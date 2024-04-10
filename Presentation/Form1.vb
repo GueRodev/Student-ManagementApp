@@ -1,4 +1,7 @@
-﻿Public Class Form1
+﻿
+
+Public Class Form1
+
     Private Sub btnCerrarLogin_Click(sender As Object, e As EventArgs) Handles btnCerrarLogin.Click
         Me.Close()
     End Sub
@@ -12,7 +15,7 @@
     Private startPoint As New Point(0, 0)
 
     ' Evento MouseDown del panel de título
-    Private Sub Panel_InicioSesion_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel_InicioSesion.MouseDown
+    Private Sub PanelTitulo_MouseDown(sender As Object, e As MouseEventArgs) Handles PanelTitulo.MouseDown
         If e.Button = MouseButtons.Left Then
             isDragging = True
             startPoint = New Point(e.X, e.Y)
@@ -20,7 +23,7 @@
     End Sub
 
     ' Evento MouseMove del panel de título
-    Private Sub Panel_InicioSesion_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel_InicioSesion.MouseMove
+    Private Sub PanelTitulo_MouseMove(sender As Object, e As MouseEventArgs) Handles PanelTitulo.MouseMove
         If isDragging Then
             Dim p As Point = Me.PointToScreen(New Point(e.X, e.Y))
             Me.Location = New Point(p.X - Me.startPoint.X, p.Y - Me.startPoint.Y)
@@ -28,15 +31,14 @@
     End Sub
 
     ' Evento MouseUp del panel de título
-    Private Sub Panel_InicioSesion_MouseUp(sender As Object, e As MouseEventArgs) Handles Panel_InicioSesion.MouseUp
+    Private Sub PanelTitulo_MouseUp(sender As Object, e As MouseEventArgs) Handles PanelTitulo.MouseUp
         If e.Button = MouseButtons.Left Then
             isDragging = False
         End If
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub btnCuentaNueva_Click(sender As Object, e As EventArgs) Handles btnCuentaNueva.Click
+        Me.Hide()
+        RegistroUsuario.Show()
     End Sub
-
-
 End Class

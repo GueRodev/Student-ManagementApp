@@ -17,7 +17,7 @@ Public Class Datos_Usuario
 
                 Dim reader = command.ExecuteReader() 'metodo que ejecuta una consulta Sql, devuelve conjunto de resultados
                 If reader.HasRows Then 'seleccion de filas de una tabla
-                    Return True 'si la conulta existe retornamos true 
+                    Return True 'si la consulta existe retornamos true 
                 Else
                     Return False
                 End If

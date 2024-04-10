@@ -24,7 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Panel_InicioSesion = New System.Windows.Forms.Panel()
+        Me.PanelTitulo = New System.Windows.Forms.Panel()
         Me.btnMinimizarLogin = New System.Windows.Forms.Button()
         Me.btnCerrarLogin = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -38,7 +38,7 @@ Partial Class Form1
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.inkRecuperarContrasena = New System.Windows.Forms.LinkLabel()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel_InicioSesion.SuspendLayout()
+        Me.PanelTitulo.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -51,16 +51,16 @@ Partial Class Form1
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
-        'Panel_InicioSesion
+        'PanelTitulo
         '
-        Me.Panel_InicioSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Panel_InicioSesion.Controls.Add(Me.btnMinimizarLogin)
-        Me.Panel_InicioSesion.Controls.Add(Me.btnCerrarLogin)
-        Me.Panel_InicioSesion.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel_InicioSesion.Location = New System.Drawing.Point(0, 0)
-        Me.Panel_InicioSesion.Name = "Panel_InicioSesion"
-        Me.Panel_InicioSesion.Size = New System.Drawing.Size(488, 26)
-        Me.Panel_InicioSesion.TabIndex = 0
+        Me.PanelTitulo.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.PanelTitulo.Controls.Add(Me.btnMinimizarLogin)
+        Me.PanelTitulo.Controls.Add(Me.btnCerrarLogin)
+        Me.PanelTitulo.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelTitulo.Location = New System.Drawing.Point(0, 0)
+        Me.PanelTitulo.Name = "PanelTitulo"
+        Me.PanelTitulo.Size = New System.Drawing.Size(488, 26)
+        Me.PanelTitulo.TabIndex = 0
         '
         'btnMinimizarLogin
         '
@@ -102,10 +102,10 @@ Partial Class Form1
         'btnCuentaNueva
         '
         Me.btnCuentaNueva.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCuentaNueva.BackColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnCuentaNueva.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.btnCuentaNueva.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnCuentaNueva.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.btnCuentaNueva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnCuentaNueva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnCuentaNueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCuentaNueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCuentaNueva.ForeColor = System.Drawing.Color.White
@@ -170,6 +170,7 @@ Partial Class Form1
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(221, 22)
         Me.TextBox1.TabIndex = 22
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox2
         '
@@ -237,21 +238,21 @@ Partial Class Form1
         Me.Controls.Add(Me.btnCuentaNueva)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Panel_InicioSesion)
+        Me.Controls.Add(Me.PanelTitulo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Form1"
         Me.Opacity = 0.9R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "      "
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel_InicioSesion.ResumeLayout(False)
+        Me.PanelTitulo.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Panel_InicioSesion As Panel
+    Friend WithEvents PanelTitulo As Panel
     Friend WithEvents btnMinimizarLogin As Button
     Friend WithEvents btnCerrarLogin As Button
     Friend WithEvents Panel1 As Panel
