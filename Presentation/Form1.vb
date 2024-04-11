@@ -41,4 +41,9 @@ Public Class Form1
         Me.Hide()
         RegistroUsuario.Show()
     End Sub
+
+    Private Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click
+        Me.Hide()
+        PantallaBienvenida.Show()
+    End Sub
 End Class
