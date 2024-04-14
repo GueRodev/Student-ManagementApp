@@ -12,8 +12,7 @@
         AjustarFormulario()
         RestaurarTamanoNormal()
     End Sub
-    ' Variable para controlar si el formulario está maximizado
-    Private estaMaximizado As Boolean = False
+
 
     'Ajustar el formulario con la barra de tareas 
     Private Sub AjustarFormulario()
@@ -29,7 +28,7 @@
 
     Private Sub btnMaximizar_Click(sender As Object, e As EventArgs) Handles btnMaximizar.Click
         Me.WindowState = FormWindowState.Maximized
-        estaMaximizado = True
+
         AjustarFormulario()
         btnMaximizar.Visible = False ' Si la ventana está maximizada, oculta el botón de maximizar
         btnRestaurar.Visible = True  ' Muestra el símbolo restaurar
@@ -37,19 +36,10 @@
 
     Private Sub btnRestaurar_Click(sender As Object, e As EventArgs) Handles btnRestaurar.Click
         Me.WindowState = FormWindowState.Normal
-        estaMaximizado = False
+
         RestaurarTamanoNormal() ' Restaurar el formulario al tamaño especificado
         btnMaximizar.Visible = True ' Si la ventana no está maximizada, muestra el botón de maximizar
         btnRestaurar.Visible = False  ' Oculta el botón de restaurar
-    End Sub
-
-    Private Sub FormPrincipal_Resize(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Resize
-        If Me.WindowState = FormWindowState.Maximized And Not estaMaximizado Then
-            AjustarFormulario()
-            estaMaximizado = True
-        ElseIf Me.WindowState = FormWindowState.Normal And estaMaximizado Then
-            estaMaximizado = False
-        End If
     End Sub
 
     Private Sub btnMinimizar_Click(sender As Object, e As EventArgs) Handles btnMinimizar.Click
