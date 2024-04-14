@@ -48,8 +48,4 @@ Public Class Datos_Usuario
             End Using
         End Using
     End Function
-
-
-
-
 End Class

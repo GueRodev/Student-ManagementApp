@@ -49,25 +49,20 @@ Public Class RegistroUsuario
         Form1.Show()
     End Sub
 
-
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         ' Obtener los datos del usuario desde los campos del formulario
         Dim usuario As String = txtRegistroUsuario.Text
         Dim contraseña As String = txtRegistroContrasena.Text
         Dim email As String = txtRegistroEmail.Text
-
         ' Validar que los campos no estén vacíos
         If String.IsNullOrEmpty(usuario) OrElse String.IsNullOrEmpty(contraseña) OrElse String.IsNullOrEmpty(email) Then
             MessageBox.Show("Por favor, complete todos los campos.")
             Return
         End If
-
-        ' Encriptar la contraseña antes de registrar el usuario
+        'Instanciar UsuarioModelo
         Dim usuarioModelo As New UsuarioModelo()
-
         ' Llamar al método dominio_Registrar para registrar el nuevo usuario con la contraseña encriptada
         Dim registroExitoso As Boolean = usuarioModelo.dominio_Registrar(usuario, contraseña, email)
-
         ' Verificar si el registro fue exitoso
         If registroExitoso Then
             MessageBox.Show("Usuario registrado correctamente.")
@@ -82,8 +77,6 @@ Public Class RegistroUsuario
         txtRegistroUsuario.Clear()
         txtRegistroContrasena.Clear()
         txtRegistroEmail.Clear()
-
-        ' Colocar el foco en el campo de usuario para una nueva entrada
         txtRegistroUsuario.Focus()
     End Sub
 

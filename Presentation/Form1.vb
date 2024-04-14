@@ -1,6 +1,6 @@
 ﻿
 Imports System.Runtime.InteropServices
-Imports Domain
+Imports Domain 'Importar la capa de dominio
 
 Public Class Form1
     Public Sub New()
@@ -50,16 +50,16 @@ Public Class Form1
     End Sub
 
     Private Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click
-
+        'Instanciamos la clase UsuarioModelo
         Dim usuarioModelo As New UsuarioModelo()
         'Mostrar Encriptacion'
         ' Dim contraseñaEncriptada As String = usuarioModelo.Encrypt(txtContrasena.Text) '
         'txtMostrarEncrypt.Text = contraseñaEncriptada'
 
-        Dim validLogin = usuarioModelo.dominio_Login(txtUsuario.Text, txtContrasena.Text)
+        Dim validLogin = usuarioModelo.dominio_Login(txtUsuario.Text, txtContrasena.Text) 'Asignamos el metodo login de la capa dominio que retorna los valores de iniciar sesion
 
         If validLogin = True Then
-            Dim frm As New FormPrincipal()
+            Dim frm As New FormPrincipal() 'Instanciamos el formulario Principal
             frm.Show()
             Me.Hide()
         Else

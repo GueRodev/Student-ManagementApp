@@ -60,7 +60,7 @@ Partial Class RegistroUsuario
         Me.btnCerrarRegistroUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.btnCerrarRegistroUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrarRegistroUsuario.Image = CType(resources.GetObject("btnCerrarRegistroUsuario.Image"), System.Drawing.Image)
-        Me.btnCerrarRegistroUsuario.Location = New System.Drawing.Point(466, -1)
+        Me.btnCerrarRegistroUsuario.Location = New System.Drawing.Point(468, -1)
         Me.btnCerrarRegistroUsuario.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCerrarRegistroUsuario.Name = "btnCerrarRegistroUsuario"
         Me.btnCerrarRegistroUsuario.Size = New System.Drawing.Size(38, 27)
