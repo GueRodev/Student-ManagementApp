@@ -30,13 +30,11 @@ Partial Class RegistroUsuario
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.btnCuentaNueva = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.btnRegistrar = New System.Windows.Forms.Button()
+        Me.txtRegistroUsuario = New System.Windows.Forms.TextBox()
+        Me.txtRegistroContrasena = New System.Windows.Forms.TextBox()
+        Me.txtRegistroEmail = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PanelTitulo.SuspendLayout()
@@ -52,7 +50,7 @@ Partial Class RegistroUsuario
         Me.PanelTitulo.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelTitulo.Location = New System.Drawing.Point(0, 0)
         Me.PanelTitulo.Name = "PanelTitulo"
-        Me.PanelTitulo.Size = New System.Drawing.Size(498, 23)
+        Me.PanelTitulo.Size = New System.Drawing.Size(506, 23)
         Me.PanelTitulo.TabIndex = 0
         '
         'btnCerrarRegistroUsuario
@@ -62,7 +60,7 @@ Partial Class RegistroUsuario
         Me.btnCerrarRegistroUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.btnCerrarRegistroUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrarRegistroUsuario.Image = CType(resources.GetObject("btnCerrarRegistroUsuario.Image"), System.Drawing.Image)
-        Me.btnCerrarRegistroUsuario.Location = New System.Drawing.Point(462, -1)
+        Me.btnCerrarRegistroUsuario.Location = New System.Drawing.Point(466, -1)
         Me.btnCerrarRegistroUsuario.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCerrarRegistroUsuario.Name = "btnCerrarRegistroUsuario"
         Me.btnCerrarRegistroUsuario.Size = New System.Drawing.Size(38, 27)
@@ -76,7 +74,7 @@ Partial Class RegistroUsuario
         Me.btnMinimizarRegistroUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.btnMinimizarRegistroUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMinimizarRegistroUsuario.Image = CType(resources.GetObject("btnMinimizarRegistroUsuario.Image"), System.Drawing.Image)
-        Me.btnMinimizarRegistroUsuario.Location = New System.Drawing.Point(427, -1)
+        Me.btnMinimizarRegistroUsuario.Location = New System.Drawing.Point(430, -1)
         Me.btnMinimizarRegistroUsuario.Margin = New System.Windows.Forms.Padding(2)
         Me.btnMinimizarRegistroUsuario.Name = "btnMinimizarRegistroUsuario"
         Me.btnMinimizarRegistroUsuario.Size = New System.Drawing.Size(38, 27)
@@ -87,9 +85,9 @@ Partial Class RegistroUsuario
         '
         Me.btnRegresarLogin.Dock = System.Windows.Forms.DockStyle.Right
         Me.btnRegresarLogin.Image = CType(resources.GetObject("btnRegresarLogin.Image"), System.Drawing.Image)
-        Me.btnRegresarLogin.Location = New System.Drawing.Point(269, 23)
+        Me.btnRegresarLogin.Location = New System.Drawing.Point(277, 23)
         Me.btnRegresarLogin.Name = "btnRegresarLogin"
-        Me.btnRegresarLogin.Size = New System.Drawing.Size(229, 344)
+        Me.btnRegresarLogin.Size = New System.Drawing.Size(229, 313)
         Me.btnRegresarLogin.TabIndex = 1
         Me.btnRegresarLogin.TabStop = False
         '
@@ -132,19 +130,6 @@ Partial Class RegistroUsuario
         Me.Label3.TabIndex = 29
         Me.Label3.Text = "Email"
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(22, 268)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 17)
-        Me.Label4.TabIndex = 30
-        Me.Label4.Text = "Tipo"
-        '
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
@@ -155,62 +140,54 @@ Partial Class RegistroUsuario
         Me.PictureBox2.TabIndex = 31
         Me.PictureBox2.TabStop = False
         '
-        'btnCuentaNueva
+        'btnRegistrar
         '
-        Me.btnCuentaNueva.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCuentaNueva.BackColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnCuentaNueva.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnCuentaNueva.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.btnCuentaNueva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.btnCuentaNueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCuentaNueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCuentaNueva.ForeColor = System.Drawing.Color.White
-        Me.btnCuentaNueva.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCuentaNueva.Location = New System.Drawing.Point(81, 321)
-        Me.btnCuentaNueva.Name = "btnCuentaNueva"
-        Me.btnCuentaNueva.Size = New System.Drawing.Size(107, 34)
-        Me.btnCuentaNueva.TabIndex = 32
-        Me.btnCuentaNueva.Text = "Registrar"
-        Me.btnCuentaNueva.UseVisualStyleBackColor = False
+        Me.btnRegistrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegistrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegistrar.ForeColor = System.Drawing.Color.White
+        Me.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnRegistrar.Location = New System.Drawing.Point(89, 281)
+        Me.btnRegistrar.Name = "btnRegistrar"
+        Me.btnRegistrar.Size = New System.Drawing.Size(107, 34)
+        Me.btnRegistrar.TabIndex = 32
+        Me.btnRegistrar.Text = "Registrar"
+        Me.btnRegistrar.UseVisualStyleBackColor = False
         '
-        'ComboBox1
+        'txtRegistroUsuario
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(25, 288)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(225, 21)
-        Me.ComboBox1.TabIndex = 35
+        Me.txtRegistroUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRegistroUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.txtRegistroUsuario.Location = New System.Drawing.Point(25, 156)
+        Me.txtRegistroUsuario.Multiline = True
+        Me.txtRegistroUsuario.Name = "txtRegistroUsuario"
+        Me.txtRegistroUsuario.Size = New System.Drawing.Size(225, 20)
+        Me.txtRegistroUsuario.TabIndex = 36
         '
-        'TextBox1
+        'txtRegistroContrasena
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.TextBox1.Location = New System.Drawing.Point(25, 156)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(225, 20)
-        Me.TextBox1.TabIndex = 36
+        Me.txtRegistroContrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRegistroContrasena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.txtRegistroContrasena.Location = New System.Drawing.Point(25, 198)
+        Me.txtRegistroContrasena.Multiline = True
+        Me.txtRegistroContrasena.Name = "txtRegistroContrasena"
+        Me.txtRegistroContrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
+        Me.txtRegistroContrasena.Size = New System.Drawing.Size(225, 20)
+        Me.txtRegistroContrasena.TabIndex = 37
         '
-        'TextBox2
+        'txtRegistroEmail
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.TextBox2.Location = New System.Drawing.Point(25, 198)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
-        Me.TextBox2.Size = New System.Drawing.Size(225, 20)
-        Me.TextBox2.TabIndex = 37
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.TextBox3.Location = New System.Drawing.Point(25, 240)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(225, 20)
-        Me.TextBox3.TabIndex = 38
+        Me.txtRegistroEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRegistroEmail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.txtRegistroEmail.Location = New System.Drawing.Point(25, 240)
+        Me.txtRegistroEmail.Multiline = True
+        Me.txtRegistroEmail.Name = "txtRegistroEmail"
+        Me.txtRegistroEmail.Size = New System.Drawing.Size(225, 20)
+        Me.txtRegistroEmail.TabIndex = 38
         '
         'Panel1
         '
@@ -218,7 +195,7 @@ Partial Class RegistroUsuario
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 23)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(9, 344)
+        Me.Panel1.Size = New System.Drawing.Size(9, 313)
         Me.Panel1.TabIndex = 39
         '
         'Button1
@@ -232,7 +209,7 @@ Partial Class RegistroUsuario
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(328, 167)
+        Me.Button1.Location = New System.Drawing.Point(336, 167)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(122, 38)
         Me.Button1.TabIndex = 40
@@ -244,16 +221,14 @@ Partial Class RegistroUsuario
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(498, 367)
+        Me.ClientSize = New System.Drawing.Size(506, 336)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.btnCuentaNueva)
+        Me.Controls.Add(Me.txtRegistroEmail)
+        Me.Controls.Add(Me.txtRegistroContrasena)
+        Me.Controls.Add(Me.txtRegistroUsuario)
+        Me.Controls.Add(Me.btnRegistrar)
         Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -279,13 +254,11 @@ Partial Class RegistroUsuario
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents btnCuentaNueva As Button
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents btnRegistrar As Button
+    Friend WithEvents txtRegistroUsuario As TextBox
+    Friend WithEvents txtRegistroContrasena As TextBox
+    Friend WithEvents txtRegistroEmail As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button1 As Button
 End Class

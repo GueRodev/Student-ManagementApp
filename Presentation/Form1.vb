@@ -1,6 +1,13 @@
 ﻿
+Imports System.Runtime.InteropServices
+Imports Domain
 
 Public Class Form1
+    Public Sub New()
+        ' This call is required by the designer.
+        InitializeComponent()
+        ' Add any initialization after the InitializeComponent() call.
+    End Sub
 
     Private Sub btnCerrarLogin_Click(sender As Object, e As EventArgs) Handles btnCerrarLogin.Click
         Me.Close()
@@ -43,7 +50,25 @@ Public Class Form1
     End Sub
 
     Private Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click
-        Me.Hide()
-        PantallaBienvenida.Show()
+
+        Dim usuarioModelo As New UsuarioModelo()
+        'Mostrar Encriptacion'
+        ' Dim contraseñaEncriptada As String = usuarioModelo.Encrypt(txtContrasena.Text) '
+        'txtMostrarEncrypt.Text = contraseñaEncriptada'
+
+        Dim validLogin = usuarioModelo.dominio_Login(txtUsuario.Text, txtContrasena.Text)
+
+        If validLogin = True Then
+            Dim frm As New FormPrincipal()
+            frm.Show()
+            Me.Hide()
+        Else
+            MessageBox.Show("Datos Incorrectos" + vbNewLine + "Intente de Nuevo")
+            txtContrasena.Clear()
+            txtContrasena.Focus()
+
+        End If
+
     End Sub
+
 End Class
