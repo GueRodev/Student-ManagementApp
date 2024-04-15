@@ -14,24 +14,17 @@ Public Class FormPrincipal
     Private Sub FormPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.StartPosition = FormStartPosition.CenterScreen
         AjustarFormulario()
-        RestaurarTamanoNormal()
     End Sub
 
     'Ajustar el formulario con la barra de tareas 
     Private Sub AjustarFormulario()
         Dim workingArea As Rectangle = Screen.GetWorkingArea(Me)
         Me.MaximumSize = New Size(workingArea.Width, workingArea.Height)
-        Me.Size = New Size(835, 459)
+        Me.Size = New Size(835, 459) 'ajustar tamano original
         Me.Location = New Point(workingArea.X + (workingArea.Width - Me.Width) \ 2, workingArea.Y + (workingArea.Height - Me.Height) \ 2)
     End Sub
 
-    ' Restaurar el formulario al tamaño especificado en las propiedades
-    Private Sub RestaurarTamanoNormal()
-        Me.Size = New Size(835, 459)
-    End Sub
-
     Private Sub btnMaximizar_Click(sender As Object, e As EventArgs) Handles btnMaximizar.Click
-
         Me.WindowState = FormWindowState.Maximized
         AjustarFormulario()
         btnMaximizar.Visible = False ' Si la ventana está maximizada, oculta el botón de maximizar
@@ -39,9 +32,7 @@ Public Class FormPrincipal
     End Sub
 
     Private Sub btnRestaurar_Click(sender As Object, e As EventArgs) Handles btnRestaurar.Click
-
         Me.WindowState = FormWindowState.Normal
-        RestaurarTamanoNormal() ' Restaurar el formulario al tamaño especificado
         btnMaximizar.Visible = True ' Si la ventana no está maximizada, muestra el botón de maximizar
         btnRestaurar.Visible = False  ' Oculta el botón de restaurar
     End Sub
@@ -77,5 +68,13 @@ Public Class FormPrincipal
         End If
     End Sub
 
+    Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
+        Dim opcion As DialogResult
+        opcion = MessageBox.Show("Esta seguro que desea Cerrar Sesion?", "Cerrar Sesion",
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If (opcion = DialogResult.Yes) Then
+            Me.Close()
+        End If
+    End Sub
 
 End Class

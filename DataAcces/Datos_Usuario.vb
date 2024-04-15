@@ -48,4 +48,52 @@ Public Class Datos_Usuario
             End Using
         End Using
     End Function
+
+
+    Public Function ActualizarUsuario(Usuario As String, Password As String, Email As String) As Boolean
+        Using connection = GetConnection()
+            connection.Open()
+            Using command = New MySqlCommand()
+                command.Connection = connection
+                command.CommandText = "INSERT INTO usuarios (Usuario, Password, Email) VALUES (@Usuario, @Password, @Email)"
+                command.Parameters.AddWithValue("@Usuario", Usuario)
+                command.Parameters.AddWithValue("@Password", Password)
+                command.Parameters.AddWithValue("@Email", Email)
+                command.CommandType = CommandType.Text
+
+                Dim rowsAffected = command.ExecuteNonQuery()
+                If rowsAffected > 0 Then
+                    Return True ' Registro exitoso
+                Else
+                    Return False ' Error al registrar usuario
+                End If
+            End Using
+        End Using
+    End Function
+
+
+    Public Function ActualizarPerfil(Usuario As String, Password As String, Email As String) As Boolean
+        Using connection = GetConnection()
+            connection.Open()
+            Using command = New MySqlCommand()
+                command.Connection = connection
+                command.CommandText = "UPDATE usuarios SET Password = @Password, Email = @Email WHERE Usuario = @Usuario"
+                command.Parameters.AddWithValue("@Usuario", Usuario)
+                command.Parameters.AddWithValue("@Password", Password)
+                command.Parameters.AddWithValue("@Email", Email)
+                command.CommandType = CommandType.Text
+
+                Dim rowsAffected = command.ExecuteNonQuery()
+                If rowsAffected > 0 Then
+                    Return True ' Actualización exitosa
+                Else
+                    Return False ' Error al actualizar usuario
+                End If
+            End Using
+        End Using
+    End Function
+
+
+
+
 End Class

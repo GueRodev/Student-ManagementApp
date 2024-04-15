@@ -19,6 +19,14 @@ Public Class UsuarioModelo
 
     End Function
 
+    Public Function dominio_EditarPerfil(Usuario As String, Password As String, Email As String) As Boolean
+        ' Encriptar la contraseña antes de registrar el usuario
+        Dim contraseñaEncriptada As String = Encrypt(Password)
+        ' Llamar al método RegistrarUsuario con la contraseña encriptada
+        Return datos_usuario.ActualizarPerfil(Usuario, contraseñaEncriptada, Email)
+    End Function
+
+
     Public Function Encrypt(Encryptation As String) As String
         Dim msg As String = String.Empty
         Dim encode As Byte() = New Byte(Encryptation.Length - 1) {}

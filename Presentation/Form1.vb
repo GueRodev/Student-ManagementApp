@@ -57,19 +57,24 @@ Public Class Form1
         'txtMostrarEncrypt.Text = contraseñaEncriptada'
 
         Dim validLogin = usuarioModelo.dominio_Login(txtUsuario.Text, txtContrasena.Text) 'Asignamos el metodo login de la capa dominio que retorna los valores de iniciar sesion
-
         If validLogin = True Then
             Dim frm As New FormPrincipal() 'Instanciamos el formulario Principal
             frm.Show()
+            AddHandler frm.FormClosed, AddressOf Me.Cerrar_Sesion
             Me.Hide()
-
         Else
             MessageBox.Show("Datos Incorrectos" + vbNewLine + "Intente de Nuevo")
             txtContrasena.Clear()
             txtContrasena.Focus()
-
         End If
+    End Sub
+
+    Private Sub Cerrar_Sesion(sender As Object, e As FormClosedEventArgs)
+        txtContrasena.Clear()
+        txtUsuario.Clear()
+        Me.Show()
 
     End Sub
+
 
 End Class
