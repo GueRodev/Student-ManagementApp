@@ -97,7 +97,7 @@ Partial Class RegistroUsuario
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(22, 136)
+        Me.Label1.Location = New System.Drawing.Point(27, 137)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(64, 17)
@@ -110,7 +110,7 @@ Partial Class RegistroUsuario
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(22, 178)
+        Me.Label2.Location = New System.Drawing.Point(27, 179)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(91, 17)
@@ -123,7 +123,7 @@ Partial Class RegistroUsuario
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(22, 220)
+        Me.Label3.Location = New System.Drawing.Point(27, 221)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(47, 17)
@@ -162,7 +162,7 @@ Partial Class RegistroUsuario
         '
         Me.txtRegistroUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRegistroUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.txtRegistroUsuario.Location = New System.Drawing.Point(25, 156)
+        Me.txtRegistroUsuario.Location = New System.Drawing.Point(30, 157)
         Me.txtRegistroUsuario.Multiline = True
         Me.txtRegistroUsuario.Name = "txtRegistroUsuario"
         Me.txtRegistroUsuario.Size = New System.Drawing.Size(225, 20)
@@ -172,7 +172,7 @@ Partial Class RegistroUsuario
         '
         Me.txtRegistroContrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRegistroContrasena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.txtRegistroContrasena.Location = New System.Drawing.Point(25, 198)
+        Me.txtRegistroContrasena.Location = New System.Drawing.Point(30, 199)
         Me.txtRegistroContrasena.Multiline = True
         Me.txtRegistroContrasena.Name = "txtRegistroContrasena"
         Me.txtRegistroContrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
@@ -183,7 +183,7 @@ Partial Class RegistroUsuario
         '
         Me.txtRegistroEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRegistroEmail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.txtRegistroEmail.Location = New System.Drawing.Point(25, 240)
+        Me.txtRegistroEmail.Location = New System.Drawing.Point(30, 241)
         Me.txtRegistroEmail.Multiline = True
         Me.txtRegistroEmail.Name = "txtRegistroEmail"
         Me.txtRegistroEmail.Size = New System.Drawing.Size(225, 20)

@@ -62,6 +62,7 @@ Public Class Form1
             Dim frm As New FormPrincipal() 'Instanciamos el formulario Principal
             frm.Show()
             Me.Hide()
+
         Else
             MessageBox.Show("Datos Incorrectos" + vbNewLine + "Intente de Nuevo")
             txtContrasena.Clear()

@@ -122,7 +122,7 @@ Partial Class Form1
         '
         Me.btnIniciarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnIniciarSesion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnIniciarSesion.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btnIniciarSesion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.btnIniciarSesion.FlatAppearance.BorderSize = 0
         Me.btnIniciarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnIniciarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(61, Byte), Integer))
