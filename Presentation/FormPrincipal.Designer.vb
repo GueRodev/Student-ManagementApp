@@ -51,6 +51,8 @@ Partial Class FormPrincipal
         Me.btnInicio = New Guna.UI2.WinForms.Guna2Button()
         Me.tmrOcultarMenu = New System.Windows.Forms.Timer(Me.components)
         Me.tmrMostrarMenu = New System.Windows.Forms.Timer(Me.components)
+        Me.lbl_Rol = New System.Windows.Forms.Label()
+        Me.lbl_Usuario = New System.Windows.Forms.Label()
         Me.panelContainer.SuspendLayout()
         Me.PanelMenu.SuspendLayout()
         Me.PanelTitulo.SuspendLayout()
@@ -61,6 +63,7 @@ Partial Class FormPrincipal
         '
         'panelContainer
         '
+        Me.panelContainer.Controls.Add(Me.txtBuscar)
         Me.panelContainer.Controls.Add(Me.PanelMenu)
         Me.panelContainer.Controls.Add(Me.Panel1)
         Me.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill
@@ -286,6 +289,8 @@ Partial Class FormPrincipal
         Me.PanelLogo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelLogo.BackColor = System.Drawing.Color.White
+        Me.PanelLogo.Controls.Add(Me.lbl_Usuario)
+        Me.PanelLogo.Controls.Add(Me.lbl_Rol)
         Me.PanelLogo.Controls.Add(Me.btnPerfil)
         Me.PanelLogo.Controls.Add(Me.Label1)
         Me.PanelLogo.Controls.Add(Me.PictureBox2)
@@ -320,7 +325,6 @@ Partial Class FormPrincipal
         Me.PanelButtons.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelButtons.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.PanelButtons.Controls.Add(Me.txtBuscar)
         Me.PanelButtons.Controls.Add(Me.btnAsignar)
         Me.PanelButtons.Controls.Add(Me.btnMaterias)
         Me.PanelButtons.Controls.Add(Me.Guna2Button3)
@@ -338,7 +342,7 @@ Partial Class FormPrincipal
         Me.txtBuscar.Animated = True
         Me.txtBuscar.AutoRoundedCorners = True
         Me.txtBuscar.BorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.txtBuscar.BorderRadius = 9
+        Me.txtBuscar.BorderRadius = 14
         Me.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtBuscar.DefaultText = ""
         Me.txtBuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -349,12 +353,12 @@ Partial Class FormPrincipal
         Me.txtBuscar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtBuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtBuscar.IconLeft = CType(resources.GetObject("txtBuscar.IconLeft"), System.Drawing.Image)
-        Me.txtBuscar.Location = New System.Drawing.Point(661, 11)
+        Me.txtBuscar.Location = New System.Drawing.Point(213, 108)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtBuscar.PlaceholderText = "Buscar"
         Me.txtBuscar.SelectedText = ""
-        Me.txtBuscar.Size = New System.Drawing.Size(171, 21)
+        Me.txtBuscar.Size = New System.Drawing.Size(402, 31)
         Me.txtBuscar.TabIndex = 1
         '
         'btnAsignar
@@ -490,6 +494,29 @@ Partial Class FormPrincipal
         '
         Me.tmrMostrarMenu.Interval = 90
         '
+        'lbl_Rol
+        '
+        Me.lbl_Rol.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_Rol.AutoSize = True
+        Me.lbl_Rol.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Rol.Location = New System.Drawing.Point(702, 21)
+        Me.lbl_Rol.Name = "lbl_Rol"
+        Me.lbl_Rol.Size = New System.Drawing.Size(24, 13)
+        Me.lbl_Rol.TabIndex = 38
+        Me.lbl_Rol.Text = "Rol"
+        '
+        'lbl_Usuario
+        '
+        Me.lbl_Usuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_Usuario.AutoSize = True
+        Me.lbl_Usuario.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Usuario.ForeColor = System.Drawing.Color.Black
+        Me.lbl_Usuario.Location = New System.Drawing.Point(722, 8)
+        Me.lbl_Usuario.Name = "lbl_Usuario"
+        Me.lbl_Usuario.Size = New System.Drawing.Size(47, 13)
+        Me.lbl_Usuario.TabIndex = 40
+        Me.lbl_Usuario.Text = "Usuario"
+        '
         'FormPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -542,4 +569,6 @@ Partial Class FormPrincipal
     Friend WithEvents btnMenuBar As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents tmrOcultarMenu As Timer
     Friend WithEvents tmrMostrarMenu As Timer
+    Friend WithEvents lbl_Usuario As Label
+    Friend WithEvents lbl_Rol As Label
 End Class

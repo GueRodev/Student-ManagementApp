@@ -206,6 +206,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.vbproj">
+      <Project>{de14f692-0a86-4670-8167-5a9bf2c87e11}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.vbproj">
       <Project>{d53021be-8c0f-46f6-bb82-d26140d8d2ef}</Project>
       <Name>Domain</Name>

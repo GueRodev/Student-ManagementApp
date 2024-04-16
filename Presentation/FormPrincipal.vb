@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel.Design
 Imports System.Runtime.InteropServices
+Imports Common
 
 Public Class FormPrincipal
 
@@ -15,6 +16,10 @@ Public Class FormPrincipal
     Private Sub FormPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.StartPosition = FormStartPosition.CenterScreen
         AjustarFormulario()
+
+        lbl_Usuario.Text = ActiveUser.Usuario
+        lbl_Rol.Text = ActiveUser.Rol
+
     End Sub
 
     'Ajustar el formulario con la barra de tareas 

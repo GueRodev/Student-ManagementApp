@@ -1,5 +1,6 @@
 ﻿'Import System.Data
 Imports MySql.Data.MySqlClient
+Imports Common
 
 Public Class Datos_Usuario
 
@@ -19,6 +20,13 @@ Public Class Datos_Usuario
 
                     Dim reader = command.ExecuteReader() 'metodo que ejecuta una consulta Sql, devuelve conjunto de resultados
                     If reader.HasRows Then 'seleccion de filas de una tabla
+                        While reader.Read()
+                            ActiveUser.ID = reader.GetInt32(0)
+                            ActiveUser.Usuario = reader.GetString(1)
+                            ActiveUser.Email = reader.GetString(3)
+                            ActiveUser.Rol = reader.GetString(4)
+                        End While
+                        reader.Dispose()
                         Return True 'si la consulta existe retornamos true 
                     Else
                         Return False
