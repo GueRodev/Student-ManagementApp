@@ -2,6 +2,7 @@
 Imports System.Runtime.InteropServices
 
 Public Class FormPrincipal
+
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Dim opcion As DialogResult
         opcion = MessageBox.Show("Esta seguro que desea salir?", "Salir del programa",
@@ -77,4 +78,38 @@ Public Class FormPrincipal
         End If
     End Sub
 
+    Private Sub tmrMostrarMenu_Tick(sender As Object, e As EventArgs) Handles tmrMostrarMenu.Tick
+        If PanelMenu.Width >= 110 Then
+            Me.tmrMostrarMenu.Enabled = False
+        Else
+            Me.PanelMenu.Width += 20 ' Aumentar el ancho del panel en 20 unidades
+        End If
+    End Sub
+
+    Private Sub tmrOcultarMenu_Tick(sender As Object, e As EventArgs) Handles tmrOcultarMenu.Tick
+        If PanelMenu.Width <= 40 Then
+            Me.tmrOcultarMenu.Enabled = False
+        Else
+            Me.PanelMenu.Width -= 20 ' Reducir el ancho del panel en 20 unidades
+        End If
+    End Sub
+
+    Private Sub btnMenuBar_Click(sender As Object, e As EventArgs) Handles btnMenuBar.Click
+        If PanelMenu.Width = 40 Then
+            tmrMostrarMenu.Enabled = True ' Si el ancho del panel es 40, comenzar a mostrarlo
+        ElseIf PanelMenu.Width = 110 Then
+            tmrOcultarMenu.Enabled = True ' Si el ancho del panel es 122, comenzar a ocultarlo
+        Else
+            tmrOcultarMenu.Enabled = True
+        End If
+    End Sub
+
+    Private Sub btnApagar_Click(sender As Object, e As EventArgs) Handles btnApagar.Click
+        Dim opcion As DialogResult
+        opcion = MessageBox.Show("Esta seguro que desea salir?", "Salir del programa",
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If (opcion = DialogResult.Yes) Then
+            End
+        End If
+    End Sub
 End Class

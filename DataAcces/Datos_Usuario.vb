@@ -49,7 +49,6 @@ Public Class Datos_Usuario
         End Using
     End Function
 
-
     Public Function ActualizarUsuario(Usuario As String, Password As String, Email As String) As Boolean
         Using connection = GetConnection()
             connection.Open()

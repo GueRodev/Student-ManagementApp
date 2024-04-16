@@ -22,10 +22,15 @@ Partial Class FormPrincipal
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPrincipal))
         Me.panelContainer = New System.Windows.Forms.Panel()
-        Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.PanelMenu = New System.Windows.Forms.Panel()
+        Me.btnCerrarSesion = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnApagar = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnEstados = New Guna.UI2.WinForms.Guna2Button()
         Me.btnMenuBar = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnHome = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnMinimizar = New System.Windows.Forms.Button()
@@ -44,46 +49,99 @@ Partial Class FormPrincipal
         Me.btnEstudiantes = New Guna.UI2.WinForms.Guna2Button()
         Me.btnUsuarios = New Guna.UI2.WinForms.Guna2Button()
         Me.btnInicio = New Guna.UI2.WinForms.Guna2Button()
-        Me.PanelLateral = New System.Windows.Forms.Panel()
-        Me.btnHome = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnEstados = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnApagar = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnCerrarSesion = New Guna.UI2.WinForms.Guna2Button()
+        Me.tmrOcultarMenu = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrMostrarMenu = New System.Windows.Forms.Timer(Me.components)
         Me.panelContainer.SuspendLayout()
+        Me.PanelMenu.SuspendLayout()
         Me.PanelTitulo.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelLogo.SuspendLayout()
         Me.PanelButtons.SuspendLayout()
-        Me.PanelLateral.SuspendLayout()
         Me.SuspendLayout()
         '
         'panelContainer
         '
-        Me.panelContainer.Controls.Add(Me.PanelLateral)
-        Me.panelContainer.Controls.Add(Me.Guna2CustomGradientPanel1)
+        Me.panelContainer.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.panelContainer.Controls.Add(Me.PanelMenu)
         Me.panelContainer.Controls.Add(Me.Panel1)
-        Me.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelContainer.Location = New System.Drawing.Point(0, 0)
         Me.panelContainer.Name = "panelContainer"
         Me.panelContainer.Size = New System.Drawing.Size(835, 459)
         Me.panelContainer.TabIndex = 36
         '
-        'Guna2CustomGradientPanel1
+        'PanelMenu
         '
-        Me.Guna2CustomGradientPanel1.BorderRadius = 3
-        Me.Guna2CustomGradientPanel1.BorderThickness = 1
-        Me.Guna2CustomGradientPanel1.CustomBorderThickness = New System.Windows.Forms.Padding(1)
-        Me.Guna2CustomGradientPanel1.FillColor = System.Drawing.Color.Empty
-        Me.Guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(101, Byte), Integer))
-        Me.Guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Guna2CustomGradientPanel1.Location = New System.Drawing.Point(708, 173)
-        Me.Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
-        Me.Guna2CustomGradientPanel1.Size = New System.Drawing.Size(60, 215)
-        Me.Guna2CustomGradientPanel1.TabIndex = 1
+        Me.PanelMenu.BackColor = System.Drawing.Color.White
+        Me.PanelMenu.Controls.Add(Me.btnCerrarSesion)
+        Me.PanelMenu.Controls.Add(Me.btnApagar)
+        Me.PanelMenu.Controls.Add(Me.btnEstados)
+        Me.PanelMenu.Controls.Add(Me.btnMenuBar)
+        Me.PanelMenu.Controls.Add(Me.btnHome)
+        Me.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PanelMenu.Location = New System.Drawing.Point(0, 0)
+        Me.PanelMenu.Name = "PanelMenu"
+        Me.PanelMenu.Size = New System.Drawing.Size(40, 443)
+        Me.PanelMenu.TabIndex = 2
+        '
+        'btnCerrarSesion
+        '
+        Me.btnCerrarSesion.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnCerrarSesion.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrarSesion.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnCerrarSesion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnCerrarSesion.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnCerrarSesion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnCerrarSesion.FillColor = System.Drawing.Color.WhiteSmoke
+        Me.btnCerrarSesion.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.btnCerrarSesion.ForeColor = System.Drawing.Color.Black
+        Me.btnCerrarSesion.Image = CType(resources.GetObject("btnCerrarSesion.Image"), System.Drawing.Image)
+        Me.btnCerrarSesion.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(0, 345)
+        Me.btnCerrarSesion.Name = "btnCerrarSesion"
+        Me.btnCerrarSesion.Size = New System.Drawing.Size(122, 46)
+        Me.btnCerrarSesion.TabIndex = 6
+        Me.btnCerrarSesion.Text = " Salir"
+        '
+        'btnApagar
+        '
+        Me.btnApagar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnApagar.BackColor = System.Drawing.Color.Transparent
+        Me.btnApagar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnApagar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnApagar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnApagar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnApagar.FillColor = System.Drawing.Color.WhiteSmoke
+        Me.btnApagar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.btnApagar.ForeColor = System.Drawing.Color.Black
+        Me.btnApagar.Image = CType(resources.GetObject("btnApagar.Image"), System.Drawing.Image)
+        Me.btnApagar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnApagar.Location = New System.Drawing.Point(0, 395)
+        Me.btnApagar.Name = "btnApagar"
+        Me.btnApagar.Size = New System.Drawing.Size(122, 46)
+        Me.btnApagar.TabIndex = 5
+        Me.btnApagar.Text = "  Apagar"
+        '
+        'btnEstados
+        '
+        Me.btnEstados.BackColor = System.Drawing.Color.Transparent
+        Me.btnEstados.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnEstados.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnEstados.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnEstados.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnEstados.FillColor = System.Drawing.Color.WhiteSmoke
+        Me.btnEstados.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.btnEstados.ForeColor = System.Drawing.Color.Black
+        Me.btnEstados.Image = CType(resources.GetObject("btnEstados.Image"), System.Drawing.Image)
+        Me.btnEstados.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnEstados.Location = New System.Drawing.Point(0, 191)
+        Me.btnEstados.Name = "btnEstados"
+        Me.btnEstados.Size = New System.Drawing.Size(122, 46)
+        Me.btnEstados.TabIndex = 4
+        Me.btnEstados.Text = "   Estados"
         '
         'btnMenuBar
         '
+        Me.btnMenuBar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnMenuBar.BackColor = System.Drawing.Color.Transparent
         Me.btnMenuBar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btnMenuBar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
@@ -93,11 +151,29 @@ Partial Class FormPrincipal
         Me.btnMenuBar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnMenuBar.ForeColor = System.Drawing.Color.White
         Me.btnMenuBar.Image = CType(resources.GetObject("btnMenuBar.Image"), System.Drawing.Image)
-        Me.btnMenuBar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.btnMenuBar.Location = New System.Drawing.Point(0, 106)
+        Me.btnMenuBar.ImageSize = New System.Drawing.Size(30, 30)
+        Me.btnMenuBar.Location = New System.Drawing.Point(5, 102)
         Me.btnMenuBar.Name = "btnMenuBar"
-        Me.btnMenuBar.Size = New System.Drawing.Size(122, 46)
+        Me.btnMenuBar.Size = New System.Drawing.Size(37, 30)
         Me.btnMenuBar.TabIndex = 0
+        '
+        'btnHome
+        '
+        Me.btnHome.BackColor = System.Drawing.Color.Transparent
+        Me.btnHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnHome.FillColor = System.Drawing.Color.WhiteSmoke
+        Me.btnHome.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHome.ForeColor = System.Drawing.Color.Black
+        Me.btnHome.Image = CType(resources.GetObject("btnHome.Image"), System.Drawing.Image)
+        Me.btnHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnHome.Location = New System.Drawing.Point(0, 140)
+        Me.btnHome.Name = "btnHome"
+        Me.btnHome.Size = New System.Drawing.Size(122, 46)
+        Me.btnHome.TabIndex = 3
+        Me.btnHome.Text = "Inicio"
         '
         'Panel1
         '
@@ -404,93 +480,11 @@ Partial Class FormPrincipal
         Me.btnInicio.TabIndex = 0
         Me.btnInicio.Text = "Inicio"
         '
-        'PanelLateral
+        'tmrOcultarMenu
         '
-        Me.PanelLateral.BackColor = System.Drawing.Color.White
-        Me.PanelLateral.Controls.Add(Me.btnCerrarSesion)
-        Me.PanelLateral.Controls.Add(Me.btnApagar)
-        Me.PanelLateral.Controls.Add(Me.btnEstados)
-        Me.PanelLateral.Controls.Add(Me.btnMenuBar)
-        Me.PanelLateral.Controls.Add(Me.btnHome)
-        Me.PanelLateral.Dock = System.Windows.Forms.DockStyle.Left
-        Me.PanelLateral.Location = New System.Drawing.Point(0, 0)
-        Me.PanelLateral.Name = "PanelLateral"
-        Me.PanelLateral.Size = New System.Drawing.Size(122, 443)
-        Me.PanelLateral.TabIndex = 2
         '
-        'btnHome
+        'tmrMostrarMenu
         '
-        Me.btnHome.BackColor = System.Drawing.Color.Transparent
-        Me.btnHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnHome.FillColor = System.Drawing.Color.WhiteSmoke
-        Me.btnHome.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnHome.ForeColor = System.Drawing.Color.Black
-        Me.btnHome.Image = CType(resources.GetObject("btnHome.Image"), System.Drawing.Image)
-        Me.btnHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnHome.Location = New System.Drawing.Point(0, 156)
-        Me.btnHome.Name = "btnHome"
-        Me.btnHome.Size = New System.Drawing.Size(122, 46)
-        Me.btnHome.TabIndex = 3
-        Me.btnHome.Text = "Inicio"
-        '
-        'btnEstados
-        '
-        Me.btnEstados.BackColor = System.Drawing.Color.Transparent
-        Me.btnEstados.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnEstados.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnEstados.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnEstados.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnEstados.FillColor = System.Drawing.Color.WhiteSmoke
-        Me.btnEstados.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.btnEstados.ForeColor = System.Drawing.Color.Black
-        Me.btnEstados.Image = CType(resources.GetObject("btnEstados.Image"), System.Drawing.Image)
-        Me.btnEstados.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnEstados.Location = New System.Drawing.Point(0, 206)
-        Me.btnEstados.Name = "btnEstados"
-        Me.btnEstados.Size = New System.Drawing.Size(122, 46)
-        Me.btnEstados.TabIndex = 4
-        Me.btnEstados.Text = "  Estados"
-        '
-        'btnApagar
-        '
-        Me.btnApagar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnApagar.BackColor = System.Drawing.Color.Transparent
-        Me.btnApagar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnApagar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnApagar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnApagar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnApagar.FillColor = System.Drawing.Color.WhiteSmoke
-        Me.btnApagar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.btnApagar.ForeColor = System.Drawing.Color.Black
-        Me.btnApagar.Image = CType(resources.GetObject("btnApagar.Image"), System.Drawing.Image)
-        Me.btnApagar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnApagar.Location = New System.Drawing.Point(0, 395)
-        Me.btnApagar.Name = "btnApagar"
-        Me.btnApagar.Size = New System.Drawing.Size(122, 46)
-        Me.btnApagar.TabIndex = 5
-        Me.btnApagar.Text = " Apagar"
-        '
-        'btnCerrarSesion
-        '
-        Me.btnCerrarSesion.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnCerrarSesion.BackColor = System.Drawing.Color.Transparent
-        Me.btnCerrarSesion.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnCerrarSesion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnCerrarSesion.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnCerrarSesion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnCerrarSesion.FillColor = System.Drawing.Color.WhiteSmoke
-        Me.btnCerrarSesion.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.btnCerrarSesion.ForeColor = System.Drawing.Color.Black
-        Me.btnCerrarSesion.Image = CType(resources.GetObject("btnCerrarSesion.Image"), System.Drawing.Image)
-        Me.btnCerrarSesion.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnCerrarSesion.Location = New System.Drawing.Point(0, 345)
-        Me.btnCerrarSesion.Name = "btnCerrarSesion"
-        Me.btnCerrarSesion.Size = New System.Drawing.Size(122, 46)
-        Me.btnCerrarSesion.TabIndex = 6
-        Me.btnCerrarSesion.Text = "Salir"
         '
         'FormPrincipal
         '
@@ -507,12 +501,12 @@ Partial Class FormPrincipal
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormPrincipal"
         Me.panelContainer.ResumeLayout(False)
+        Me.PanelMenu.ResumeLayout(False)
         Me.PanelTitulo.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelLogo.ResumeLayout(False)
         Me.PanelLogo.PerformLayout()
         Me.PanelButtons.ResumeLayout(False)
-        Me.PanelLateral.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -536,11 +530,12 @@ Partial Class FormPrincipal
     Friend WithEvents btnPerfil As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents Panel1 As Panel
     Friend WithEvents txtBuscar As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Guna2CustomGradientPanel1 As Guna.UI2.WinForms.Guna2CustomGradientPanel
-    Friend WithEvents btnMenuBar As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents PanelLateral As Panel
+    Friend WithEvents PanelMenu As Panel
     Friend WithEvents btnHome As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnEstados As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnApagar As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnCerrarSesion As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnMenuBar As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents tmrOcultarMenu As Timer
+    Friend WithEvents tmrMostrarMenu As Timer
 End Class
