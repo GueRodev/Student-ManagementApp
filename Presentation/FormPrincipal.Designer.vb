@@ -61,9 +61,9 @@ Partial Class FormPrincipal
         '
         'panelContainer
         '
-        Me.panelContainer.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.panelContainer.Controls.Add(Me.PanelMenu)
         Me.panelContainer.Controls.Add(Me.Panel1)
+        Me.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelContainer.Location = New System.Drawing.Point(0, 0)
         Me.panelContainer.Name = "panelContainer"
         Me.panelContainer.Size = New System.Drawing.Size(835, 459)
@@ -71,13 +71,14 @@ Partial Class FormPrincipal
         '
         'PanelMenu
         '
+        Me.PanelMenu.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.PanelMenu.BackColor = System.Drawing.Color.White
         Me.PanelMenu.Controls.Add(Me.btnCerrarSesion)
         Me.PanelMenu.Controls.Add(Me.btnApagar)
         Me.PanelMenu.Controls.Add(Me.btnEstados)
         Me.PanelMenu.Controls.Add(Me.btnMenuBar)
         Me.PanelMenu.Controls.Add(Me.btnHome)
-        Me.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelMenu.Location = New System.Drawing.Point(0, 0)
         Me.PanelMenu.Name = "PanelMenu"
         Me.PanelMenu.Size = New System.Drawing.Size(40, 443)
@@ -177,8 +178,9 @@ Partial Class FormPrincipal
         '
         'Panel1
         '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(0, 443)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(835, 16)
@@ -482,9 +484,11 @@ Partial Class FormPrincipal
         '
         'tmrOcultarMenu
         '
+        Me.tmrOcultarMenu.Interval = 90
         '
         'tmrMostrarMenu
         '
+        Me.tmrMostrarMenu.Interval = 90
         '
         'FormPrincipal
         '
