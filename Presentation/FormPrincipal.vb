@@ -20,6 +20,11 @@ Public Class FormPrincipal
         lbl_Usuario.Text = ActiveUser.Usuario
         lbl_Rol.Text = ActiveUser.Rol
 
+        'Instanciar
+        Dim panelInicio As New Panel_Inicio()
+        ' Llamar al método AddUserControl para mostrar el control Panel_Inicio
+        AddUserControl(panelInicio)
+
     End Sub
 
     'Ajustar el formulario con la barra de tareas 
@@ -74,15 +79,7 @@ Public Class FormPrincipal
         End If
     End Sub
 
-    Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
-        Dim opcion As DialogResult
-        opcion = MessageBox.Show("Esta seguro que desea Cerrar Sesion?", "Cerrar Sesion",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If (opcion = DialogResult.Yes) Then
-            Me.Close()
-        End If
-    End Sub
-
+    'Menu lateral
     Private Sub tmrMostrarMenu_Tick(sender As Object, e As EventArgs) Handles tmrMostrarMenu.Tick
         If PanelMenu.Width >= 110 Then
             Me.tmrMostrarMenu.Enabled = False
@@ -109,6 +106,15 @@ Public Class FormPrincipal
         End If
     End Sub
 
+    Private Sub btnCerrarSesion_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
+        Dim opcion As DialogResult
+        opcion = MessageBox.Show("Esta seguro que desea Cerrar Sesion?", "Cerrar Sesion",
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If (opcion = DialogResult.Yes) Then
+            Me.Close()
+        End If
+    End Sub
+
     Private Sub btnApagar_Click(sender As Object, e As EventArgs) Handles btnApagar.Click
         Dim opcion As DialogResult
         opcion = MessageBox.Show("Esta seguro que desea salir?", "Salir del programa",
@@ -116,5 +122,73 @@ Public Class FormPrincipal
         If (opcion = DialogResult.Yes) Then
             End
         End If
+    End Sub
+
+    Private Sub AddUserControl(ByVal userControl As UserControl)
+        ' Crear una lista para almacenar los controles que se mantendrán
+        Dim controlesMantener As New List(Of Control)
+
+        ' Iterar a través de los controles en panelContainer
+        For Each ctrl As Control In panelContainer.Controls
+            ' Verificar si el control es el PanelMenu o el PanelAbajo y agregarlos a la lista de controles a mantener
+            If ctrl.Name = "PanelMenu" OrElse ctrl.Name = "PanelAbajo" Then
+                controlesMantener.Add(ctrl)
+            End If
+        Next
+
+        ' Limpiar los controles en panelContainer, excluyendo los controles que se mantendrán
+        For Each ctrl As Control In panelContainer.Controls
+            If Not controlesMantener.Contains(ctrl) Then
+                ctrl.Dispose() ' Dispose() elimina el control del formulario
+            End If
+        Next
+
+        ' Establecer el dock y agregar el nuevo control
+        userControl.Dock = DockStyle.Fill
+        panelContainer.Controls.Add(userControl)
+        PanelMenu.Visible = True
+
+    End Sub
+
+    Private Sub btnInicio_Click(sender As Object, e As EventArgs) Handles btnInicio.Click
+        'Instanciar
+        Dim panelInicio As New Panel_Inicio()
+        ' Llamar al método AddUserControl para mostrar el control Panel_Inicio
+        AddUserControl(panelInicio)
+    End Sub
+
+    Private Sub btnUsuarios_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
+
+        Dim panelUsuarios As New Panel_Usuarios()
+        ' Llamar al método AddUserControl para mostrar el control Panel_Usuarios
+        AddUserControl(panelUsuarios)
+    End Sub
+
+    Private Sub btnEstudiantes_Click(sender As Object, e As EventArgs) Handles btnEstudiantes.Click
+        Dim panelEstudiantes As New Panel_Estudiantes()
+        ' Llamar al método AddUserControl para mostrar el control Panel_Estudiantes
+        AddUserControl(panelEstudiantes)
+    End Sub
+
+    Private Sub btnMaterias_Click(sender As Object, e As EventArgs) Handles btnMaterias.Click
+        Dim panelMaterias As New Panel_Materias()
+        ' Llamar al método AddUserControl para mostrar el control Panel_Materias
+        AddUserControl(panelMaterias)
+    End Sub
+
+    Private Sub btnAsignar_Click(sender As Object, e As EventArgs) Handles btnAsignar.Click
+        'Instanciar
+        Dim panelAsignar As New Panel_Asignar()
+        ' Llamar al método AddUserControl para mostrar el control Panel_Materias
+        AddUserControl(panelAsignar)
+    End Sub
+
+    Private Sub btnEstados_Click(sender As Object, e As EventArgs) Handles btnEstados.Click
+
+        'Instanciar
+        Dim panelEstados As New Panel_Estados()
+        ' Llamar al método AddUserControl para mostrar el control Panel_Materias
+        AddUserControl(panelEstados)
+
     End Sub
 End Class

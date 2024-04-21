@@ -159,6 +159,42 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PanelesHijos\Panel_Asignar.Designer.vb">
+      <DependentUpon>Panel_Asignar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PanelesHijos\Panel_Asignar.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PanelesHijos\Panel_Estados.Designer.vb">
+      <DependentUpon>Panel_Estados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PanelesHijos\Panel_Estados.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PanelesHijos\Panel_Estudiantes.Designer.vb">
+      <DependentUpon>Panel_Estudiantes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PanelesHijos\Panel_Estudiantes.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PanelesHijos\Panel_Inicio.Designer.vb">
+      <DependentUpon>Panel_Inicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PanelesHijos\Panel_Inicio.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PanelesHijos\Panel_Materias.Designer.vb">
+      <DependentUpon>Panel_Materias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PanelesHijos\Panel_Materias.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PanelesHijos\Panel_Usuarios.Designer.vb">
+      <DependentUpon>Panel_Usuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PanelesHijos\Panel_Usuarios.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="PantallaBienvenida.Designer.vb">
       <DependentUpon>PantallaBienvenida.vb</DependentUpon>
     </Compile>
@@ -184,6 +220,24 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelesHijos\Panel_Asignar.resx">
+      <DependentUpon>Panel_Asignar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelesHijos\Panel_Estados.resx">
+      <DependentUpon>Panel_Estados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelesHijos\Panel_Estudiantes.resx">
+      <DependentUpon>Panel_Estudiantes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelesHijos\Panel_Inicio.resx">
+      <DependentUpon>Panel_Inicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelesHijos\Panel_Materias.resx">
+      <DependentUpon>Panel_Materias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelesHijos\Panel_Usuarios.resx">
+      <DependentUpon>Panel_Usuarios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PantallaBienvenida.resx">
       <DependentUpon>PantallaBienvenida.vb</DependentUpon>

@@ -31,7 +31,7 @@ Partial Class FormPrincipal
         Me.btnEstados = New Guna.UI2.WinForms.Guna2Button()
         Me.btnMenuBar = New Guna.UI2.WinForms.Guna2Button()
         Me.btnHome = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PanelAbajo = New System.Windows.Forms.Panel()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnMinimizar = New System.Windows.Forms.Button()
         Me.btnMaximizar = New System.Windows.Forms.Button()
@@ -40,19 +40,18 @@ Partial Class FormPrincipal
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PanelLogo = New System.Windows.Forms.Panel()
+        Me.lbl_Usuario = New System.Windows.Forms.Label()
+        Me.lbl_Rol = New System.Windows.Forms.Label()
         Me.btnPerfil = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.PanelButtons = New System.Windows.Forms.Panel()
-        Me.txtBuscar = New Guna.UI2.WinForms.Guna2TextBox()
         Me.btnAsignar = New Guna.UI2.WinForms.Guna2Button()
         Me.btnMaterias = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.btnEstudiantes = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnUsuarios = New Guna.UI2.WinForms.Guna2Button()
         Me.btnInicio = New Guna.UI2.WinForms.Guna2Button()
         Me.tmrOcultarMenu = New System.Windows.Forms.Timer(Me.components)
         Me.tmrMostrarMenu = New System.Windows.Forms.Timer(Me.components)
-        Me.lbl_Rol = New System.Windows.Forms.Label()
-        Me.lbl_Usuario = New System.Windows.Forms.Label()
+        Me.btnUsuarios = New Guna.UI2.WinForms.Guna2Button()
         Me.panelContainer.SuspendLayout()
         Me.PanelMenu.SuspendLayout()
         Me.PanelTitulo.SuspendLayout()
@@ -63,9 +62,8 @@ Partial Class FormPrincipal
         '
         'panelContainer
         '
-        Me.panelContainer.Controls.Add(Me.txtBuscar)
         Me.panelContainer.Controls.Add(Me.PanelMenu)
-        Me.panelContainer.Controls.Add(Me.Panel1)
+        Me.panelContainer.Controls.Add(Me.PanelAbajo)
         Me.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelContainer.Location = New System.Drawing.Point(0, 0)
         Me.panelContainer.Name = "panelContainer"
@@ -179,15 +177,15 @@ Partial Class FormPrincipal
         Me.btnHome.TabIndex = 3
         Me.btnHome.Text = "Inicio"
         '
-        'Panel1
+        'PanelAbajo
         '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.PanelAbajo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Panel1.Location = New System.Drawing.Point(0, 443)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(835, 16)
-        Me.Panel1.TabIndex = 0
+        Me.PanelAbajo.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.PanelAbajo.Location = New System.Drawing.Point(0, 443)
+        Me.PanelAbajo.Name = "PanelAbajo"
+        Me.PanelAbajo.Size = New System.Drawing.Size(835, 16)
+        Me.PanelAbajo.TabIndex = 0
         '
         'btnSalir
         '
@@ -299,6 +297,29 @@ Partial Class FormPrincipal
         Me.PanelLogo.Size = New System.Drawing.Size(835, 38)
         Me.PanelLogo.TabIndex = 34
         '
+        'lbl_Usuario
+        '
+        Me.lbl_Usuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_Usuario.AutoSize = True
+        Me.lbl_Usuario.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Usuario.ForeColor = System.Drawing.Color.Black
+        Me.lbl_Usuario.Location = New System.Drawing.Point(722, 8)
+        Me.lbl_Usuario.Name = "lbl_Usuario"
+        Me.lbl_Usuario.Size = New System.Drawing.Size(47, 13)
+        Me.lbl_Usuario.TabIndex = 40
+        Me.lbl_Usuario.Text = "Usuario"
+        '
+        'lbl_Rol
+        '
+        Me.lbl_Rol.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl_Rol.AutoSize = True
+        Me.lbl_Rol.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Rol.Location = New System.Drawing.Point(702, 21)
+        Me.lbl_Rol.Name = "lbl_Rol"
+        Me.lbl_Rol.Size = New System.Drawing.Size(24, 13)
+        Me.lbl_Rol.TabIndex = 38
+        Me.lbl_Rol.Text = "Rol"
+        '
         'btnPerfil
         '
         Me.btnPerfil.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -335,31 +356,6 @@ Partial Class FormPrincipal
         Me.PanelButtons.Name = "PanelButtons"
         Me.PanelButtons.Size = New System.Drawing.Size(836, 42)
         Me.PanelButtons.TabIndex = 35
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtBuscar.Animated = True
-        Me.txtBuscar.AutoRoundedCorners = True
-        Me.txtBuscar.BorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.txtBuscar.BorderRadius = 14
-        Me.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtBuscar.DefaultText = ""
-        Me.txtBuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtBuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtBuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtBuscar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtBuscar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtBuscar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtBuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtBuscar.IconLeft = CType(resources.GetObject("txtBuscar.IconLeft"), System.Drawing.Image)
-        Me.txtBuscar.Location = New System.Drawing.Point(213, 108)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtBuscar.PlaceholderText = "Buscar"
-        Me.txtBuscar.SelectedText = ""
-        Me.txtBuscar.Size = New System.Drawing.Size(402, 31)
-        Me.txtBuscar.TabIndex = 1
         '
         'btnAsignar
         '
@@ -443,27 +439,6 @@ Partial Class FormPrincipal
         Me.btnEstudiantes.TabIndex = 2
         Me.btnEstudiantes.Text = "Estudiantes"
         '
-        'btnUsuarios
-        '
-        Me.btnUsuarios.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton
-        Me.btnUsuarios.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnUsuarios.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.btnUsuarios.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 3)
-        Me.btnUsuarios.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnUsuarios.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnUsuarios.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnUsuarios.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnUsuarios.FillColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.btnUsuarios.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.btnUsuarios.ForeColor = System.Drawing.Color.White
-        Me.btnUsuarios.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnUsuarios.HoverState.FillColor = System.Drawing.Color.DarkSeaGreen
-        Me.btnUsuarios.Location = New System.Drawing.Point(132, 1)
-        Me.btnUsuarios.Name = "btnUsuarios"
-        Me.btnUsuarios.Size = New System.Drawing.Size(122, 39)
-        Me.btnUsuarios.TabIndex = 1
-        Me.btnUsuarios.Text = "Usuarios"
-        '
         'btnInicio
         '
         Me.btnInicio.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton
@@ -494,28 +469,26 @@ Partial Class FormPrincipal
         '
         Me.tmrMostrarMenu.Interval = 90
         '
-        'lbl_Rol
+        'btnUsuarios
         '
-        Me.lbl_Rol.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl_Rol.AutoSize = True
-        Me.lbl_Rol.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Rol.Location = New System.Drawing.Point(702, 21)
-        Me.lbl_Rol.Name = "lbl_Rol"
-        Me.lbl_Rol.Size = New System.Drawing.Size(24, 13)
-        Me.lbl_Rol.TabIndex = 38
-        Me.lbl_Rol.Text = "Rol"
-        '
-        'lbl_Usuario
-        '
-        Me.lbl_Usuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl_Usuario.AutoSize = True
-        Me.lbl_Usuario.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Usuario.ForeColor = System.Drawing.Color.Black
-        Me.lbl_Usuario.Location = New System.Drawing.Point(722, 8)
-        Me.lbl_Usuario.Name = "lbl_Usuario"
-        Me.lbl_Usuario.Size = New System.Drawing.Size(47, 13)
-        Me.lbl_Usuario.TabIndex = 40
-        Me.lbl_Usuario.Text = "Usuario"
+        Me.btnUsuarios.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton
+        Me.btnUsuarios.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnUsuarios.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnUsuarios.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 3)
+        Me.btnUsuarios.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnUsuarios.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnUsuarios.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnUsuarios.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnUsuarios.FillColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnUsuarios.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.btnUsuarios.ForeColor = System.Drawing.Color.White
+        Me.btnUsuarios.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnUsuarios.HoverState.FillColor = System.Drawing.Color.DarkSeaGreen
+        Me.btnUsuarios.Location = New System.Drawing.Point(132, 1)
+        Me.btnUsuarios.Name = "btnUsuarios"
+        Me.btnUsuarios.Size = New System.Drawing.Size(122, 39)
+        Me.btnUsuarios.TabIndex = 1
+        Me.btnUsuarios.Text = "Usuarios"
         '
         'FormPrincipal
         '
@@ -555,12 +528,10 @@ Partial Class FormPrincipal
     Friend WithEvents btnInicio As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnEstudiantes As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents btnUsuarios As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnAsignar As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnMaterias As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnPerfil As Guna.UI2.WinForms.Guna2CircleButton
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents txtBuscar As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents PanelAbajo As Panel
     Friend WithEvents PanelMenu As Panel
     Friend WithEvents btnHome As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnEstados As Guna.UI2.WinForms.Guna2Button
@@ -571,4 +542,5 @@ Partial Class FormPrincipal
     Friend WithEvents tmrMostrarMenu As Timer
     Friend WithEvents lbl_Usuario As Label
     Friend WithEvents lbl_Rol As Label
+    Friend WithEvents btnUsuarios As Guna.UI2.WinForms.Guna2Button
 End Class
