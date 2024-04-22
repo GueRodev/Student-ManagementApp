@@ -22,6 +22,7 @@ Partial Class RegistroUsuario
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RegistroUsuario))
         Me.PanelTitulo = New System.Windows.Forms.Panel()
         Me.btnCerrarRegistroUsuario = New System.Windows.Forms.Button()
@@ -37,9 +38,11 @@ Partial Class RegistroUsuario
         Me.txtRegistroEmail = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.ErrorRegistro = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.PanelTitulo.SuspendLayout()
         CType(Me.btnRegresarLogin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelTitulo
@@ -216,6 +219,10 @@ Partial Class RegistroUsuario
         Me.Button1.Text = "Regresar"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'ErrorRegistro
+        '
+        Me.ErrorRegistro.ContainerControl = Me
+        '
         'RegistroUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -242,6 +249,7 @@ Partial Class RegistroUsuario
         Me.PanelTitulo.ResumeLayout(False)
         CType(Me.btnRegresarLogin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorRegistro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -261,4 +269,5 @@ Partial Class RegistroUsuario
     Friend WithEvents txtRegistroEmail As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button1 As Button
+    Friend WithEvents ErrorRegistro As ErrorProvider
 End Class

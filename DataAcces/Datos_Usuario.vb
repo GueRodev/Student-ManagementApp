@@ -1,6 +1,7 @@
 ﻿'Import System.Data
 Imports MySql.Data.MySqlClient
 Imports Common
+Imports System.Data
 
 Public Class Datos_Usuario
 
@@ -63,6 +64,7 @@ Public Class Datos_Usuario
                     Else
                         Return False ' Error al registrar usuario
                     End If
+
                 End Using
             End Using
 
@@ -73,33 +75,50 @@ Public Class Datos_Usuario
 
     End Function
 
-    Public Function ActualizarPerfil(Usuario As String, Password As String, Email As String) As Boolean
+    'Mostrar Datos
+    Public Function ObtenerUsuarios() As DataTable
+        Dim dtUsuarios As New DataTable()
 
         Try
             Using connection = GetConnection()
                 connection.Open()
                 Using command = New MySqlCommand()
                     command.Connection = connection
-                    command.CommandText = "UPDATE usuarios SET Password = @Password, Email = @Email WHERE Usuario = @Usuario"
-                    command.Parameters.AddWithValue("@Usuario", Usuario)
-                    command.Parameters.AddWithValue("@Password", Password)
-                    command.Parameters.AddWithValue("@Email", Email)
+                    command.CommandText = "SELECT * FROM usuarios"
                     command.CommandType = CommandType.Text
 
-                    Dim rowsAffected = command.ExecuteNonQuery()
-                    If rowsAffected > 0 Then
-                        Return True ' Actualización exitosa
-                    Else
-                        Return False ' Error al actualizar usuario
-                    End If
+                    Dim adapter As New MySqlDataAdapter(command)
+                    adapter.Fill(dtUsuarios)
                 End Using
             End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
+        Return dtUsuarios
+    End Function
+
+    Public Function ActualizarUsuario(id As Integer, usuario As String, email As String) As Boolean
+        Try
+            Using connection = GetConnection()
+                connection.Open()
+                Using command = New MySqlCommand()
+                    command.Connection = connection
+                    command.CommandText = "UPDATE usuarios SET Usuario = @Usuario, Email = @Email WHERE ID = @ID"
+                    command.Parameters.AddWithValue("@ID", id)
+                    command.Parameters.AddWithValue("@Usuario", usuario)
+                    command.Parameters.AddWithValue("@Email", email)
+                    command.CommandType = CommandType.Text
+                    Dim rowsAffected = command.ExecuteNonQuery()
+                    Return rowsAffected > 0
+                End Using
+            End Using
         Catch ex As Exception
             MsgBox(ex.Message)
             Return False
         End Try
-
     End Function
+
+
 
 End Class

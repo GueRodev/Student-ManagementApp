@@ -4,9 +4,9 @@ Imports Domain 'Importar la capa de dominio
 
 Public Class Form1
     Public Sub New()
-        ' This call is required by the designer.
+
         InitializeComponent()
-        ' Add any initialization after the InitializeComponent() call.
+
     End Sub
 
     Private Sub btnCerrarLogin_Click(sender As Object, e As EventArgs) Handles btnCerrarLogin.Click

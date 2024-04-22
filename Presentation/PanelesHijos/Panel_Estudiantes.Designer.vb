@@ -22,7 +22,10 @@ Partial Class Panel_Estudiantes
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -36,6 +39,10 @@ Partial Class Panel_Estudiantes
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Estudiantes"
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'Panel_Estudiantes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -44,10 +51,12 @@ Partial Class Panel_Estudiantes
         Me.Controls.Add(Me.Label1)
         Me.Name = "Panel_Estudiantes"
         Me.Size = New System.Drawing.Size(835, 459)
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Label1 As Label
+    Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class

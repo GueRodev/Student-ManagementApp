@@ -22,7 +22,10 @@ Partial Class Panel_Materias
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ErrorMaterias = New System.Windows.Forms.ErrorProvider(Me.components)
+        CType(Me.ErrorMaterias, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -36,6 +39,10 @@ Partial Class Panel_Materias
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Materias"
         '
+        'ErrorMaterias
+        '
+        Me.ErrorMaterias.ContainerControl = Me
+        '
         'Panel_Materias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -44,10 +51,12 @@ Partial Class Panel_Materias
         Me.Controls.Add(Me.Label1)
         Me.Name = "Panel_Materias"
         Me.Size = New System.Drawing.Size(835, 459)
+        CType(Me.ErrorMaterias, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Label1 As Label
+    Friend WithEvents ErrorMaterias As ErrorProvider
 End Class

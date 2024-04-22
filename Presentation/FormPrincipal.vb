@@ -25,6 +25,7 @@ Public Class FormPrincipal
         ' Llamar al método AddUserControl para mostrar el control Panel_Inicio
         AddUserControl(panelInicio)
 
+
     End Sub
 
     'Ajustar el formulario con la barra de tareas 
@@ -150,7 +151,7 @@ Public Class FormPrincipal
 
     End Sub
 
-    Private Sub btnInicio_Click(sender As Object, e As EventArgs) Handles btnInicio.Click
+    Private Sub btnInicio_Click(sender As Object, e As EventArgs)
         'Instanciar
         Dim panelInicio As New Panel_Inicio()
         ' Llamar al método AddUserControl para mostrar el control Panel_Inicio
@@ -191,4 +192,13 @@ Public Class FormPrincipal
         AddUserControl(panelEstados)
 
     End Sub
+
+    Private Sub btnHome_Click(sender As Object, e As EventArgs) Handles btnHome.Click
+        'Instanciar
+        Dim panelInicio As New Panel_Inicio()
+        ' Llamar al método AddUserControl para mostrar el control Panel_Inicio
+        AddUserControl(panelInicio)
+    End Sub
+
+
 End Class

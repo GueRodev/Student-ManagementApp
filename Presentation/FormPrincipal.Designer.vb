@@ -48,10 +48,9 @@ Partial Class FormPrincipal
         Me.btnMaterias = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.btnEstudiantes = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnInicio = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnUsuarios = New Guna.UI2.WinForms.Guna2Button()
         Me.tmrOcultarMenu = New System.Windows.Forms.Timer(Me.components)
         Me.tmrMostrarMenu = New System.Windows.Forms.Timer(Me.components)
-        Me.btnUsuarios = New Guna.UI2.WinForms.Guna2Button()
         Me.panelContainer.SuspendLayout()
         Me.PanelMenu.SuspendLayout()
         Me.PanelTitulo.SuspendLayout()
@@ -351,7 +350,6 @@ Partial Class FormPrincipal
         Me.PanelButtons.Controls.Add(Me.Guna2Button3)
         Me.PanelButtons.Controls.Add(Me.btnEstudiantes)
         Me.PanelButtons.Controls.Add(Me.btnUsuarios)
-        Me.PanelButtons.Controls.Add(Me.btnInicio)
         Me.PanelButtons.Location = New System.Drawing.Point(0, 60)
         Me.PanelButtons.Name = "PanelButtons"
         Me.PanelButtons.Size = New System.Drawing.Size(836, 42)
@@ -439,36 +437,6 @@ Partial Class FormPrincipal
         Me.btnEstudiantes.TabIndex = 2
         Me.btnEstudiantes.Text = "Estudiantes"
         '
-        'btnInicio
-        '
-        Me.btnInicio.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton
-        Me.btnInicio.Checked = True
-        Me.btnInicio.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnInicio.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.btnInicio.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 3)
-        Me.btnInicio.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnInicio.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnInicio.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnInicio.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnInicio.FillColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.btnInicio.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.btnInicio.ForeColor = System.Drawing.Color.White
-        Me.btnInicio.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnInicio.HoverState.FillColor = System.Drawing.Color.DarkSeaGreen
-        Me.btnInicio.Location = New System.Drawing.Point(0, 1)
-        Me.btnInicio.Name = "btnInicio"
-        Me.btnInicio.Size = New System.Drawing.Size(122, 39)
-        Me.btnInicio.TabIndex = 0
-        Me.btnInicio.Text = "Inicio"
-        '
-        'tmrOcultarMenu
-        '
-        Me.tmrOcultarMenu.Interval = 90
-        '
-        'tmrMostrarMenu
-        '
-        Me.tmrMostrarMenu.Interval = 90
-        '
         'btnUsuarios
         '
         Me.btnUsuarios.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton
@@ -489,6 +457,14 @@ Partial Class FormPrincipal
         Me.btnUsuarios.Size = New System.Drawing.Size(122, 39)
         Me.btnUsuarios.TabIndex = 1
         Me.btnUsuarios.Text = "Usuarios"
+        '
+        'tmrOcultarMenu
+        '
+        Me.tmrOcultarMenu.Interval = 90
+        '
+        'tmrMostrarMenu
+        '
+        Me.tmrMostrarMenu.Interval = 90
         '
         'FormPrincipal
         '
@@ -525,7 +501,6 @@ Partial Class FormPrincipal
     Friend WithEvents Label1 As Label
     Friend WithEvents PanelLogo As Panel
     Friend WithEvents PanelButtons As Panel
-    Friend WithEvents btnInicio As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnEstudiantes As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnAsignar As Guna.UI2.WinForms.Guna2Button
@@ -543,4 +518,5 @@ Partial Class FormPrincipal
     Friend WithEvents lbl_Usuario As Label
     Friend WithEvents lbl_Rol As Label
     Friend WithEvents btnUsuarios As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents tmrHoraActual As Timer
 End Class

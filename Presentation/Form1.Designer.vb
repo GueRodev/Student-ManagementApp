@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PanelTitulo = New System.Windows.Forms.Panel()
@@ -38,9 +39,11 @@ Partial Class Form1
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.inkRecuperarContrasena = New System.Windows.Forms.LinkLabel()
         Me.txtMostrarEncrypt = New System.Windows.Forms.TextBox()
+        Me.ErrorLogin = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelTitulo.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorLogin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -229,6 +232,10 @@ Partial Class Form1
         Me.txtMostrarEncrypt.TabIndex = 27
         Me.txtMostrarEncrypt.Visible = False
         '
+        'ErrorLogin
+        '
+        Me.ErrorLogin.ContainerControl = Me
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -256,6 +263,7 @@ Partial Class Form1
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelTitulo.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorLogin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -275,4 +283,5 @@ Partial Class Form1
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents inkRecuperarContrasena As LinkLabel
     Friend WithEvents txtMostrarEncrypt As TextBox
+    Friend WithEvents ErrorLogin As ErrorProvider
 End Class

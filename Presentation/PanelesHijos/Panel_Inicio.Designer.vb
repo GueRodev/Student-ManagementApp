@@ -22,26 +22,26 @@ Partial Class Panel_Inicio
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblHora = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Label1
+        'lblHora
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label1.Location = New System.Drawing.Point(319, 165)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(202, 86)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Inicio"
+        Me.lblHora.AutoSize = True
+        Me.lblHora.Font = New System.Drawing.Font("Segoe UI", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHora.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.lblHora.Location = New System.Drawing.Point(319, 165)
+        Me.lblHora.Name = "lblHora"
+        Me.lblHora.Size = New System.Drawing.Size(202, 86)
+        Me.lblHora.TabIndex = 0
+        Me.lblHora.Text = "Inicio"
         '
         'Panel_Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblHora)
         Me.Name = "Panel_Inicio"
         Me.Size = New System.Drawing.Size(835, 459)
         Me.ResumeLayout(False)
@@ -49,5 +49,5 @@ Partial Class Panel_Inicio
 
     End Sub
 
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblHora As Label
 End Class
