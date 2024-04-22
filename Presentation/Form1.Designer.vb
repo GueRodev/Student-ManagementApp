@@ -30,16 +30,12 @@ Partial Class Form1
         Me.btnCerrarLogin = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnCuentaNueva = New System.Windows.Forms.Button()
-        Me.btnIniciarSesion = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtUsuario = New System.Windows.Forms.TextBox()
-        Me.txtContrasena = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.inkRecuperarContrasena = New System.Windows.Forms.LinkLabel()
-        Me.txtMostrarEncrypt = New System.Windows.Forms.TextBox()
         Me.ErrorLogin = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.txt_Usuario = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txt_Contrasena = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.btn_IniciarSesion = New Guna.UI2.WinForms.Guna2GradientButton()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelTitulo.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -121,71 +117,6 @@ Partial Class Form1
         Me.btnCuentaNueva.Text = "Cuenta Nueva"
         Me.btnCuentaNueva.UseVisualStyleBackColor = False
         '
-        'btnIniciarSesion
-        '
-        Me.btnIniciarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnIniciarSesion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnIniciarSesion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.btnIniciarSesion.FlatAppearance.BorderSize = 0
-        Me.btnIniciarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnIniciarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnIniciarSesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnIniciarSesion.ForeColor = System.Drawing.Color.White
-        Me.btnIniciarSesion.Location = New System.Drawing.Point(246, 242)
-        Me.btnIniciarSesion.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnIniciarSesion.Name = "btnIniciarSesion"
-        Me.btnIniciarSesion.Size = New System.Drawing.Size(221, 27)
-        Me.btnIniciarSesion.TabIndex = 19
-        Me.btnIniciarSesion.Text = "Iniciar Sesión"
-        Me.btnIniciarSesion.UseVisualStyleBackColor = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(244, 140)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(64, 17)
-        Me.Label1.TabIndex = 20
-        Me.Label1.Text = "Usuario"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(243, 188)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(91, 17)
-        Me.Label2.TabIndex = 21
-        Me.Label2.Text = "Contraseña"
-        '
-        'txtUsuario
-        '
-        Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.txtUsuario.Location = New System.Drawing.Point(246, 161)
-        Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(221, 22)
-        Me.txtUsuario.TabIndex = 22
-        '
-        'txtContrasena
-        '
-        Me.txtContrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContrasena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.txtContrasena.Location = New System.Drawing.Point(246, 208)
-        Me.txtContrasena.Multiline = True
-        Me.txtContrasena.Name = "txtContrasena"
-        Me.txtContrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
-        Me.txtContrasena.Size = New System.Drawing.Size(221, 20)
-        Me.txtContrasena.TabIndex = 23
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -201,40 +132,86 @@ Partial Class Form1
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(247, 26)
+        Me.PictureBox2.Location = New System.Drawing.Point(247, 35)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(220, 111)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 25
         Me.PictureBox2.TabStop = False
         '
-        'inkRecuperarContrasena
-        '
-        Me.inkRecuperarContrasena.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.inkRecuperarContrasena.AutoSize = True
-        Me.inkRecuperarContrasena.BackColor = System.Drawing.Color.Transparent
-        Me.inkRecuperarContrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.inkRecuperarContrasena.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.inkRecuperarContrasena.LinkColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.inkRecuperarContrasena.Location = New System.Drawing.Point(243, 282)
-        Me.inkRecuperarContrasena.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.inkRecuperarContrasena.Name = "inkRecuperarContrasena"
-        Me.inkRecuperarContrasena.Size = New System.Drawing.Size(114, 13)
-        Me.inkRecuperarContrasena.TabIndex = 26
-        Me.inkRecuperarContrasena.TabStop = True
-        Me.inkRecuperarContrasena.Text = "Recuperar Contraseña"
-        '
-        'txtMostrarEncrypt
-        '
-        Me.txtMostrarEncrypt.Location = New System.Drawing.Point(73, 233)
-        Me.txtMostrarEncrypt.Name = "txtMostrarEncrypt"
-        Me.txtMostrarEncrypt.Size = New System.Drawing.Size(100, 20)
-        Me.txtMostrarEncrypt.TabIndex = 27
-        Me.txtMostrarEncrypt.Visible = False
-        '
         'ErrorLogin
         '
         Me.ErrorLogin.ContainerControl = Me
+        '
+        'txt_Usuario
+        '
+        Me.txt_Usuario.AutoRoundedCorners = True
+        Me.txt_Usuario.BorderRadius = 10
+        Me.txt_Usuario.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_Usuario.DefaultText = ""
+        Me.txt_Usuario.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_Usuario.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_Usuario.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_Usuario.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_Usuario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_Usuario.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.txt_Usuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.txt_Usuario.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_Usuario.IconLeft = CType(resources.GetObject("txt_Usuario.IconLeft"), System.Drawing.Image)
+        Me.txt_Usuario.Location = New System.Drawing.Point(246, 163)
+        Me.txt_Usuario.Name = "txt_Usuario"
+        Me.txt_Usuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_Usuario.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.txt_Usuario.PlaceholderText = "Usuario"
+        Me.txt_Usuario.SelectedText = ""
+        Me.txt_Usuario.Size = New System.Drawing.Size(221, 22)
+        Me.txt_Usuario.TabIndex = 28
+        '
+        'txt_Contrasena
+        '
+        Me.txt_Contrasena.AutoRoundedCorners = True
+        Me.txt_Contrasena.BorderRadius = 10
+        Me.txt_Contrasena.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_Contrasena.DefaultText = ""
+        Me.txt_Contrasena.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_Contrasena.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_Contrasena.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_Contrasena.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_Contrasena.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_Contrasena.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.txt_Contrasena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.txt_Contrasena.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_Contrasena.IconLeft = CType(resources.GetObject("txt_Contrasena.IconLeft"), System.Drawing.Image)
+        Me.txt_Contrasena.Location = New System.Drawing.Point(246, 200)
+        Me.txt_Contrasena.Name = "txt_Contrasena"
+        Me.txt_Contrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
+        Me.txt_Contrasena.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.txt_Contrasena.PlaceholderText = "Contraseña"
+        Me.txt_Contrasena.SelectedText = ""
+        Me.txt_Contrasena.Size = New System.Drawing.Size(221, 22)
+        Me.txt_Contrasena.TabIndex = 29
+        '
+        'btn_IniciarSesion
+        '
+        Me.btn_IniciarSesion.AutoRoundedCorners = True
+        Me.btn_IniciarSesion.BorderRadius = 12
+        Me.btn_IniciarSesion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_IniciarSesion.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_IniciarSesion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_IniciarSesion.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_IniciarSesion.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_IniciarSesion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_IniciarSesion.FillColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btn_IniciarSesion.FillColor2 = System.Drawing.Color.DarkSeaGreen
+        Me.btn_IniciarSesion.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_IniciarSesion.ForeColor = System.Drawing.Color.White
+        Me.btn_IniciarSesion.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_IniciarSesion.HoverState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btn_IniciarSesion.Location = New System.Drawing.Point(246, 235)
+        Me.btn_IniciarSesion.Name = "btn_IniciarSesion"
+        Me.btn_IniciarSesion.Size = New System.Drawing.Size(221, 27)
+        Me.btn_IniciarSesion.TabIndex = 30
+        Me.btn_IniciarSesion.Text = "Iniciar Sesión"
         '
         'Form1
         '
@@ -242,15 +219,11 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(488, 349)
-        Me.Controls.Add(Me.txtMostrarEncrypt)
-        Me.Controls.Add(Me.inkRecuperarContrasena)
+        Me.Controls.Add(Me.btn_IniciarSesion)
+        Me.Controls.Add(Me.txt_Contrasena)
+        Me.Controls.Add(Me.txt_Usuario)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.txtContrasena)
-        Me.Controls.Add(Me.txtUsuario)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnIniciarSesion)
         Me.Controls.Add(Me.btnCuentaNueva)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox1)
@@ -274,14 +247,10 @@ Partial Class Form1
     Friend WithEvents btnCerrarLogin As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnCuentaNueva As Button
-    Friend WithEvents btnIniciarSesion As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents txtUsuario As TextBox
-    Friend WithEvents txtContrasena As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents inkRecuperarContrasena As LinkLabel
-    Friend WithEvents txtMostrarEncrypt As TextBox
     Friend WithEvents ErrorLogin As ErrorProvider
+    Friend WithEvents txt_Contrasena As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txt_Usuario As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents btn_IniciarSesion As Guna.UI2.WinForms.Guna2GradientButton
 End Class

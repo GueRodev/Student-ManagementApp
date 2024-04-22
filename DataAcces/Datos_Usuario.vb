@@ -119,6 +119,30 @@ Public Class Datos_Usuario
         End Try
     End Function
 
+    Public Function EliminarUsuario(id As Integer) As Boolean
+        Try
+            Using connection = GetConnection()
+                connection.Open()
+                Using command = New MySqlCommand()
+                    command.Connection = connection
+                    command.CommandText = "DELETE FROM usuarios WHERE ID = @ID"
+                    command.Parameters.AddWithValue("@ID", id)
+                    command.CommandType = CommandType.Text
+                    Dim rowsAffected = command.ExecuteNonQuery()
+
+                    ' Reiniciar el valor del auto incremento después de eliminar el usuario
+                    Dim cmdResetAutoIncrement As New MySqlCommand("ALTER TABLE usuarios AUTO_INCREMENT = 1", connection)
+                    cmdResetAutoIncrement.ExecuteNonQuery()
+
+                    Return rowsAffected > 0
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+
 
 
 End Class

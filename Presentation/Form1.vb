@@ -49,14 +49,14 @@ Public Class Form1
         RegistroUsuario.Show()
     End Sub
 
-    Private Sub btnIniciarSesion_Click(sender As Object, e As EventArgs) Handles btnIniciarSesion.Click
+    Private Sub btn_IniciarSesion_Click(sender As Object, e As EventArgs) Handles btn_IniciarSesion.Click
         'Instanciamos la clase UsuarioModelo
         Dim usuarioModelo As New UsuarioModelo()
         'Mostrar Encriptacion'
         ' Dim contraseñaEncriptada As String = usuarioModelo.Encrypt(txtContrasena.Text) '
         'txtMostrarEncrypt.Text = contraseñaEncriptada'
 
-        Dim validLogin = usuarioModelo.dominio_Login(txtUsuario.Text, txtContrasena.Text) 'Asignamos el metodo login de la capa dominio que retorna los valores de iniciar sesion
+        Dim validLogin = usuarioModelo.dominio_Login(txt_Usuario.Text, txt_Contrasena.Text) 'Asignamos el metodo login de la capa dominio que retorna los valores de iniciar sesion
         If validLogin = True Then
             Dim frm As New FormPrincipal() 'Instanciamos el formulario Principal
             frm.Show()
@@ -64,17 +64,16 @@ Public Class Form1
             Me.Hide()
         Else
             MessageBox.Show("Datos Incorrectos" + vbNewLine + "Intente de Nuevo")
-            txtContrasena.Clear()
-            txtContrasena.Focus()
+            txt_Contrasena.Clear()
+            txt_Contrasena.Focus()
         End If
     End Sub
 
     Private Sub Cerrar_Sesion(sender As Object, e As FormClosedEventArgs)
-        txtContrasena.Clear()
-        txtUsuario.Clear()
+        txt_Contrasena.Clear()
+        txt_Usuario.Clear()
         Me.Show()
 
     End Sub
-
 
 End Class

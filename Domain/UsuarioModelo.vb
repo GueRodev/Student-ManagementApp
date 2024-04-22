@@ -29,6 +29,12 @@ Public Class UsuarioModelo
         Return datos_usuario.ActualizarUsuario(id, usuario, email)
     End Function
 
+    Public Function dominio_EliminarUsuario(id As Integer) As Boolean
+        Dim datos_usuario As New Datos_Usuario()
+        Return datos_usuario.EliminarUsuario(id)
+    End Function
+
+
 
     Public Function Encrypt(Encryptation As String) As String
         Dim msg As String = String.Empty
