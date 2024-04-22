@@ -33,7 +33,10 @@ Public Class UsuarioModelo
         Dim datos_usuario As New Datos_Usuario()
         Return datos_usuario.EliminarUsuario(id)
     End Function
-
+    Public Function Negocio_ContarUsuarios() As Integer
+        Dim datosUsuario As New Datos_Usuario()
+        Return datosUsuario.ContarUsuarios()
+    End Function
 
 
     Public Function Encrypt(Encryptation As String) As String

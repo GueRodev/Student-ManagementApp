@@ -45,21 +45,16 @@ Public Class RegistroUsuario
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Close()
-        Form1.Show()
-    End Sub
-
-    Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
+    Private Sub btn_Registrar_Click(sender As Object, e As EventArgs) Handles btn_Registrar.Click
         ' Mostrar un cuadro de diálogo de confirmación
         Dim respuesta As DialogResult = MessageBox.Show("¿Estás seguro de que deseas crear un nuevo usuario?", "Confirmar creación de usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         ' Verificar si se confirmó la creación de usuario
         If respuesta = DialogResult.Yes Then
             ' Obtener los datos del usuario desde los campos del formulario
-            Dim usuario As String = txtRegistroUsuario.Text
-            Dim contraseña As String = txtRegistroContrasena.Text
-            Dim email As String = txtRegistroEmail.Text
+            Dim usuario As String = txt_RegistroUsuario.Text
+            Dim contraseña As String = txt_RegistroContrasena.Text
+            Dim email As String = txt_RegistroEmail.Text
 
             ' Validar que los campos no estén vacíos
             If String.IsNullOrEmpty(usuario) OrElse String.IsNullOrEmpty(contraseña) OrElse String.IsNullOrEmpty(email) Then
@@ -130,11 +125,6 @@ Public Class RegistroUsuario
     End Function
 
 
-    Private Function ValidarCorreo(correo As String) As Boolean
-        ' Verificar si el correo electrónico contiene un "@" y termina con ".com"
-        Return correo.Contains("@") AndAlso correo.EndsWith(".com")
-    End Function
-
     Private Function ValidarContraseña(contraseña As String) As Boolean
         ' Verificar si la contraseña cumple con los criterios de seguridad
         If contraseña.Length < 8 Then
@@ -149,12 +139,23 @@ Public Class RegistroUsuario
         Return True
     End Function
 
+
+    Private Function ValidarCorreo(correo As String) As Boolean
+        ' Verificar si el correo electrónico contiene un "@" y termina con ".com"
+        Return correo.Contains("@") AndAlso correo.EndsWith(".com")
+    End Function
+
+
     Private Sub LimpiarCampos()
         ' Limpiar los campos del formulario
-        txtRegistroUsuario.Clear()
-        txtRegistroContrasena.Clear()
-        txtRegistroEmail.Clear()
-        txtRegistroUsuario.Focus()
+        txt_RegistroUsuario.Clear()
+        txt_RegistroContrasena.Clear()
+        txt_RegistroEmail.Clear()
+        txt_RegistroUsuario.Focus()
     End Sub
 
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+        Me.Close()
+        Form1.Show()
+    End Sub
 End Class

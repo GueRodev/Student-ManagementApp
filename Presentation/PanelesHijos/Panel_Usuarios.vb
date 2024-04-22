@@ -192,6 +192,18 @@ Public Class Panel_Usuarios
                     Return
                 End If
 
+                ' Validar el nombre de usuario
+                If Not ValidarUsuario(usuario) Then
+                    MessageBox.Show("El nombre de usuario debe tener máximo 8 caracteres y como máximo 2 números.", "Error de usuario", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+
+                ' Validar el formato del correo electrónico
+                If Not ValidarCorreo(email) Then
+                    MessageBox.Show("Ingrese un correo electrónico válido.", "Error de correo electrónico", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+
                 ' Instanciar UsuarioModelo
                 Dim usuarioModelo As New UsuarioModelo()
 

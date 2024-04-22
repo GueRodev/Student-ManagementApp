@@ -142,7 +142,16 @@ Public Class Datos_Usuario
             Return False
         End Try
     End Function
-
+    Public Function ContarUsuarios() As Integer
+        Dim count As Integer = 0
+        Using connection = GetConnection()
+            connection.Open()
+            Using command = New MySqlCommand("SELECT COUNT(*) FROM Usuarios", connection)
+                count = Convert.ToInt32(command.ExecuteScalar())
+            End Using
+        End Using
+        Return count
+    End Function
 
 
 End Class
