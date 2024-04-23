@@ -7,7 +7,7 @@ Public Class Panel_Inicio
         ' Crear una instancia de UsuarioModelo
         Dim usuarioModelo As New UsuarioModelo()
         ' Llamar al método para contar usuarios desde la instancia creada
-        Dim cantidadUsuarios As Integer = usuarioModelo.Negocio_ContarUsuarios()
+        Dim cantidadUsuarios As Integer = usuarioModelo.dominio_ContarUsuarios()
         ' Asignar el valor al Label
         lblCantidadUsuarios.Text = cantidadUsuarios.ToString()
 

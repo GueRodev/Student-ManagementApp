@@ -52,9 +52,6 @@ Public Class Form1
     Private Sub btn_IniciarSesion_Click(sender As Object, e As EventArgs) Handles btn_IniciarSesion.Click
         'Instanciamos la clase UsuarioModelo
         Dim usuarioModelo As New UsuarioModelo()
-        'Mostrar Encriptacion'
-        ' Dim contraseñaEncriptada As String = usuarioModelo.Encrypt(txtContrasena.Text) '
-        'txtMostrarEncrypt.Text = contraseñaEncriptada'
 
         Dim validLogin = usuarioModelo.dominio_Login(txt_Usuario.Text, txt_Contrasena.Text) 'Asignamos el metodo login de la capa dominio que retorna los valores de iniciar sesion
         If validLogin = True Then
