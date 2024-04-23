@@ -66,7 +66,7 @@ Partial Class Panel_Estudiantes
         Me.txt_ID_Estudiante.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_ID_Estudiante.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txt_ID_Estudiante.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_ID_Estudiante.Location = New System.Drawing.Point(63, 147)
+        Me.txt_ID_Estudiante.Location = New System.Drawing.Point(127, 147)
         Me.txt_ID_Estudiante.Name = "txt_ID_Estudiante"
         Me.txt_ID_Estudiante.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_ID_Estudiante.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
@@ -88,7 +88,7 @@ Partial Class Panel_Estudiantes
         Me.txtNombreEstudiante.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.txtNombreEstudiante.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtNombreEstudiante.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtNombreEstudiante.Location = New System.Drawing.Point(105, 147)
+        Me.txtNombreEstudiante.Location = New System.Drawing.Point(169, 147)
         Me.txtNombreEstudiante.Name = "txtNombreEstudiante"
         Me.txtNombreEstudiante.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtNombreEstudiante.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
@@ -113,7 +113,7 @@ Partial Class Panel_Estudiantes
         Me.btnEliminarEstudiante.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnEliminarEstudiante.ForeColor = System.Drawing.Color.White
         Me.btnEliminarEstudiante.Image = CType(resources.GetObject("btnEliminarEstudiante.Image"), System.Drawing.Image)
-        Me.btnEliminarEstudiante.Location = New System.Drawing.Point(644, 110)
+        Me.btnEliminarEstudiante.Location = New System.Drawing.Point(708, 110)
         Me.btnEliminarEstudiante.Name = "btnEliminarEstudiante"
         Me.btnEliminarEstudiante.Size = New System.Drawing.Size(93, 23)
         Me.btnEliminarEstudiante.TabIndex = 24
@@ -135,7 +135,7 @@ Partial Class Panel_Estudiantes
         Me.btnEditarEstudiante.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnEditarEstudiante.ForeColor = System.Drawing.Color.White
         Me.btnEditarEstudiante.Image = CType(resources.GetObject("btnEditarEstudiante.Image"), System.Drawing.Image)
-        Me.btnEditarEstudiante.Location = New System.Drawing.Point(548, 110)
+        Me.btnEditarEstudiante.Location = New System.Drawing.Point(612, 110)
         Me.btnEditarEstudiante.Name = "btnEditarEstudiante"
         Me.btnEditarEstudiante.Size = New System.Drawing.Size(93, 23)
         Me.btnEditarEstudiante.TabIndex = 23
@@ -157,7 +157,7 @@ Partial Class Panel_Estudiantes
         Me.btnGuardarEstudiante.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGuardarEstudiante.ForeColor = System.Drawing.Color.White
         Me.btnGuardarEstudiante.Image = CType(resources.GetObject("btnGuardarEstudiante.Image"), System.Drawing.Image)
-        Me.btnGuardarEstudiante.Location = New System.Drawing.Point(449, 110)
+        Me.btnGuardarEstudiante.Location = New System.Drawing.Point(513, 110)
         Me.btnGuardarEstudiante.Name = "btnGuardarEstudiante"
         Me.btnGuardarEstudiante.Size = New System.Drawing.Size(93, 23)
         Me.btnGuardarEstudiante.TabIndex = 22
@@ -190,7 +190,7 @@ Partial Class Panel_Estudiantes
         Me.dgv_estudiantes.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_estudiantes.EnableHeadersVisualStyles = False
         Me.dgv_estudiantes.GridColor = System.Drawing.Color.White
-        Me.dgv_estudiantes.Location = New System.Drawing.Point(63, 175)
+        Me.dgv_estudiantes.Location = New System.Drawing.Point(127, 175)
         Me.dgv_estudiantes.Margin = New System.Windows.Forms.Padding(4)
         Me.dgv_estudiantes.Name = "dgv_estudiantes"
         Me.dgv_estudiantes.RowHeadersVisible = False
@@ -210,7 +210,7 @@ Partial Class Panel_Estudiantes
         Me.txtApellidosEstudiante.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.txtApellidosEstudiante.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtApellidosEstudiante.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtApellidosEstudiante.Location = New System.Drawing.Point(208, 147)
+        Me.txtApellidosEstudiante.Location = New System.Drawing.Point(272, 147)
         Me.txtApellidosEstudiante.Name = "txtApellidosEstudiante"
         Me.txtApellidosEstudiante.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtApellidosEstudiante.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
@@ -232,7 +232,7 @@ Partial Class Panel_Estudiantes
         Me.txtIdentificacionEstudiante.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.txtIdentificacionEstudiante.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtIdentificacionEstudiante.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtIdentificacionEstudiante.Location = New System.Drawing.Point(312, 147)
+        Me.txtIdentificacionEstudiante.Location = New System.Drawing.Point(376, 147)
         Me.txtIdentificacionEstudiante.Name = "txtIdentificacionEstudiante"
         Me.txtIdentificacionEstudiante.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtIdentificacionEstudiante.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
@@ -254,7 +254,7 @@ Partial Class Panel_Estudiantes
         Me.txtCorreoEstudiante.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.txtCorreoEstudiante.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtCorreoEstudiante.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtCorreoEstudiante.Location = New System.Drawing.Point(430, 147)
+        Me.txtCorreoEstudiante.Location = New System.Drawing.Point(494, 147)
         Me.txtCorreoEstudiante.Name = "txtCorreoEstudiante"
         Me.txtCorreoEstudiante.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtCorreoEstudiante.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
@@ -276,7 +276,7 @@ Partial Class Panel_Estudiantes
         Me.txtCarreraEstudiante.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.txtCarreraEstudiante.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtCarreraEstudiante.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtCarreraEstudiante.Location = New System.Drawing.Point(535, 147)
+        Me.txtCarreraEstudiante.Location = New System.Drawing.Point(599, 147)
         Me.txtCarreraEstudiante.Name = "txtCarreraEstudiante"
         Me.txtCarreraEstudiante.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtCarreraEstudiante.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
@@ -298,7 +298,7 @@ Partial Class Panel_Estudiantes
         Me.txtFechaEstudiante.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.txtFechaEstudiante.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtFechaEstudiante.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtFechaEstudiante.Location = New System.Drawing.Point(642, 147)
+        Me.txtFechaEstudiante.Location = New System.Drawing.Point(706, 147)
         Me.txtFechaEstudiante.Name = "txtFechaEstudiante"
         Me.txtFechaEstudiante.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtFechaEstudiante.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
@@ -345,6 +345,7 @@ Partial Class Panel_Estudiantes
         Me.Correo.DataPropertyName = "Correo"
         Me.Correo.HeaderText = "Correo"
         Me.Correo.Name = "Correo"
+        Me.Correo.ReadOnly = True
         '
         'Carrera
         '
@@ -352,6 +353,7 @@ Partial Class Panel_Estudiantes
         Me.Carrera.DataPropertyName = "Carrera"
         Me.Carrera.HeaderText = "Carrera"
         Me.Carrera.Name = "Carrera"
+        Me.Carrera.ReadOnly = True
         '
         'Fecha_Ingreso
         '
@@ -359,6 +361,7 @@ Partial Class Panel_Estudiantes
         Me.Fecha_Ingreso.DataPropertyName = "Fecha_Ingreso"
         Me.Fecha_Ingreso.HeaderText = "Fecha_Ingreso"
         Me.Fecha_Ingreso.Name = "Fecha_Ingreso"
+        Me.Fecha_Ingreso.ReadOnly = True
         '
         'Panel_Estudiantes
         '

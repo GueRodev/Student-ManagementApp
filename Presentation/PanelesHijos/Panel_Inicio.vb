@@ -11,6 +11,11 @@ Public Class Panel_Inicio
         ' Asignar el valor al Label
         lblCantidadUsuarios.Text = cantidadUsuarios.ToString()
 
+        ' Obtener la cantidad de estudiantes registrados
+        Dim estudianteModelo As New EstudianteModelo()
+        Dim cantidadEstudiantes As Integer = estudianteModelo.dominio_ContarEstudiantes()
+        lblCantidadEstudiantes.Text = cantidadEstudiantes.ToString()
+
         MostrarHoraActual()
         tmrHora.Start()
     End Sub
