@@ -28,21 +28,24 @@ Partial Class Panel_Inicio
         Me.Pnl_CantidadUser = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Pnl_CantidadEstudiantes = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.lblCantidadEstudiantes = New System.Windows.Forms.Label()
         Me.Pnl_CantidadMaterias = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        Me.Guna2PictureBox3 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lbl_HORA = New System.Windows.Forms.Label()
         Me.tmrHora = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox3 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Pnl_CantidadUser.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Pnl_CantidadEstudiantes.SuspendLayout()
-        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Pnl_CantidadMaterias.SuspendLayout()
-        CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblCantidadUsuarios
@@ -51,9 +54,10 @@ Partial Class Panel_Inicio
         Me.lblCantidadUsuarios.BackColor = System.Drawing.Color.Transparent
         Me.lblCantidadUsuarios.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCantidadUsuarios.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.lblCantidadUsuarios.Location = New System.Drawing.Point(123, 21)
+        Me.lblCantidadUsuarios.Location = New System.Drawing.Point(292, 46)
+        Me.lblCantidadUsuarios.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblCantidadUsuarios.Name = "lblCantidadUsuarios"
-        Me.lblCantidadUsuarios.Size = New System.Drawing.Size(28, 32)
+        Me.lblCantidadUsuarios.Size = New System.Drawing.Size(56, 65)
         Me.lblCantidadUsuarios.TabIndex = 0
         Me.lblCantidadUsuarios.Text = "#"
         '
@@ -61,14 +65,16 @@ Partial Class Panel_Inicio
         '
         Me.Pnl_CantidadUser.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Pnl_CantidadUser.Controls.Add(Me.Guna2PictureBox1)
+        Me.Pnl_CantidadUser.Controls.Add(Me.Label1)
         Me.Pnl_CantidadUser.Controls.Add(Me.lblCantidadUsuarios)
         Me.Pnl_CantidadUser.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(101, Byte), Integer))
         Me.Pnl_CantidadUser.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(101, Byte), Integer))
         Me.Pnl_CantidadUser.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.Pnl_CantidadUser.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Pnl_CantidadUser.Location = New System.Drawing.Point(130, 122)
+        Me.Pnl_CantidadUser.Location = New System.Drawing.Point(260, 583)
+        Me.Pnl_CantidadUser.Margin = New System.Windows.Forms.Padding(6)
         Me.Pnl_CantidadUser.Name = "Pnl_CantidadUser"
-        Me.Pnl_CantidadUser.Size = New System.Drawing.Size(177, 69)
+        Me.Pnl_CantidadUser.Size = New System.Drawing.Size(354, 133)
         Me.Pnl_CantidadUser.TabIndex = 1
         '
         'Guna2PictureBox1
@@ -76,9 +82,10 @@ Partial Class Panel_Inicio
         Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
         Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(20, 7)
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2PictureBox1.Margin = New System.Windows.Forms.Padding(6)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(69, 53)
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(105, 76)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Guna2PictureBox1.TabIndex = 5
         Me.Guna2PictureBox1.TabStop = False
@@ -87,29 +94,18 @@ Partial Class Panel_Inicio
         'Pnl_CantidadEstudiantes
         '
         Me.Pnl_CantidadEstudiantes.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Pnl_CantidadEstudiantes.Controls.Add(Me.Label3)
         Me.Pnl_CantidadEstudiantes.Controls.Add(Me.Guna2PictureBox2)
         Me.Pnl_CantidadEstudiantes.Controls.Add(Me.lblCantidadEstudiantes)
         Me.Pnl_CantidadEstudiantes.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(101, Byte), Integer))
         Me.Pnl_CantidadEstudiantes.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(101, Byte), Integer))
         Me.Pnl_CantidadEstudiantes.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.Pnl_CantidadEstudiantes.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Pnl_CantidadEstudiantes.Location = New System.Drawing.Point(371, 122)
+        Me.Pnl_CantidadEstudiantes.Location = New System.Drawing.Point(742, 583)
+        Me.Pnl_CantidadEstudiantes.Margin = New System.Windows.Forms.Padding(6)
         Me.Pnl_CantidadEstudiantes.Name = "Pnl_CantidadEstudiantes"
-        Me.Pnl_CantidadEstudiantes.Size = New System.Drawing.Size(177, 69)
+        Me.Pnl_CantidadEstudiantes.Size = New System.Drawing.Size(354, 133)
         Me.Pnl_CantidadEstudiantes.TabIndex = 2
-        '
-        'Guna2PictureBox2
-        '
-        Me.Guna2PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
-        Me.Guna2PictureBox2.ImageRotate = 0!
-        Me.Guna2PictureBox2.Location = New System.Drawing.Point(15, 8)
-        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
-        Me.Guna2PictureBox2.Size = New System.Drawing.Size(69, 53)
-        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Guna2PictureBox2.TabIndex = 6
-        Me.Guna2PictureBox2.TabStop = False
-        Me.Guna2PictureBox2.UseTransparentBackground = True
         '
         'lblCantidadEstudiantes
         '
@@ -117,38 +113,28 @@ Partial Class Panel_Inicio
         Me.lblCantidadEstudiantes.BackColor = System.Drawing.Color.Transparent
         Me.lblCantidadEstudiantes.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCantidadEstudiantes.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.lblCantidadEstudiantes.Location = New System.Drawing.Point(134, 21)
+        Me.lblCantidadEstudiantes.Location = New System.Drawing.Point(291, 42)
+        Me.lblCantidadEstudiantes.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblCantidadEstudiantes.Name = "lblCantidadEstudiantes"
-        Me.lblCantidadEstudiantes.Size = New System.Drawing.Size(28, 32)
+        Me.lblCantidadEstudiantes.Size = New System.Drawing.Size(56, 65)
         Me.lblCantidadEstudiantes.TabIndex = 0
         Me.lblCantidadEstudiantes.Text = "#"
         '
         'Pnl_CantidadMaterias
         '
         Me.Pnl_CantidadMaterias.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Pnl_CantidadMaterias.Controls.Add(Me.Label4)
         Me.Pnl_CantidadMaterias.Controls.Add(Me.Guna2PictureBox3)
         Me.Pnl_CantidadMaterias.Controls.Add(Me.Label2)
         Me.Pnl_CantidadMaterias.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(101, Byte), Integer))
         Me.Pnl_CantidadMaterias.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(101, Byte), Integer))
         Me.Pnl_CantidadMaterias.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.Pnl_CantidadMaterias.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Pnl_CantidadMaterias.Location = New System.Drawing.Point(604, 122)
+        Me.Pnl_CantidadMaterias.Location = New System.Drawing.Point(1208, 583)
+        Me.Pnl_CantidadMaterias.Margin = New System.Windows.Forms.Padding(6)
         Me.Pnl_CantidadMaterias.Name = "Pnl_CantidadMaterias"
-        Me.Pnl_CantidadMaterias.Size = New System.Drawing.Size(177, 69)
+        Me.Pnl_CantidadMaterias.Size = New System.Drawing.Size(354, 133)
         Me.Pnl_CantidadMaterias.TabIndex = 3
-        '
-        'Guna2PictureBox3
-        '
-        Me.Guna2PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox3.Image = CType(resources.GetObject("Guna2PictureBox3.Image"), System.Drawing.Image)
-        Me.Guna2PictureBox3.ImageRotate = 0!
-        Me.Guna2PictureBox3.Location = New System.Drawing.Point(20, 8)
-        Me.Guna2PictureBox3.Name = "Guna2PictureBox3"
-        Me.Guna2PictureBox3.Size = New System.Drawing.Size(69, 53)
-        Me.Guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Guna2PictureBox3.TabIndex = 7
-        Me.Guna2PictureBox3.TabStop = False
-        Me.Guna2PictureBox3.UseTransparentBackground = True
         '
         'Label2
         '
@@ -156,9 +142,10 @@ Partial Class Panel_Inicio
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label2.Location = New System.Drawing.Point(139, 21)
+        Me.Label2.Location = New System.Drawing.Point(294, 43)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(28, 32)
+        Me.Label2.Size = New System.Drawing.Size(56, 65)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "#"
         '
@@ -167,11 +154,12 @@ Partial Class Panel_Inicio
         Me.lbl_HORA.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lbl_HORA.AutoSize = True
         Me.lbl_HORA.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_HORA.Font = New System.Drawing.Font("Segoe UI", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_HORA.Font = New System.Drawing.Font("Segoe UI", 28.125!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_HORA.ForeColor = System.Drawing.Color.White
-        Me.lbl_HORA.Location = New System.Drawing.Point(246, 319)
+        Me.lbl_HORA.Location = New System.Drawing.Point(653, 445)
+        Me.lbl_HORA.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lbl_HORA.Name = "lbl_HORA"
-        Me.lbl_HORA.Size = New System.Drawing.Size(222, 86)
+        Me.lbl_HORA.Size = New System.Drawing.Size(258, 100)
         Me.lbl_HORA.TabIndex = 4
         Me.lbl_HORA.Text = "HORA"
         '
@@ -182,16 +170,81 @@ Partial Class Panel_Inicio
         '
         Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(338, 207)
+        Me.PictureBox2.Location = New System.Drawing.Point(615, 187)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(6)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(200, 118)
+        Me.PictureBox2.Size = New System.Drawing.Size(554, 264)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 32
         Me.PictureBox2.TabStop = False
         '
+        'Guna2PictureBox2
+        '
+        Me.Guna2PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox2.ImageRotate = 0!
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(5, 2)
+        Me.Guna2PictureBox2.Margin = New System.Windows.Forms.Padding(6)
+        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(105, 76)
+        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Guna2PictureBox2.TabIndex = 6
+        Me.Guna2PictureBox2.TabStop = False
+        Me.Guna2PictureBox2.UseTransparentBackground = True
+        '
+        'Guna2PictureBox3
+        '
+        Me.Guna2PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox3.Image = CType(resources.GetObject("Guna2PictureBox3.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox3.ImageRotate = 0!
+        Me.Guna2PictureBox3.Location = New System.Drawing.Point(2, 1)
+        Me.Guna2PictureBox3.Margin = New System.Windows.Forms.Padding(6)
+        Me.Guna2PictureBox3.Name = "Guna2PictureBox3"
+        Me.Guna2PictureBox3.Size = New System.Drawing.Size(105, 76)
+        Me.Guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Guna2PictureBox3.TabIndex = 7
+        Me.Guna2PictureBox3.TabStop = False
+        Me.Guna2PictureBox3.UseTransparentBackground = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(100, 77)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(130, 31)
+        Me.Label1.TabIndex = 33
+        Me.Label1.Text = "Usuarios"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(92, 80)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(168, 31)
+        Me.Label3.TabIndex = 34
+        Me.Label3.Text = "Estudiantes"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(115, 78)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(126, 31)
+        Me.Label4.TabIndex = 35
+        Me.Label4.Text = "Materias"
+        '
         'Panel_Inicio
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.Controls.Add(Me.PictureBox2)
@@ -199,18 +252,19 @@ Partial Class Panel_Inicio
         Me.Controls.Add(Me.Pnl_CantidadMaterias)
         Me.Controls.Add(Me.Pnl_CantidadEstudiantes)
         Me.Controls.Add(Me.Pnl_CantidadUser)
+        Me.Margin = New System.Windows.Forms.Padding(6)
         Me.Name = "Panel_Inicio"
-        Me.Size = New System.Drawing.Size(835, 459)
+        Me.Size = New System.Drawing.Size(1670, 883)
         Me.Pnl_CantidadUser.ResumeLayout(False)
         Me.Pnl_CantidadUser.PerformLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Pnl_CantidadEstudiantes.ResumeLayout(False)
         Me.Pnl_CantidadEstudiantes.PerformLayout()
-        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Pnl_CantidadMaterias.ResumeLayout(False)
         Me.Pnl_CantidadMaterias.PerformLayout()
-        CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -224,8 +278,11 @@ Partial Class Panel_Inicio
     Friend WithEvents Pnl_CantidadMaterias As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents Label2 As Label
     Friend WithEvents lbl_HORA As Label
-    Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents Guna2PictureBox3 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents tmrHora As Timer
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2PictureBox3 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class

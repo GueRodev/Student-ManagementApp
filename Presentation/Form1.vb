@@ -1,12 +1,11 @@
 ﻿
 Imports System.Runtime.InteropServices
 Imports Domain 'Importar la capa de dominio
+Imports System.Threading
 
 Public Class Form1
     Public Sub New()
-
         InitializeComponent()
-
     End Sub
 
     Private Sub btnCerrarLogin_Click(sender As Object, e As EventArgs) Handles btnCerrarLogin.Click
@@ -50,15 +49,28 @@ Public Class Form1
     End Sub
 
     Private Sub btn_IniciarSesion_Click(sender As Object, e As EventArgs) Handles btn_IniciarSesion.Click
-        'Instanciamos la clase UsuarioModelo
         Dim usuarioModelo As New UsuarioModelo()
+        Dim validLogin = usuarioModelo.dominio_Login(txt_Usuario.Text, txt_Contrasena.Text)
 
-        Dim validLogin = usuarioModelo.dominio_Login(txt_Usuario.Text, txt_Contrasena.Text) 'Asignamos el metodo login de la capa dominio que retorna los valores de iniciar sesion
-        If validLogin = True Then
-            Dim frm As New FormPrincipal() 'Instanciamos el formulario Principal
-            frm.Show()
-            AddHandler frm.FormClosed, AddressOf Me.Cerrar_Sesion
-            Me.Hide()
+        If validLogin Then
+            Dim pantallaBienvenida As New PantallaBienvenida()
+            pantallaBienvenida.Show()
+
+            Dim delayThread As New Thread(
+            Sub()
+                Thread.Sleep(3000)
+                pantallaBienvenida.Invoke(Sub() pantallaBienvenida.Close())
+
+                ' Abrir el FormPrincipal en el hilo principal después de cerrar la pantalla de bienvenida
+                Me.Invoke(Sub()
+                              Dim frmPrincipal As New FormPrincipal()
+                              frmPrincipal.Show()
+                              AddHandler frmPrincipal.FormClosed, AddressOf Me.Cerrar_Sesion
+                              Me.Hide()
+                          End Sub)
+            End Sub
+        )
+            delayThread.Start()
         Else
             MessageBox.Show("Datos Incorrectos" + vbNewLine + "Intente de Nuevo")
             txt_Contrasena.Clear()
@@ -66,11 +78,21 @@ Public Class Form1
         End If
     End Sub
 
+
+
+    Private Sub CerrarForm1()
+        If Me.InvokeRequired Then
+            Me.Invoke(New Action(AddressOf CerrarForm1))
+        Else
+            Me.Hide()
+        End If
+    End Sub
+
+
     Private Sub Cerrar_Sesion(sender As Object, e As FormClosedEventArgs)
         txt_Contrasena.Clear()
         txt_Usuario.Clear()
         Me.Show()
-
     End Sub
 
 End Class

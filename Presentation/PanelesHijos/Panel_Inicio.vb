@@ -31,4 +31,6 @@ Public Class Panel_Inicio
     Private Sub tmrHora_Tick(sender As Object, e As EventArgs) Handles tmrHora.Tick
         MostrarHoraActual()
     End Sub
+
+
 End Class
