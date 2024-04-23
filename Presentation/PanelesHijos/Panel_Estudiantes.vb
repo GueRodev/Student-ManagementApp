@@ -79,7 +79,7 @@ Public Class Panel_Estudiantes
         Dim identificacion As String = txtIdentificacionEstudiante.Text
         Dim correo As String = txtCorreoEstudiante.Text
         Dim carrera As String = txtCarreraEstudiante.Text
-        Dim fechaIngreso As Date = txtFechaEstudiante.Text
+
 
         ' Validar que el nombre y el apellido no contengan números enteros y no excedan los 16 caracteres
         If Not EsNombreValido(nombre) Or Not EsNombreValido(apellidos) Then
@@ -99,6 +99,25 @@ Public Class Panel_Estudiantes
             Return ' Cancelar la operación si no se cumple la validación
         End If
 
+        ' Validar que el campo de carrera no esté vacío y cumpla con los requisitos de longitud y contenido
+        If String.IsNullOrWhiteSpace(carrera) OrElse carrera.Length > 30 OrElse Not EsNombreValido(carrera) Then
+            MessageBox.Show("Ingrese Datos Validos para la carrera.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return ' Cancelar la operación si no se cumple la validación
+        End If
+
+        ' Convertir el campo de fecha de ingreso a tipo Date
+        Dim fechaIngreso As Date
+        If Not String.IsNullOrEmpty(txtFechaEstudiante.Text) Then
+            If Date.TryParse(txtFechaEstudiante.Text, fechaIngreso) Then
+                ' La conversión fue exitosa, la fecha se asignó correctamente
+            Else
+                MessageBox.Show("Ingrese una fecha de ingreso válida en formato dd/MM/yyyy.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return ' Cancelar la operación si no se cumple la validación
+            End If
+        Else
+            MessageBox.Show("El campo de fecha de ingreso no puede estar vacío.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return ' Cancelar la operación si no se cumple la validación
+        End If
         ' Instanciar EstudianteModelo
         Dim estudianteModelo As New EstudianteModelo()
 
@@ -132,6 +151,7 @@ Public Class Panel_Estudiantes
         Dim esNumerico As Boolean = Integer.TryParse(identificacion, Nothing)
         Return esNumerico AndAlso identificacion.Length <= 10
     End Function
+
 
     Private Sub LimpiarCampos()
         ' Limpiar los campos del formulario
@@ -170,7 +190,7 @@ Public Class Panel_Estudiantes
             Dim identificacion As String = txtIdentificacionEstudiante.Text
             Dim correo As String = txtCorreoEstudiante.Text
             Dim carrera As String = txtCarreraEstudiante.Text
-            Dim fechaIngreso As Date
+
 
             ' Validar que los campos no estén vacíos
             If String.IsNullOrWhiteSpace(nombre) OrElse String.IsNullOrWhiteSpace(apellidos) OrElse String.IsNullOrWhiteSpace(identificacion) OrElse String.IsNullOrWhiteSpace(correo) OrElse String.IsNullOrWhiteSpace(carrera) Then
@@ -196,10 +216,24 @@ Public Class Panel_Estudiantes
                 Return
             End If
 
-            ' Convertir la fecha de ingreso a formato Date
-            If Not Date.TryParse(txtFechaEstudiante.Text, fechaIngreso) Then
-                MessageBox.Show("Ingrese una fecha de ingreso válida en formato dd/MM/yyyy.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Return
+            ' Validar que el campo de carrera no esté vacío y cumpla con los requisitos de longitud y contenido
+            If String.IsNullOrWhiteSpace(carrera) OrElse carrera.Length > 30 OrElse Not EsNombreValido(carrera) Then
+                MessageBox.Show("Ingrese Datos Validos para la carrera.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return ' Cancelar la operación si no se cumple la validación
+            End If
+
+            ' Convertir el campo de fecha de ingreso a tipo Date
+            Dim fechaIngreso As Date
+            If Not String.IsNullOrEmpty(txtFechaEstudiante.Text) Then
+                If Date.TryParse(txtFechaEstudiante.Text, fechaIngreso) Then
+                    ' La conversión fue exitosa, la fecha se asignó correctamente
+                Else
+                    MessageBox.Show("Ingrese una fecha de ingreso válida en formato dd/MM/yyyy.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return ' Cancelar la operación si no se cumple la validación
+                End If
+            Else
+                MessageBox.Show("El campo de fecha de ingreso no puede estar vacío.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return ' Cancelar la operación si no se cumple la validación
             End If
 
             ' Instanciar EstudianteModelo
