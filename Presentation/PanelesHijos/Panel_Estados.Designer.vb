@@ -28,22 +28,21 @@ Partial Class Panel_Estados
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgv_Estudiantes_Mostrar = New System.Windows.Forms.DataGridView()
-        Me.Nombre_Estudiante = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Apellidos_Estudiante = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Identificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnlEstadoEstudiantes = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.dgv_Estudiantes_Estados = New System.Windows.Forms.DataGridView()
-        Me.Estudiante = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Apellidos = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Materia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnBuscarIdentificacion = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.pnl_BuscarEstados = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.txt_Buscar_Identificacion = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Estudiante = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Apellidos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Materia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Identificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgv_Estudiantes_Mostrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlEstadoEstudiantes.SuspendLayout()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,7 +67,7 @@ Partial Class Panel_Estados
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgv_Estudiantes_Mostrar.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_Estudiantes_Mostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_Estudiantes_Mostrar.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre_Estudiante, Me.Apellidos_Estudiante, Me.Identificacion})
+        Me.dgv_Estudiantes_Mostrar.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Identificacion})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSeaGreen
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -84,35 +83,8 @@ Partial Class Panel_Estados
         Me.dgv_Estudiantes_Mostrar.Name = "dgv_Estudiantes_Mostrar"
         Me.dgv_Estudiantes_Mostrar.RowHeadersVisible = False
         Me.dgv_Estudiantes_Mostrar.RowHeadersWidth = 82
-        Me.dgv_Estudiantes_Mostrar.Size = New System.Drawing.Size(955, 115)
+        Me.dgv_Estudiantes_Mostrar.Size = New System.Drawing.Size(989, 143)
         Me.dgv_Estudiantes_Mostrar.TabIndex = 39
-        '
-        'Nombre_Estudiante
-        '
-        Me.Nombre_Estudiante.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Nombre_Estudiante.DataPropertyName = "Nombre_Estudiante"
-        Me.Nombre_Estudiante.HeaderText = "Nombre_Estudiante"
-        Me.Nombre_Estudiante.MinimumWidth = 10
-        Me.Nombre_Estudiante.Name = "Nombre_Estudiante"
-        Me.Nombre_Estudiante.ReadOnly = True
-        '
-        'Apellidos_Estudiante
-        '
-        Me.Apellidos_Estudiante.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Apellidos_Estudiante.DataPropertyName = "Apellidos_Estudiante"
-        Me.Apellidos_Estudiante.HeaderText = "Apellidos_Estudiante"
-        Me.Apellidos_Estudiante.MinimumWidth = 10
-        Me.Apellidos_Estudiante.Name = "Apellidos_Estudiante"
-        Me.Apellidos_Estudiante.ReadOnly = True
-        '
-        'Identificacion
-        '
-        Me.Identificacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Identificacion.DataPropertyName = "Identificacion"
-        Me.Identificacion.HeaderText = "Identificacion"
-        Me.Identificacion.MinimumWidth = 10
-        Me.Identificacion.Name = "Identificacion"
-        Me.Identificacion.ReadOnly = True
         '
         'pnlEstadoEstudiantes
         '
@@ -190,42 +162,6 @@ Partial Class Panel_Estados
         Me.dgv_Estudiantes_Estados.RowHeadersWidth = 82
         Me.dgv_Estudiantes_Estados.Size = New System.Drawing.Size(1364, 114)
         Me.dgv_Estudiantes_Estados.TabIndex = 41
-        '
-        'Estudiante
-        '
-        Me.Estudiante.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Estudiante.DataPropertyName = "Nombre"
-        Me.Estudiante.HeaderText = "Nombre"
-        Me.Estudiante.MinimumWidth = 10
-        Me.Estudiante.Name = "Estudiante"
-        Me.Estudiante.ReadOnly = True
-        '
-        'Apellidos
-        '
-        Me.Apellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Apellidos.DataPropertyName = "Apellidos"
-        Me.Apellidos.HeaderText = "Apellidos"
-        Me.Apellidos.MinimumWidth = 10
-        Me.Apellidos.Name = "Apellidos"
-        Me.Apellidos.ReadOnly = True
-        '
-        'Materia
-        '
-        Me.Materia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Materia.DataPropertyName = "Materia"
-        Me.Materia.HeaderText = "Materia"
-        Me.Materia.MinimumWidth = 10
-        Me.Materia.Name = "Materia"
-        Me.Materia.ReadOnly = True
-        '
-        'Estado
-        '
-        Me.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Estado.DataPropertyName = "Estado"
-        Me.Estado.HeaderText = "Estado"
-        Me.Estado.MinimumWidth = 10
-        Me.Estado.Name = "Estado"
-        Me.Estado.ReadOnly = True
         '
         'btnBuscarIdentificacion
         '
@@ -315,6 +251,60 @@ Partial Class Panel_Estados
         Me.txt_Buscar_Identificacion.Size = New System.Drawing.Size(911, 44)
         Me.txt_Buscar_Identificacion.TabIndex = 44
         '
+        'Estudiante
+        '
+        Me.Estudiante.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Estudiante.DataPropertyName = "Estudiante"
+        Me.Estudiante.HeaderText = "Estudiante"
+        Me.Estudiante.MinimumWidth = 10
+        Me.Estudiante.Name = "Estudiante"
+        Me.Estudiante.ReadOnly = True
+        '
+        'Apellidos
+        '
+        Me.Apellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Apellidos.DataPropertyName = "Apellidos"
+        Me.Apellidos.HeaderText = "Apellidos"
+        Me.Apellidos.MinimumWidth = 10
+        Me.Apellidos.Name = "Apellidos"
+        Me.Apellidos.ReadOnly = True
+        '
+        'Materia
+        '
+        Me.Materia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Materia.DataPropertyName = "Materia"
+        Me.Materia.HeaderText = "Materia"
+        Me.Materia.MinimumWidth = 10
+        Me.Materia.Name = "Materia"
+        Me.Materia.ReadOnly = True
+        '
+        'Estado
+        '
+        Me.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Estado.DataPropertyName = "Estado"
+        Me.Estado.HeaderText = "Estado"
+        Me.Estado.MinimumWidth = 10
+        Me.Estado.Name = "Estado"
+        Me.Estado.ReadOnly = True
+        '
+        'Nombre
+        '
+        Me.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Nombre.DataPropertyName = "Nombre"
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.MinimumWidth = 10
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.ReadOnly = True
+        '
+        'Identificacion
+        '
+        Me.Identificacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Identificacion.DataPropertyName = "Identificacion"
+        Me.Identificacion.HeaderText = "Identificacion"
+        Me.Identificacion.MinimumWidth = 10
+        Me.Identificacion.Name = "Identificacion"
+        Me.Identificacion.ReadOnly = True
+        '
         'Panel_Estados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
@@ -346,16 +336,15 @@ Partial Class Panel_Estados
     Friend WithEvents Label3 As Label
     Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents dgv_Estudiantes_Estados As DataGridView
-    Friend WithEvents Nombre_Estudiante As DataGridViewTextBoxColumn
-    Friend WithEvents Apellidos_Estudiante As DataGridViewTextBoxColumn
-    Friend WithEvents Identificacion As DataGridViewTextBoxColumn
-    Friend WithEvents Estudiante As DataGridViewTextBoxColumn
-    Friend WithEvents Apellidos As DataGridViewTextBoxColumn
-    Friend WithEvents Materia As DataGridViewTextBoxColumn
-    Friend WithEvents Estado As DataGridViewTextBoxColumn
     Friend WithEvents btnBuscarIdentificacion As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents pnl_BuscarEstados As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents Label1 As Label
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents txt_Buscar_Identificacion As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Estudiante As DataGridViewTextBoxColumn
+    Friend WithEvents Apellidos As DataGridViewTextBoxColumn
+    Friend WithEvents Materia As DataGridViewTextBoxColumn
+    Friend WithEvents Estado As DataGridViewTextBoxColumn
+    Friend WithEvents Nombre As DataGridViewTextBoxColumn
+    Friend WithEvents Identificacion As DataGridViewTextBoxColumn
 End Class

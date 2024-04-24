@@ -27,4 +27,10 @@ Public Class MateriaModelo
         Return datosMateria.ContarMaterias()
     End Function
 
+    Public Function VistaMateriasID() As DataTable
+        Dim datosMateria As New Datos_Materias()
+        Return datosMateria.VistaMateriasID()
+    End Function
+
+
 End Class

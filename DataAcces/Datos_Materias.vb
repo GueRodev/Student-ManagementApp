@@ -110,4 +110,25 @@ Public Class Datos_Materias
         End Using
         Return count
     End Function
+
+    Public Function VistaMateriasID() As DataTable
+        Dim dataTable As New DataTable()
+        Try
+            Using connection = GetConnection()
+                connection.Open()
+                Using command = New MySqlCommand("SELECT * FROM uta_database.id_materias", connection)
+                    Using adapter As New MySqlDataAdapter(command)
+                        adapter.Fill(dataTable)
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            ' Manejo de excepciones
+            MsgBox("Error al obtener las materias: " & ex.Message)
+        End Try
+        Return dataTable
+    End Function
+
+
+
 End Class
