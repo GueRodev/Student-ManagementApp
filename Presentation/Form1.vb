@@ -61,12 +61,12 @@ Public Class Form1
                 Thread.Sleep(3000)
                 pantallaBienvenida.Invoke(Sub() pantallaBienvenida.Close())
 
-                ' Abrir el FormPrincipal en el hilo principal después de cerrar la pantalla de bienvenida
+                ' Cerrar el Form1 en el hilo principal después de cerrar la pantalla de bienvenida
                 Me.Invoke(Sub()
+                              Me.Hide()
                               Dim frmPrincipal As New FormPrincipal()
                               frmPrincipal.Show()
                               AddHandler frmPrincipal.FormClosed, AddressOf Me.Cerrar_Sesion
-                              Me.Hide()
                           End Sub)
             End Sub
         )
@@ -77,6 +77,7 @@ Public Class Form1
             txt_Contrasena.Focus()
         End If
     End Sub
+
 
 
 

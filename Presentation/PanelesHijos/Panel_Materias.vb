@@ -71,7 +71,7 @@ Public Class Panel_Materias
 
         ' Validar que el nombre de la materia no contenga números enteros
         If Not EsNombreValido(nombre) Then
-            MessageBox.Show("El nombre de la materia no puede contener números enteros.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("El nombre de la materia no puede contener números y sobre pasar los 100 caracteres.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return ' Cancelar la operación si no se cumple la validación
         End If
 
@@ -84,7 +84,7 @@ Public Class Panel_Materias
         ' Validar que los créditos de la materia sean un número entero entre 3 y 6
         Dim creditos As Integer
         If Not Integer.TryParse(creditosStr, creditos) OrElse creditos < 3 OrElse creditos > 6 Then
-            MessageBox.Show("Los créditos deben ser un número entero entre 3 y 6.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Los créditos deben ser un número entre 3 y 6.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return ' Cancelar la operación si no se cumple la validación
         End If
 
@@ -165,7 +165,7 @@ Public Class Panel_Materias
 
             ' Validar que el nombre de la materia no contenga números enteros
             If Not EsNombreValido(nombre) Then
-                MessageBox.Show("El nombre de la materia no puede contener números enteros.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("El nombre de la materia no puede contener números y sobre pasar los 100 caracteres.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return ' Cancelar la operación si no se cumple la validación
             End If
 
@@ -178,7 +178,7 @@ Public Class Panel_Materias
             ' Validar que los créditos de la materia sean un número entero entre 3 y 6
             Dim creditos As Integer
             If Not Integer.TryParse(creditosStr, creditos) OrElse creditos < 3 OrElse creditos > 6 Then
-                MessageBox.Show("Los créditos deben ser un número entero entre 3 y 6.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Los créditos deben ser un número entre 3 y 6.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return ' Cancelar la operación si no se cumple la validación
             End If
 
