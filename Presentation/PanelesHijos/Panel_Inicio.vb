@@ -16,6 +16,11 @@ Public Class Panel_Inicio
         Dim cantidadEstudiantes As Integer = estudianteModelo.dominio_ContarEstudiantes()
         lblCantidadEstudiantes.Text = cantidadEstudiantes.ToString()
 
+        ' Obtener la cantidad de materias registradas
+        Dim materiaModelo As New MateriaModelo()
+        Dim cantidadMaterias As Integer = materiaModelo.Dominio_ContarMaterias()
+        lblCantidadMaterias.Text = cantidadMaterias.ToString()
+
         MostrarHoraActual()
         tmrHora.Start()
     End Sub

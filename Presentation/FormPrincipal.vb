@@ -17,6 +17,7 @@ Public Class FormPrincipal
         Me.StartPosition = FormStartPosition.CenterScreen
         AjustarFormulario()
 
+        'Mostrar Usuario Activo 
         lbl_Usuario.Text = ActiveUser.Usuario
         lbl_Rol.Text = ActiveUser.Rol
 
