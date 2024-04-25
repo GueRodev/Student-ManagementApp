@@ -13,7 +13,7 @@ Public Class Panel_Asignar
 
     Private Sub Panel_Asignar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MostrarEstudiantes()
-        MostrarMaterias() ' Llamar a la función para mostrar las materias al cargar el formulario
+        MostrarMaterias()
     End Sub
 
     Private Sub MostrarEstudiantes()
@@ -25,53 +25,95 @@ Public Class Panel_Asignar
         dtEstudiantes = estudianteModelo.dominio_ObtenerEstudiantes()
 
         ' Configurar las columnas del DataGridView
-        dgv_Estudiantes_Mostrar.Columns.Clear() ' Limpiar las columnas existentes
-        dgv_Estudiantes_Mostrar.AutoGenerateColumns = False ' Deshabilitar la generación automática de columnas
+        dgv_AsignarEstudiante.Columns.Clear() ' Limpiar las columnas existentes
+        dgv_AsignarEstudiante.AutoGenerateColumns = False ' Deshabilitar la generación automática de columnas
 
         ' Agregar las columnas necesarias
+        Dim colID As New DataGridViewTextBoxColumn()
+        colID.DataPropertyName = "ID"
+        colID.HeaderText = "ID"
+        dgv_AsignarEstudiante.Columns.Add(colID)
 
         Dim colNombre As New DataGridViewTextBoxColumn()
         colNombre.DataPropertyName = "Nombre"
         colNombre.HeaderText = "Nombre"
-        dgv_Estudiantes_Mostrar.Columns.Add(colNombre)
+        dgv_AsignarEstudiante.Columns.Add(colNombre)
 
-        Dim colIdentificacion As New DataGridViewTextBoxColumn()
-        colIdentificacion.DataPropertyName = "Identificacion"
-        colIdentificacion.HeaderText = "Identificacion"
-        dgv_Estudiantes_Mostrar.Columns.Add(colIdentificacion)
-
-        ' Asignar los datos al DataGridView
-        dgv_Estudiantes_Mostrar.DataSource = dtEstudiantes
+        dgv_AsignarEstudiante.DataSource = dtEstudiantes
     End Sub
 
-
     Private Sub MostrarMaterias()
-        ' Instanciar el modelo de materia
+        ' Instanciar MateriaModelo
         Dim materiaModelo As New MateriaModelo()
 
         ' Obtener los datos de las materias
         Dim dtMaterias As New DataTable()
-        dtMaterias = materiaModelo.VistaMateriasID()
+        dtMaterias = materiaModelo.Dominio_ObtenerMaterias()
 
         ' Configurar las columnas del DataGridView
-        dgv_materias_Asignar.Columns.Clear() ' Limpiar las columnas existentes
-        dgv_materias_Asignar.AutoGenerateColumns = False ' Deshabilitar la generación automática de columnas
+        dgv_AsignarMateria.Columns.Clear() ' Limpiar las columnas existentes
+        dgv_AsignarMateria.AutoGenerateColumns = False ' Deshabilitar la generación automática de columnas
 
         ' Agregar las columnas necesarias
-
         Dim colID As New DataGridViewTextBoxColumn()
         colID.DataPropertyName = "ID"
         colID.HeaderText = "ID"
-        dgv_materias_Asignar.Columns.Add(colID)
+        dgv_AsignarMateria.Columns.Add(colID)
 
-        Dim colMateria As New DataGridViewTextBoxColumn()
-        colMateria.DataPropertyName = "Materia"
-        colMateria.HeaderText = "Materia"
-        dgv_materias_Asignar.Columns.Add(colMateria)
+        Dim colNombre As New DataGridViewTextBoxColumn()
+        colNombre.DataPropertyName = "Nombre"
+        colNombre.HeaderText = "Nombre"
+        dgv_AsignarMateria.Columns.Add(colNombre)
 
         ' Asignar los datos al DataGridView
-        dgv_materias_Asignar.DataSource = dtMaterias
+        dgv_AsignarMateria.DataSource = dtMaterias
+    End Sub
+
+    Private Sub dgv_AsignarEstudiante_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_AsignarEstudiante.CellClick
+        ' Verificar si la celda seleccionada no es el encabezado de la fila
+        If e.RowIndex >= 0 Then
+            ' Obtener los valores de la fila seleccionada y mostrarlos en los campos de texto
+            Dim selectedRow As DataGridViewRow = dgv_AsignarEstudiante.Rows(e.RowIndex)
+            lbl_IDEstudiante.Text = dgv_AsignarEstudiante.CurrentRow.Cells(0).Value
+            txt_Asignar_Estudiante.Text = selectedRow.Cells(1).Value.ToString()
+        End If
+    End Sub
+
+    Private Sub dgv_AsignarMateria_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_AsignarMateria.CellClick
+        ' Verificar si la celda seleccionada no es el encabezado de la fila
+        If e.RowIndex >= 0 Then
+            ' Obtener los valores de la fila seleccionada y mostrarlos en los campos de texto
+            Dim selectedRow As DataGridViewRow = dgv_AsignarMateria.Rows(e.RowIndex)
+            lbl_IDMateria.Text = dgv_AsignarMateria.CurrentRow.Cells(0).Value
+            txt_Asignar_Materia.Text = selectedRow.Cells(1).Value.ToString()
+
+        End If
+    End Sub
+
+    Private Sub btnAsignarMateria_Click(sender As Object, e As EventArgs) Handles btnAsignarMateria.Click
+        ' Obtener el ID del estudiante y la materia seleccionados desde los labels
+        Dim idEstudiante As String = lbl_IDEstudiante.Text
+        Dim idMateria As String = lbl_IDMateria.Text
+
+        If Not String.IsNullOrEmpty(idEstudiante) AndAlso Not String.IsNullOrEmpty(idMateria) Then
+            ' Obtener el estado seleccionado
+            Dim estado As String = cbo_AsignarEstado.SelectedItem.ToString()
+
+            ' Instanciar el modelo y llamar al método para asignar la materia al estudiante
+            Dim asignarModelo As New AsignarModelo()
+            Dim exito As Boolean = asignarModelo.AsignarMateriaAEstudiante(idEstudiante, idMateria, estado)
+
+            If exito Then
+                MessageBox.Show("Materia asignada correctamente.")
+            Else
+                MessageBox.Show("Error al asignar la materia.")
+            End If
+        Else
+            MessageBox.Show("Por favor, seleccione un estudiante y una materia.")
+        End If
     End Sub
 
 
+
 End Class
+

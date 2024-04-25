@@ -24,8 +24,8 @@ Partial Class Panel_Materias
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Panel_Materias))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ErrorMaterias = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.btnEliminarMateria = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.btnEditarMateria = New Guna.UI2.WinForms.Guna2GradientButton()
@@ -51,7 +51,7 @@ Partial Class Panel_Materias
         '
         Me.btnEliminarMateria.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnEliminarMateria.AutoRoundedCorners = True
-        Me.btnEliminarMateria.BorderRadius = 21
+        Me.btnEliminarMateria.BorderRadius = 10
         Me.btnEliminarMateria.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnEliminarMateria.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btnEliminarMateria.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
@@ -63,10 +63,9 @@ Partial Class Panel_Materias
         Me.btnEliminarMateria.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnEliminarMateria.ForeColor = System.Drawing.Color.White
         Me.btnEliminarMateria.Image = CType(resources.GetObject("btnEliminarMateria.Image"), System.Drawing.Image)
-        Me.btnEliminarMateria.Location = New System.Drawing.Point(1354, 212)
-        Me.btnEliminarMateria.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.btnEliminarMateria.Location = New System.Drawing.Point(677, 110)
         Me.btnEliminarMateria.Name = "btnEliminarMateria"
-        Me.btnEliminarMateria.Size = New System.Drawing.Size(186, 44)
+        Me.btnEliminarMateria.Size = New System.Drawing.Size(93, 23)
         Me.btnEliminarMateria.TabIndex = 37
         Me.btnEliminarMateria.Text = "Eliminar"
         '
@@ -74,7 +73,7 @@ Partial Class Panel_Materias
         '
         Me.btnEditarMateria.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnEditarMateria.AutoRoundedCorners = True
-        Me.btnEditarMateria.BorderRadius = 21
+        Me.btnEditarMateria.BorderRadius = 10
         Me.btnEditarMateria.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnEditarMateria.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btnEditarMateria.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
@@ -86,10 +85,9 @@ Partial Class Panel_Materias
         Me.btnEditarMateria.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnEditarMateria.ForeColor = System.Drawing.Color.White
         Me.btnEditarMateria.Image = CType(resources.GetObject("btnEditarMateria.Image"), System.Drawing.Image)
-        Me.btnEditarMateria.Location = New System.Drawing.Point(1162, 212)
-        Me.btnEditarMateria.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.btnEditarMateria.Location = New System.Drawing.Point(581, 110)
         Me.btnEditarMateria.Name = "btnEditarMateria"
-        Me.btnEditarMateria.Size = New System.Drawing.Size(186, 44)
+        Me.btnEditarMateria.Size = New System.Drawing.Size(93, 23)
         Me.btnEditarMateria.TabIndex = 36
         Me.btnEditarMateria.Text = "Editar"
         '
@@ -97,7 +95,7 @@ Partial Class Panel_Materias
         '
         Me.btnGuardarMateria.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnGuardarMateria.AutoRoundedCorners = True
-        Me.btnGuardarMateria.BorderRadius = 21
+        Me.btnGuardarMateria.BorderRadius = 10
         Me.btnGuardarMateria.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnGuardarMateria.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btnGuardarMateria.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
@@ -109,10 +107,9 @@ Partial Class Panel_Materias
         Me.btnGuardarMateria.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGuardarMateria.ForeColor = System.Drawing.Color.White
         Me.btnGuardarMateria.Image = CType(resources.GetObject("btnGuardarMateria.Image"), System.Drawing.Image)
-        Me.btnGuardarMateria.Location = New System.Drawing.Point(964, 212)
-        Me.btnGuardarMateria.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.btnGuardarMateria.Location = New System.Drawing.Point(482, 110)
         Me.btnGuardarMateria.Name = "btnGuardarMateria"
-        Me.btnGuardarMateria.Size = New System.Drawing.Size(186, 44)
+        Me.btnGuardarMateria.Size = New System.Drawing.Size(93, 23)
         Me.btnGuardarMateria.TabIndex = 35
         Me.btnGuardarMateria.Text = "Guardar"
         '
@@ -129,14 +126,14 @@ Partial Class Panel_Materias
         Me.txt_ID_Materias.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_ID_Materias.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txt_ID_Materias.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_ID_Materias.Location = New System.Drawing.Point(254, 287)
-        Me.txt_ID_Materias.Margin = New System.Windows.Forms.Padding(14, 13, 14, 13)
+        Me.txt_ID_Materias.Location = New System.Drawing.Point(127, 149)
+        Me.txt_ID_Materias.Margin = New System.Windows.Forms.Padding(7, 7, 7, 7)
         Me.txt_ID_Materias.Name = "txt_ID_Materias"
         Me.txt_ID_Materias.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_ID_Materias.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txt_ID_Materias.PlaceholderText = "ID"
         Me.txt_ID_Materias.SelectedText = ""
-        Me.txt_ID_Materias.Size = New System.Drawing.Size(70, 40)
+        Me.txt_ID_Materias.Size = New System.Drawing.Size(35, 21)
         Me.txt_ID_Materias.TabIndex = 42
         '
         'txtCodigoMateria
@@ -152,14 +149,14 @@ Partial Class Panel_Materias
         Me.txtCodigoMateria.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.txtCodigoMateria.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtCodigoMateria.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtCodigoMateria.Location = New System.Drawing.Point(738, 287)
-        Me.txtCodigoMateria.Margin = New System.Windows.Forms.Padding(14, 13, 14, 13)
+        Me.txtCodigoMateria.Location = New System.Drawing.Point(369, 149)
+        Me.txtCodigoMateria.Margin = New System.Windows.Forms.Padding(7, 7, 7, 7)
         Me.txtCodigoMateria.Name = "txtCodigoMateria"
         Me.txtCodigoMateria.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtCodigoMateria.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtCodigoMateria.PlaceholderText = "Codigo"
         Me.txtCodigoMateria.SelectedText = ""
-        Me.txtCodigoMateria.Size = New System.Drawing.Size(404, 40)
+        Me.txtCodigoMateria.Size = New System.Drawing.Size(202, 21)
         Me.txtCodigoMateria.TabIndex = 41
         '
         'txtCreditosMateria
@@ -175,14 +172,14 @@ Partial Class Panel_Materias
         Me.txtCreditosMateria.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.txtCreditosMateria.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtCreditosMateria.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtCreditosMateria.Location = New System.Drawing.Point(1154, 287)
-        Me.txtCreditosMateria.Margin = New System.Windows.Forms.Padding(14, 13, 14, 13)
+        Me.txtCreditosMateria.Location = New System.Drawing.Point(577, 149)
+        Me.txtCreditosMateria.Margin = New System.Windows.Forms.Padding(7, 7, 7, 7)
         Me.txtCreditosMateria.Name = "txtCreditosMateria"
         Me.txtCreditosMateria.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtCreditosMateria.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtCreditosMateria.PlaceholderText = "Creditos"
         Me.txtCreditosMateria.SelectedText = ""
-        Me.txtCreditosMateria.Size = New System.Drawing.Size(392, 40)
+        Me.txtCreditosMateria.Size = New System.Drawing.Size(196, 21)
         Me.txtCreditosMateria.TabIndex = 40
         '
         'txtNombreMateria
@@ -198,14 +195,14 @@ Partial Class Panel_Materias
         Me.txtNombreMateria.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.txtNombreMateria.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtNombreMateria.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtNombreMateria.Location = New System.Drawing.Point(336, 287)
-        Me.txtNombreMateria.Margin = New System.Windows.Forms.Padding(14, 13, 14, 13)
+        Me.txtNombreMateria.Location = New System.Drawing.Point(168, 149)
+        Me.txtNombreMateria.Margin = New System.Windows.Forms.Padding(7, 7, 7, 7)
         Me.txtNombreMateria.Name = "txtNombreMateria"
         Me.txtNombreMateria.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtNombreMateria.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtNombreMateria.PlaceholderText = "Nombre"
         Me.txtNombreMateria.SelectedText = ""
-        Me.txtNombreMateria.Size = New System.Drawing.Size(390, 40)
+        Me.txtNombreMateria.Size = New System.Drawing.Size(195, 21)
         Me.txtNombreMateria.TabIndex = 39
         '
         'dgv_materias
@@ -215,32 +212,32 @@ Partial Class Panel_Materias
         Me.dgv_materias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv_materias.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.dgv_materias.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_materias.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_materias.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_materias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_materias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Nombre, Me.Codigo, Me.Creditos})
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSeaGreen
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_materias.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSeaGreen
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_materias.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_materias.EnableHeadersVisualStyles = False
         Me.dgv_materias.GridColor = System.Drawing.Color.White
-        Me.dgv_materias.Location = New System.Drawing.Point(254, 337)
-        Me.dgv_materias.Margin = New System.Windows.Forms.Padding(8, 8, 8, 8)
+        Me.dgv_materias.Location = New System.Drawing.Point(127, 175)
+        Me.dgv_materias.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgv_materias.Name = "dgv_materias"
         Me.dgv_materias.RowHeadersVisible = False
         Me.dgv_materias.RowHeadersWidth = 82
-        Me.dgv_materias.Size = New System.Drawing.Size(1292, 333)
+        Me.dgv_materias.Size = New System.Drawing.Size(646, 173)
         Me.dgv_materias.TabIndex = 38
         '
         'ID
@@ -282,7 +279,7 @@ Partial Class Panel_Materias
         '
         'Panel_Materias
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.Controls.Add(Me.txt_ID_Materias)
@@ -293,9 +290,8 @@ Partial Class Panel_Materias
         Me.Controls.Add(Me.btnEliminarMateria)
         Me.Controls.Add(Me.btnEditarMateria)
         Me.Controls.Add(Me.btnGuardarMateria)
-        Me.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.Name = "Panel_Materias"
-        Me.Size = New System.Drawing.Size(1670, 883)
+        Me.Size = New System.Drawing.Size(835, 459)
         CType(Me.ErrorMaterias, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv_materias, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

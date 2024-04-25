@@ -117,6 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnMySql.vb" />
+    <Compile Include="Datos_Asignar.vb" />
     <Compile Include="Datos_Estudiantes.vb" />
     <Compile Include="Datos_Materias.vb" />
     <Compile Include="Datos_Usuario.vb" />

@@ -64,6 +64,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsignarModelo.vb" />
     <Compile Include="EstudianteModelo.vb" />
     <Compile Include="MateriaModelo.vb" />
     <Compile Include="UsuarioModelo.vb" />

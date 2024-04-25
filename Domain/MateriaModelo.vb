@@ -1,7 +1,6 @@
 ﻿Imports DataAcces
 
 Public Class MateriaModelo
-
     Public Function Dominio_InsertarMateria(nombre As String, codigo As String, creditos As Integer) As Boolean
         Dim datosMateria As New Datos_Materias()
         Return datosMateria.InsertarMateria(nombre, codigo, creditos)
@@ -26,11 +25,5 @@ Public Class MateriaModelo
         Dim datosMateria As New Datos_Materias()
         Return datosMateria.ContarMaterias()
     End Function
-
-    Public Function VistaMateriasID() As DataTable
-        Dim datosMateria As New Datos_Materias()
-        Return datosMateria.VistaMateriasID()
-    End Function
-
 
 End Class

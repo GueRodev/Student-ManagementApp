@@ -114,7 +114,6 @@ Public Class Panel_Materias
         Return Not nombre.Any(Function(c) Char.IsDigit(c)) AndAlso nombre.Length <= longitudMaxima
     End Function
 
-
     Private Function EsCodigoValido(codigo As String) As Boolean
         ' Validar el formato del código de la materia (2 letras mayúsculas, 1 caracter "-", y 4 números)
         Dim formatoEsperado As String = "XX-0000" ' XX representa letras mayúsculas y 0000 representa dígitos
@@ -203,8 +202,6 @@ Public Class Panel_Materias
         End If
     End Sub
 
-
-
     Private Sub btnEliminarMateria_Click(sender As Object, e As EventArgs) Handles btnEliminarMateria.Click
         ' Obtener el ID de la materia seleccionada en el DataGridView
         Dim idMateria As Integer
@@ -260,7 +257,6 @@ Public Class Panel_Materias
         Dim dtMaterias As DataTable = materiaModelo.Dominio_ObtenerMaterias()
         dgv_materias.DataSource = dtMaterias
     End Sub
-
 
 
 End Class
