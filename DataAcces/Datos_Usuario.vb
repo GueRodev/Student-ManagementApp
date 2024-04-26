@@ -48,6 +48,18 @@ Public Class Datos_Usuario
     Public Function RegistrarUsuario(Usuario As String, Password As String, Email As String) As Boolean
 
         Try
+
+            ' Verificar si ya existe un usuario con el mismo nombre de usuario o correo electrónico
+            If ExisteUsuarioPorNombreUsuario(Usuario) Then
+                MsgBox("Error al guardar el usuario.")
+                Return False
+            End If
+
+            If ExisteUsuarioPorCorreoElectronico(Email) Then
+                MsgBox("Error al guardar el correo.")
+                Return False
+            End If
+
             Using connection = GetConnection()
                 connection.Open()
                 Using command = New MySqlCommand()
@@ -100,6 +112,13 @@ Public Class Datos_Usuario
 
     Public Function ActualizarUsuario(id As Integer, usuario As String, email As String) As Boolean
         Try
+
+            ' Verificar si ya existe un usuario con el mismo correo electrónico, excluyendo al usuario actual
+            If ExisteUsuarioPorCorreoElectronicoExcluyendoId(email, id) Then
+                MsgBox("Error al actualizar el correo.")
+                Return False
+            End If
+
             Using connection = GetConnection()
                 connection.Open()
                 Using command = New MySqlCommand()
@@ -151,6 +170,68 @@ Public Class Datos_Usuario
             End Using
         End Using
         Return count
+    End Function
+
+
+    Public Function ExisteUsuarioPorNombreUsuario(Usuario As String) As Boolean
+        Dim query As String = "SELECT COUNT(*) FROM usuarios WHERE Usuario = @Usuario"
+        Dim count As Integer
+
+        Try
+            Using connection = GetConnection()
+                connection.Open()
+                Using command = New MySqlCommand(query, connection)
+                    command.Parameters.AddWithValue("@Usuario", Usuario)
+                    count = Convert.ToInt32(command.ExecuteScalar())
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox("Error al verificar la existencia del usuario por nombre de usuario: " & ex.Message)
+            Return False
+        End Try
+
+        Return count > 0
+    End Function
+
+    Public Function ExisteUsuarioPorCorreoElectronico(Email As String) As Boolean
+        Dim query As String = "SELECT COUNT(*) FROM usuarios WHERE Email = @Email"
+        Dim count As Integer
+
+        Try
+            Using connection = GetConnection()
+                connection.Open()
+                Using command = New MySqlCommand(query, connection)
+                    command.Parameters.AddWithValue("@Email", Email)
+                    count = Convert.ToInt32(command.ExecuteScalar())
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox("Error al verificar la existencia del usuario por correo electrónico: " & ex.Message)
+            Return False
+        End Try
+
+        Return count > 0
+    End Function
+
+    Public Function ExisteUsuarioPorCorreoElectronicoExcluyendoId(Email As String, id As Integer) As Boolean
+        Dim query As String = "SELECT COUNT(*) FROM usuarios WHERE Email = @Email AND ID != @ID"
+        Dim count As Integer
+
+        Try
+            Using connection = GetConnection()
+                connection.Open()
+                Using command = New MySqlCommand(query, connection)
+                    command.Parameters.AddWithValue("@Email", Email)
+                    command.Parameters.AddWithValue("@ID", id)
+                    count = Convert.ToInt32(command.ExecuteScalar())
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox("Error al verificar la existencia del usuario por correo electrónico excluyendo ID: " & ex.Message)
+            Return False
+        End Try
+
+        Return count > 0
     End Function
 
 

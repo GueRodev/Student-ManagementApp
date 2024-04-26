@@ -38,6 +38,18 @@ Public Class UsuarioModelo
         Return datosUsuario.ContarUsuarios()
     End Function
 
+    Public Function ExisteUsuarioPorNombreUsuario(Usuario As String) As Boolean
+        Return datos_usuario.ExisteUsuarioPorNombreUsuario(Usuario)
+    End Function
+
+    Public Function ExisteUsuarioPorCorreoElectronico(Email As String) As Boolean
+        Return datos_usuario.ExisteUsuarioPorCorreoElectronico(Email)
+    End Function
+
+    Public Function ExisteUsuarioPorCorreoElectronicoExcluyendoId(Email As String, id As Integer) As Boolean
+        Return datos_usuario.ExisteUsuarioPorCorreoElectronicoExcluyendoId(Email, id)
+    End Function
+
 
     Public Function Encrypt(Encryptation As String) As String
         Dim msg As String = String.Empty

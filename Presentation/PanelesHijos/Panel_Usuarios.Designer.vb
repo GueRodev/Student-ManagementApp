@@ -23,8 +23,8 @@ Partial Class Panel_Usuarios
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Panel_Usuarios))
         Me.dgv_usuarios = New System.Windows.Forms.DataGridView()
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -39,6 +39,7 @@ Partial Class Panel_Usuarios
         Me.txt_ID_Usuario = New Guna.UI2.WinForms.Guna2TextBox()
         Me.ErrorIconoUsuario = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.txtGuardarPasswordUsuario = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.btnLimpiarUsuario = New Guna.UI2.WinForms.Guna2GradientButton()
         CType(Me.dgv_usuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorIconoUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -50,24 +51,24 @@ Partial Class Panel_Usuarios
         Me.dgv_usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv_usuarios.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.dgv_usuarios.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_usuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_usuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgv_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_usuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Usuario, Me.Email, Me.Rol})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSeaGreen
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_usuarios.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSeaGreen
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_usuarios.DefaultCellStyle = DataGridViewCellStyle4
         Me.dgv_usuarios.EnableHeadersVisualStyles = False
         Me.dgv_usuarios.GridColor = System.Drawing.Color.White
         Me.dgv_usuarios.Location = New System.Drawing.Point(127, 175)
@@ -152,7 +153,7 @@ Partial Class Panel_Usuarios
         Me.btnEditarUsuario.Name = "btnEditarUsuario"
         Me.btnEditarUsuario.Size = New System.Drawing.Size(93, 23)
         Me.btnEditarUsuario.TabIndex = 15
-        Me.btnEditarUsuario.Text = "Editar"
+        Me.btnEditarUsuario.Text = "Actualizar"
         '
         'btnEliminarUsuario
         '
@@ -271,11 +272,33 @@ Partial Class Panel_Usuarios
         Me.txtGuardarPasswordUsuario.Size = New System.Drawing.Size(196, 21)
         Me.txtGuardarPasswordUsuario.TabIndex = 18
         '
+        'btnLimpiarUsuario
+        '
+        Me.btnLimpiarUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnLimpiarUsuario.AutoRoundedCorners = True
+        Me.btnLimpiarUsuario.BorderRadius = 10
+        Me.btnLimpiarUsuario.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLimpiarUsuario.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnLimpiarUsuario.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnLimpiarUsuario.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnLimpiarUsuario.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnLimpiarUsuario.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnLimpiarUsuario.FillColor = System.Drawing.Color.Goldenrod
+        Me.btnLimpiarUsuario.FillColor2 = System.Drawing.Color.Yellow
+        Me.btnLimpiarUsuario.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btnLimpiarUsuario.ForeColor = System.Drawing.Color.White
+        Me.btnLimpiarUsuario.Image = CType(resources.GetObject("btnLimpiarUsuario.Image"), System.Drawing.Image)
+        Me.btnLimpiarUsuario.Location = New System.Drawing.Point(425, 110)
+        Me.btnLimpiarUsuario.Name = "btnLimpiarUsuario"
+        Me.btnLimpiarUsuario.Size = New System.Drawing.Size(51, 23)
+        Me.btnLimpiarUsuario.TabIndex = 35
+        '
         'Panel_Usuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.Controls.Add(Me.btnLimpiarUsuario)
         Me.Controls.Add(Me.txt_ID_Usuario)
         Me.Controls.Add(Me.txtGuardarEmailUsuario)
         Me.Controls.Add(Me.txtGuardarPasswordUsuario)
@@ -306,4 +329,5 @@ Partial Class Panel_Usuarios
     Friend WithEvents Usuario As DataGridViewTextBoxColumn
     Friend WithEvents Email As DataGridViewTextBoxColumn
     Friend WithEvents Rol As DataGridViewTextBoxColumn
+    Friend WithEvents btnLimpiarUsuario As Guna.UI2.WinForms.Guna2GradientButton
 End Class

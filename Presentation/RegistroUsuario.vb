@@ -86,6 +86,18 @@ Public Class RegistroUsuario
             ' Llamar al método dominio_Registrar para registrar el nuevo usuario con la contraseña encriptada
             Dim registroExitoso As Boolean = usuarioModelo.dominio_Registrar(usuario, contraseña, email)
 
+            ' Verificar si ya existe un usuario con el mismo nombre de usuario
+            If usuarioModelo.ExisteUsuarioPorNombreUsuario(usuario) Then
+                MessageBox.Show("Ya existe un usuario con el mismo nombre de usuario.", "Error de usuario", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+
+            ' Verificar si ya existe un usuario con el mismo correo electrónico
+            If usuarioModelo.ExisteUsuarioPorCorreoElectronico(email) Then
+                MessageBox.Show("Ya existe un usuario con el mismo correo electrónico.", "Error de correo electrónico", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+
             ' Verificar si el registro fue exitoso
             If registroExitoso Then
                 MessageBox.Show("Usuario registrado correctamente.")

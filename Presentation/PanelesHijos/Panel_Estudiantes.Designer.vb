@@ -23,9 +23,9 @@ Partial Class Panel_Estudiantes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Panel_Estudiantes))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Panel_Estudiantes))
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.txt_ID_Estudiante = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtNombreEstudiante = New Guna.UI2.WinForms.Guna2TextBox()
@@ -33,11 +33,6 @@ Partial Class Panel_Estudiantes
         Me.btnEditarEstudiante = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.btnGuardarEstudiante = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.dgv_estudiantes = New System.Windows.Forms.DataGridView()
-        Me.txtApellidosEstudiante = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.txtIdentificacionEstudiante = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.txtCorreoEstudiante = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.txtCarreraEstudiante = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.txtFechaEstudiante = New Guna.UI2.WinForms.Guna2TextBox()
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Apellidos = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -45,6 +40,12 @@ Partial Class Panel_Estudiantes
         Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Carrera = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Fecha_Ingreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txtApellidosEstudiante = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtIdentificacionEstudiante = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtCorreoEstudiante = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtCarreraEstudiante = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtFechaEstudiante = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.btnLimpiarEstudiante = New Guna.UI2.WinForms.Guna2GradientButton()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_estudiantes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -135,11 +136,11 @@ Partial Class Panel_Estudiantes
         Me.btnEditarEstudiante.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnEditarEstudiante.ForeColor = System.Drawing.Color.White
         Me.btnEditarEstudiante.Image = CType(resources.GetObject("btnEditarEstudiante.Image"), System.Drawing.Image)
-        Me.btnEditarEstudiante.Location = New System.Drawing.Point(612, 110)
+        Me.btnEditarEstudiante.Location = New System.Drawing.Point(611, 110)
         Me.btnEditarEstudiante.Name = "btnEditarEstudiante"
         Me.btnEditarEstudiante.Size = New System.Drawing.Size(93, 23)
         Me.btnEditarEstudiante.TabIndex = 23
-        Me.btnEditarEstudiante.Text = "Editar"
+        Me.btnEditarEstudiante.Text = "Actualizar"
         '
         'btnGuardarEstudiante
         '
@@ -196,6 +197,62 @@ Partial Class Panel_Estudiantes
         Me.dgv_estudiantes.RowHeadersVisible = False
         Me.dgv_estudiantes.Size = New System.Drawing.Size(677, 169)
         Me.dgv_estudiantes.TabIndex = 21
+        '
+        'ID
+        '
+        Me.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ID.DataPropertyName = "ID"
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        '
+        'Nombre
+        '
+        Me.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Nombre.DataPropertyName = "Nombre"
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.ReadOnly = True
+        '
+        'Apellidos
+        '
+        Me.Apellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Apellidos.DataPropertyName = "Apellidos"
+        Me.Apellidos.HeaderText = "Apellidos"
+        Me.Apellidos.Name = "Apellidos"
+        Me.Apellidos.ReadOnly = True
+        '
+        'Identificacion
+        '
+        Me.Identificacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Identificacion.DataPropertyName = "Identificacion"
+        Me.Identificacion.HeaderText = "Identificacion"
+        Me.Identificacion.Name = "Identificacion"
+        Me.Identificacion.ReadOnly = True
+        '
+        'Correo
+        '
+        Me.Correo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Correo.DataPropertyName = "Correo"
+        Me.Correo.HeaderText = "Correo"
+        Me.Correo.Name = "Correo"
+        Me.Correo.ReadOnly = True
+        '
+        'Carrera
+        '
+        Me.Carrera.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Carrera.DataPropertyName = "Carrera"
+        Me.Carrera.HeaderText = "Carrera"
+        Me.Carrera.Name = "Carrera"
+        Me.Carrera.ReadOnly = True
+        '
+        'Fecha_Ingreso
+        '
+        Me.Fecha_Ingreso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Fecha_Ingreso.DataPropertyName = "Fecha_Ingreso"
+        Me.Fecha_Ingreso.HeaderText = "Fecha_Ingreso"
+        Me.Fecha_Ingreso.Name = "Fecha_Ingreso"
+        Me.Fecha_Ingreso.ReadOnly = True
         '
         'txtApellidosEstudiante
         '
@@ -307,67 +364,33 @@ Partial Class Panel_Estudiantes
         Me.txtFechaEstudiante.Size = New System.Drawing.Size(95, 21)
         Me.txtFechaEstudiante.TabIndex = 33
         '
-        'ID
+        'btnLimpiarEstudiante
         '
-        Me.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.ID.DataPropertyName = "ID"
-        Me.ID.HeaderText = "ID"
-        Me.ID.Name = "ID"
-        Me.ID.ReadOnly = True
-        '
-        'Nombre
-        '
-        Me.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Nombre.DataPropertyName = "Nombre"
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.ReadOnly = True
-        '
-        'Apellidos
-        '
-        Me.Apellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Apellidos.DataPropertyName = "Apellidos"
-        Me.Apellidos.HeaderText = "Apellidos"
-        Me.Apellidos.Name = "Apellidos"
-        Me.Apellidos.ReadOnly = True
-        '
-        'Identificacion
-        '
-        Me.Identificacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Identificacion.DataPropertyName = "Identificacion"
-        Me.Identificacion.HeaderText = "Identificacion"
-        Me.Identificacion.Name = "Identificacion"
-        Me.Identificacion.ReadOnly = True
-        '
-        'Correo
-        '
-        Me.Correo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Correo.DataPropertyName = "Correo"
-        Me.Correo.HeaderText = "Correo"
-        Me.Correo.Name = "Correo"
-        Me.Correo.ReadOnly = True
-        '
-        'Carrera
-        '
-        Me.Carrera.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Carrera.DataPropertyName = "Carrera"
-        Me.Carrera.HeaderText = "Carrera"
-        Me.Carrera.Name = "Carrera"
-        Me.Carrera.ReadOnly = True
-        '
-        'Fecha_Ingreso
-        '
-        Me.Fecha_Ingreso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Fecha_Ingreso.DataPropertyName = "Fecha_Ingreso"
-        Me.Fecha_Ingreso.HeaderText = "Fecha_Ingreso"
-        Me.Fecha_Ingreso.Name = "Fecha_Ingreso"
-        Me.Fecha_Ingreso.ReadOnly = True
+        Me.btnLimpiarEstudiante.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnLimpiarEstudiante.AutoRoundedCorners = True
+        Me.btnLimpiarEstudiante.BorderRadius = 10
+        Me.btnLimpiarEstudiante.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLimpiarEstudiante.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnLimpiarEstudiante.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnLimpiarEstudiante.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnLimpiarEstudiante.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnLimpiarEstudiante.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnLimpiarEstudiante.FillColor = System.Drawing.Color.Goldenrod
+        Me.btnLimpiarEstudiante.FillColor2 = System.Drawing.Color.Yellow
+        Me.btnLimpiarEstudiante.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btnLimpiarEstudiante.ForeColor = System.Drawing.Color.White
+        Me.btnLimpiarEstudiante.Image = CType(resources.GetObject("btnLimpiarEstudiante.Image"), System.Drawing.Image)
+        Me.btnLimpiarEstudiante.Location = New System.Drawing.Point(455, 110)
+        Me.btnLimpiarEstudiante.Name = "btnLimpiarEstudiante"
+        Me.btnLimpiarEstudiante.Size = New System.Drawing.Size(51, 23)
+        Me.btnLimpiarEstudiante.TabIndex = 34
         '
         'Panel_Estudiantes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.Controls.Add(Me.btnLimpiarEstudiante)
         Me.Controls.Add(Me.txtFechaEstudiante)
         Me.Controls.Add(Me.txtCarreraEstudiante)
         Me.Controls.Add(Me.txtCorreoEstudiante)
@@ -405,4 +428,5 @@ Partial Class Panel_Estudiantes
     Friend WithEvents Correo As DataGridViewTextBoxColumn
     Friend WithEvents Carrera As DataGridViewTextBoxColumn
     Friend WithEvents Fecha_Ingreso As DataGridViewTextBoxColumn
+    Friend WithEvents btnLimpiarEstudiante As Guna.UI2.WinForms.Guna2GradientButton
 End Class

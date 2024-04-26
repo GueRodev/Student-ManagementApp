@@ -233,6 +233,7 @@ Public Class Panel_Materias
 
     Private Sub LimpiarCamposMateria()
         ' Limpiar los campos del formulario de materias
+        txt_ID_Materias.Clear()
         txtNombreMateria.Clear()
         txtCodigoMateria.Clear()
         txtCreditosMateria.Clear()
@@ -258,5 +259,7 @@ Public Class Panel_Materias
         dgv_materias.DataSource = dtMaterias
     End Sub
 
-
+    Private Sub btnLimpiarMaterias_Click(sender As Object, e As EventArgs) Handles btnLimpiarMaterias.Click
+        LimpiarCamposMateria()
+    End Sub
 End Class

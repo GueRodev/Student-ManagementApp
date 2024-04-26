@@ -80,10 +80,18 @@ Public Class Panel_Estudiantes
         Dim correo As String = txtCorreoEstudiante.Text
         Dim carrera As String = txtCarreraEstudiante.Text
 
+        ' Instanciar EstudianteModelo
+        Dim estudianteModelo As New EstudianteModelo()
+
+        ' Validar que los campos no estén vacíos
+        If String.IsNullOrWhiteSpace(nombre) OrElse String.IsNullOrWhiteSpace(apellidos) OrElse String.IsNullOrWhiteSpace(identificacion) OrElse String.IsNullOrWhiteSpace(correo) OrElse String.IsNullOrWhiteSpace(carrera) Then
+            MessageBox.Show("Por favor, complete todos los campos.")
+            Return
+        End If
 
         ' Validar que el nombre y el apellido no contengan números enteros y no excedan los 16 caracteres
         If Not EsNombreValido(nombre) Or Not EsNombreValido(apellidos) Then
-            MessageBox.Show("El nombre y el apellido no pueden contener números enteros y deben tener máximo 16 caracteres.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("El nombre y el apellido no pueden contener números y deben tener máximo 16 caracteres.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return ' Cancelar la operación si no se cumple la validación
         End If
 
@@ -93,10 +101,22 @@ Public Class Panel_Estudiantes
             Return ' Cancelar la operación si no se cumple la validación
         End If
 
+        ' Verificar si ya existe un estudiante con el mismo correo electrónico
+        If estudianteModelo.ExisteEstudiantePorCorreo(correo) Then
+            MessageBox.Show("Ya existe un estudiante con ese correo electrónico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
         ' Validar que la identificación sea válida
         If Not EsIdentificacionValida(identificacion) Then
-            MessageBox.Show("La identificación debe ser un número entero de máximo 10 dígitos.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("La identificación debe ser un número de máximo 10 dígitos.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return ' Cancelar la operación si no se cumple la validación
+        End If
+
+        ' Verificar si ya existe un estudiante con la misma identificación
+        If Not String.IsNullOrEmpty(identificacion) AndAlso EstudianteModelo.ExisteEstudiantePorIdentificacion(identificacion) Then
+            MessageBox.Show("Ya existe un estudiante con esa identificación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
         End If
 
         ' Validar que el campo de carrera no esté vacío y cumpla con los requisitos de longitud y contenido
@@ -118,8 +138,6 @@ Public Class Panel_Estudiantes
             MessageBox.Show("El campo de fecha de ingreso no puede estar vacío.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return ' Cancelar la operación si no se cumple la validación
         End If
-        ' Instanciar EstudianteModelo
-        Dim estudianteModelo As New EstudianteModelo()
 
         ' Llamar al método Dominio_InsertarEstudiante para guardar el nuevo estudiante
         Dim insercionExitosa As Boolean = estudianteModelo.dominio_InsertarEstudiante(nombre, apellidos, identificacion, correo, carrera, fechaIngreso)
@@ -179,10 +197,11 @@ Public Class Panel_Estudiantes
         End If
     End Sub
 
-
     Private Sub btnEditarEstudiante_Click(sender As Object, e As EventArgs) Handles btnEditarEstudiante.Click
+
         ' Obtener el ID del estudiante seleccionado en el DataGridView
         Dim idEstudiante As Integer
+
         If Integer.TryParse(txt_ID_Estudiante.Text, idEstudiante) AndAlso idEstudiante > 0 Then
             ' Obtener los datos del estudiante desde los campos del formulario
             Dim nombre As String = txtNombreEstudiante.Text
@@ -191,6 +210,15 @@ Public Class Panel_Estudiantes
             Dim correo As String = txtCorreoEstudiante.Text
             Dim carrera As String = txtCarreraEstudiante.Text
 
+            ' Validar si el usuario está seguro de guardar el estudiante
+            Dim confirmacion As DialogResult = MessageBox.Show($"¿Está seguro de que desea Actualizar {nombre} {apellidos}", "Confirmar Actualizacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If confirmacion = DialogResult.No Then
+                Return ' Cancelar la operación si el usuario no está seguro
+            End If
+
+
+            ' Instanciar EstudianteModelo
+            Dim estudianteModelo As New EstudianteModelo()
 
             ' Validar que los campos no estén vacíos
             If String.IsNullOrWhiteSpace(nombre) OrElse String.IsNullOrWhiteSpace(apellidos) OrElse String.IsNullOrWhiteSpace(identificacion) OrElse String.IsNullOrWhiteSpace(correo) OrElse String.IsNullOrWhiteSpace(carrera) Then
@@ -198,16 +226,28 @@ Public Class Panel_Estudiantes
                 Return
             End If
 
-            ' Validar que la identificación sea válida
-            If Not EsIdentificacionValida(identificacion) Then
-                MessageBox.Show("La identificación debe ser un número entero de máximo 10 dígitos.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ' Validar que el nombre y el apellido no contengan números enteros y no excedan los 16 caracteres
+            If Not EsNombreValido(nombre) Or Not EsNombreValido(apellidos) Then
+                MessageBox.Show("El nombre y el apellido no pueden contener números y deben tener máximo 16 caracteres.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return
             End If
 
-            ' Validar que el nombre y el apellido no contengan números enteros y no excedan los 16 caracteres
-            If Not EsNombreValido(nombre) Or Not EsNombreValido(apellidos) Then
-                MessageBox.Show("El nombre y el apellido no pueden contener números enteros y deben tener máximo 16 caracteres.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ' Validar que la identificación sea válida
+            If Not EsIdentificacionValida(identificacion) Then
+                MessageBox.Show("La identificación debe ser un número de máximo 10 dígitos.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return
+            End If
+
+            'Obtener el estudiante actual por su ID
+            Dim estudianteActual As DataRow = estudianteModelo.dominio_ObtenerEstudiantePorId(idEstudiante)
+
+            ' Verificar si se está editando la identificación del estudiante actual
+            If estudianteActual IsNot Nothing AndAlso identificacion <> estudianteActual("Identificacion").ToString() Then
+                ' Verificar si ya existe un estudiante con la nueva identificación
+                If estudianteModelo.ExisteEstudiantePorIdentificacion(identificacion) Then
+                    MessageBox.Show("Ya existe un estudiante con esa identificación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
             End If
 
             ' Validar el formato del correo electrónico
@@ -215,6 +255,14 @@ Public Class Panel_Estudiantes
                 MessageBox.Show("Ingrese un correo electrónico válido.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return
             End If
+
+            ' Verificar si ya existe un estudiante con el mismo correo electrónico, excluyendo al estudiante actual
+            If estudianteModelo.ExisteEstudiantePorCorreoExcluyendoId(correo, idEstudiante) Then
+                MessageBox.Show("Ya existe un estudiante con ese correo electrónico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+
+
 
             ' Validar que el campo de carrera no esté vacío y cumpla con los requisitos de longitud y contenido
             If String.IsNullOrWhiteSpace(carrera) OrElse carrera.Length > 30 OrElse Not EsNombreValido(carrera) Then
@@ -235,9 +283,6 @@ Public Class Panel_Estudiantes
                 MessageBox.Show("El campo de fecha de ingreso no puede estar vacío.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return ' Cancelar la operación si no se cumple la validación
             End If
-
-            ' Instanciar EstudianteModelo
-            Dim estudianteModelo As New EstudianteModelo()
 
             ' Llamar al método dominio_ActualizarEstudiante para actualizar los datos del estudiante
             Dim actualizacionExitosa As Boolean = estudianteModelo.dominio_ActualizarEstudiante(idEstudiante, nombre, apellidos, identificacion, correo, carrera, fechaIngreso)
@@ -264,7 +309,9 @@ Public Class Panel_Estudiantes
         Dim idEstudiante As Integer
         If Integer.TryParse(txt_ID_Estudiante.Text, idEstudiante) AndAlso idEstudiante > 0 Then
             ' Mostrar un cuadro de diálogo de confirmación
-            Dim respuesta As DialogResult = MessageBox.Show("¿Estás seguro de que deseas eliminar este estudiante?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            Dim nombre As String = txtNombreEstudiante.Text
+            Dim apellidos As String = txtApellidosEstudiante.Text
+            Dim respuesta As DialogResult = MessageBox.Show($"¿Estás seguro de que deseas eliminar a {nombre} {apellidos}?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
             ' Verificar si se confirmó la eliminación
             If respuesta = DialogResult.Yes Then
@@ -299,4 +346,7 @@ Public Class Panel_Estudiantes
         dgv_estudiantes.DataSource = dtEstudiantes
     End Sub
 
+    Private Sub btnLimpiarEstudiante_Click(sender As Object, e As EventArgs) Handles btnLimpiarEstudiante.Click
+        LimpiarCampos()
+    End Sub
 End Class

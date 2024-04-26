@@ -201,5 +201,12 @@ Public Class FormPrincipal
         AddUserControl(panelInicio)
     End Sub
 
-
+    Private Sub btn_LogoCerrarSesion_Click(sender As Object, e As EventArgs) Handles btn_LogoCerrarSesion.Click
+        Dim opcion As DialogResult
+        opcion = MessageBox.Show("Esta seguro que desea Cerrar Sesion?", "Cerrar Sesion",
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If (opcion = DialogResult.Yes) Then
+            Me.Close()
+        End If
+    End Sub
 End Class

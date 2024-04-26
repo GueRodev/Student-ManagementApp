@@ -29,4 +29,26 @@ Public Class EstudianteModelo
         Return datosEstudiante.ContarEstudiantes()
     End Function
 
+    Public Function ExisteEstudiantePorIdentificacion(identificacion As String) As Boolean
+        Dim datosEstudiantes As New Datos_Estudiantes()
+        Return datosEstudiantes.ExisteEstudiantePorIdentificacion(identificacion)
+    End Function
+
+    Public Function dominio_ObtenerEstudiantePorId(id As Integer) As DataRow
+        Dim datosEstudiante As New Datos_Estudiantes()
+        Return datosEstudiante.ObtenerEstudiantePorId(id)
+    End Function
+
+    Public Function ExisteEstudiantePorCorreo(correo As String) As Boolean
+        Dim datosEstudiantes As New Datos_Estudiantes()
+        Return datosEstudiantes.ExisteEstudiantePorCorreo(correo)
+    End Function
+
+    Public Function ExisteEstudiantePorCorreoExcluyendoId(correo As String, id As Integer) As Boolean
+        Dim datosEstudiantes As New Datos_Estudiantes()
+        Return datosEstudiantes.ExisteEstudiantePorCorreoExcluyendoId(correo, id)
+    End Function
+
+
+
 End Class

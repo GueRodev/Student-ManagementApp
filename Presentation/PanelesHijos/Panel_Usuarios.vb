@@ -93,6 +93,18 @@ Public Class Panel_Usuarios
             ' Llamar al método dominio_Registrar para registrar el nuevo usuario con la contraseña encriptada
             Dim registroExitoso As Boolean = usuarioModelo.dominio_Registrar(usuario, contraseña, email)
 
+            ' Verificar si ya existe un usuario con el mismo nombre de usuario
+            If usuarioModelo.ExisteUsuarioPorNombreUsuario(usuario) Then
+                MessageBox.Show("Ya existe un usuario con el mismo nombre de usuario.", "Error de usuario", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+
+            ' Verificar si ya existe un usuario con el mismo correo electrónico
+            If usuarioModelo.ExisteUsuarioPorCorreoElectronico(email) Then
+                MessageBox.Show("Ya existe un usuario con el mismo correo electrónico.", "Error de correo electrónico", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+
             ' Verificar si el registro fue exitoso
             If registroExitoso Then
                 MessageBox.Show("Usuario registrado correctamente.")
@@ -206,6 +218,11 @@ Public Class Panel_Usuarios
 
                 ' Instanciar UsuarioModelo
                 Dim usuarioModelo As New UsuarioModelo()
+                ' Verificar si ya existe un usuario con el mismo correo electrónico excluyendo el ID actual
+                If usuarioModelo.ExisteUsuarioPorCorreoElectronicoExcluyendoId(email, idUsuario) Then
+                    MessageBox.Show("Ya existe un usuario con el mismo correo electrónico.", "Error de correo electrónico", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
 
                 ' Llamar al método dominio_ActualizarUsuario para actualizar los datos del usuario
                 Dim actualizacionExitosa As Boolean = usuarioModelo.dominio_ActualizarUsuario(idUsuario, usuario, email)
@@ -270,5 +287,7 @@ Public Class Panel_Usuarios
         dgv_usuarios.DataSource = dtUsuarios
     End Sub
 
-
+    Private Sub btnLimpiarUsuario_Click(sender As Object, e As EventArgs) Handles btnLimpiarUsuario.Click
+        LimpiarCampos()
+    End Sub
 End Class

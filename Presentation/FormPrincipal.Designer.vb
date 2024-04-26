@@ -40,7 +40,7 @@ Partial Class FormPrincipal
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PanelLogo = New System.Windows.Forms.Panel()
-        Me.Guna2CircleButton1 = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.btn_LogoCerrarSesion = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.lbl_Rol = New System.Windows.Forms.Label()
         Me.lbl_Usuario = New System.Windows.Forms.Label()
         Me.PanelButtons = New System.Windows.Forms.Panel()
@@ -196,7 +196,7 @@ Partial Class FormPrincipal
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.Location = New System.Drawing.Point(656, -1)
-        Me.btnSalir.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnSalir.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(38, 27)
         Me.btnSalir.TabIndex = 5
@@ -211,7 +211,7 @@ Partial Class FormPrincipal
         Me.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMinimizar.Image = CType(resources.GetObject("btnMinimizar.Image"), System.Drawing.Image)
         Me.btnMinimizar.Location = New System.Drawing.Point(588, -2)
-        Me.btnMinimizar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnMinimizar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnMinimizar.Name = "btnMinimizar"
         Me.btnMinimizar.Size = New System.Drawing.Size(38, 27)
         Me.btnMinimizar.TabIndex = 6
@@ -226,7 +226,7 @@ Partial Class FormPrincipal
         Me.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMaximizar.Image = CType(resources.GetObject("btnMaximizar.Image"), System.Drawing.Image)
         Me.btnMaximizar.Location = New System.Drawing.Point(626, -2)
-        Me.btnMaximizar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnMaximizar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnMaximizar.Name = "btnMaximizar"
         Me.btnMaximizar.Size = New System.Drawing.Size(31, 27)
         Me.btnMaximizar.TabIndex = 7
@@ -286,7 +286,7 @@ Partial Class FormPrincipal
         Me.PanelLogo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelLogo.BackColor = System.Drawing.Color.White
-        Me.PanelLogo.Controls.Add(Me.Guna2CircleButton1)
+        Me.PanelLogo.Controls.Add(Me.btn_LogoCerrarSesion)
         Me.PanelLogo.Controls.Add(Me.lbl_Rol)
         Me.PanelLogo.Controls.Add(Me.lbl_Usuario)
         Me.PanelLogo.Controls.Add(Me.Label1)
@@ -296,26 +296,26 @@ Partial Class FormPrincipal
         Me.PanelLogo.Size = New System.Drawing.Size(835, 38)
         Me.PanelLogo.TabIndex = 34
         '
-        'Guna2CircleButton1
+        'btn_LogoCerrarSesion
         '
-        Me.Guna2CircleButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Guna2CircleButton1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2CircleButton1.FillColor = System.Drawing.Color.Empty
-        Me.Guna2CircleButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2CircleButton1.ForeColor = System.Drawing.Color.White
-        Me.Guna2CircleButton1.HoverState.BorderColor = System.Drawing.Color.Transparent
-        Me.Guna2CircleButton1.HoverState.FillColor = System.Drawing.Color.DarkSeaGreen
-        Me.Guna2CircleButton1.Image = CType(resources.GetObject("Guna2CircleButton1.Image"), System.Drawing.Image)
-        Me.Guna2CircleButton1.ImageSize = New System.Drawing.Size(30, 30)
-        Me.Guna2CircleButton1.Location = New System.Drawing.Point(641, 0)
-        Me.Guna2CircleButton1.Name = "Guna2CircleButton1"
-        Me.Guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.Guna2CircleButton1.Size = New System.Drawing.Size(50, 38)
-        Me.Guna2CircleButton1.TabIndex = 43
+        Me.btn_LogoCerrarSesion.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_LogoCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_LogoCerrarSesion.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_LogoCerrarSesion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_LogoCerrarSesion.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_LogoCerrarSesion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_LogoCerrarSesion.FillColor = System.Drawing.Color.Empty
+        Me.btn_LogoCerrarSesion.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btn_LogoCerrarSesion.ForeColor = System.Drawing.Color.White
+        Me.btn_LogoCerrarSesion.HoverState.BorderColor = System.Drawing.Color.Transparent
+        Me.btn_LogoCerrarSesion.HoverState.FillColor = System.Drawing.Color.DarkSeaGreen
+        Me.btn_LogoCerrarSesion.Image = CType(resources.GetObject("btn_LogoCerrarSesion.Image"), System.Drawing.Image)
+        Me.btn_LogoCerrarSesion.ImageSize = New System.Drawing.Size(30, 30)
+        Me.btn_LogoCerrarSesion.Location = New System.Drawing.Point(641, 0)
+        Me.btn_LogoCerrarSesion.Name = "btn_LogoCerrarSesion"
+        Me.btn_LogoCerrarSesion.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.btn_LogoCerrarSesion.Size = New System.Drawing.Size(50, 38)
+        Me.btn_LogoCerrarSesion.TabIndex = 43
         '
         'lbl_Rol
         '
@@ -516,7 +516,7 @@ Partial Class FormPrincipal
     Friend WithEvents tmrMostrarMenu As Timer
     Friend WithEvents btnUsuarios As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents tmrHoraActual As Timer
-    Friend WithEvents Guna2CircleButton1 As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents btn_LogoCerrarSesion As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents lbl_Rol As Label
     Friend WithEvents lbl_Usuario As Label
 End Class
