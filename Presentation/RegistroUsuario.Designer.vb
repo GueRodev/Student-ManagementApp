@@ -167,7 +167,7 @@ Partial Class RegistroUsuario
         Me.txt_RegistroContrasena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txt_RegistroContrasena.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_RegistroContrasena.IconLeft = CType(resources.GetObject("txt_RegistroContrasena.IconLeft"), System.Drawing.Image)
-        Me.txt_RegistroContrasena.Location = New System.Drawing.Point(15, 180)
+        Me.txt_RegistroContrasena.Location = New System.Drawing.Point(15, 214)
         Me.txt_RegistroContrasena.Name = "txt_RegistroContrasena"
         Me.txt_RegistroContrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.txt_RegistroContrasena.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
@@ -191,7 +191,7 @@ Partial Class RegistroUsuario
         Me.txt_RegistroEmail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txt_RegistroEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_RegistroEmail.IconLeft = CType(resources.GetObject("txt_RegistroEmail.IconLeft"), System.Drawing.Image)
-        Me.txt_RegistroEmail.Location = New System.Drawing.Point(15, 222)
+        Me.txt_RegistroEmail.Location = New System.Drawing.Point(15, 176)
         Me.txt_RegistroEmail.Name = "txt_RegistroEmail"
         Me.txt_RegistroEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_RegistroEmail.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
