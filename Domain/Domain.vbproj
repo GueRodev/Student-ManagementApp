@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsignarModelo.vb" />
+    <Compile Include="EstadosModelo.vb" />
     <Compile Include="EstudianteModelo.vb" />
     <Compile Include="MateriaModelo.vb" />
     <Compile Include="UsuarioModelo.vb" />

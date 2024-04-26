@@ -28,27 +28,23 @@ Partial Class Panel_Estados
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgv_Estudiantes_Mostrar = New System.Windows.Forms.DataGridView()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Identificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnlEstadoEstudiantes = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.dgv_Estudiantes_Estados = New System.Windows.Forms.DataGridView()
         Me.btnBuscarIdentificacion = New Guna.UI2.WinForms.Guna2GradientButton()
-        Me.pnl_BuscarEstados = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.txt_Buscar_Identificacion = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estudiante = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Apellidos = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Materia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Identificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgv_Estudiantes_Mostrar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlEstadoEstudiantes.SuspendLayout()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_Estudiantes_Estados, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnl_BuscarEstados.SuspendLayout()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgv_Estudiantes_Mostrar
@@ -78,13 +74,31 @@ Partial Class Panel_Estados
         Me.dgv_Estudiantes_Mostrar.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_Estudiantes_Mostrar.EnableHeadersVisualStyles = False
         Me.dgv_Estudiantes_Mostrar.GridColor = System.Drawing.Color.White
-        Me.dgv_Estudiantes_Mostrar.Location = New System.Drawing.Point(478, 367)
-        Me.dgv_Estudiantes_Mostrar.Margin = New System.Windows.Forms.Padding(8)
+        Me.dgv_Estudiantes_Mostrar.Location = New System.Drawing.Point(210, 167)
+        Me.dgv_Estudiantes_Mostrar.Margin = New System.Windows.Forms.Padding(4)
         Me.dgv_Estudiantes_Mostrar.Name = "dgv_Estudiantes_Mostrar"
         Me.dgv_Estudiantes_Mostrar.RowHeadersVisible = False
         Me.dgv_Estudiantes_Mostrar.RowHeadersWidth = 82
-        Me.dgv_Estudiantes_Mostrar.Size = New System.Drawing.Size(989, 143)
+        Me.dgv_Estudiantes_Mostrar.Size = New System.Drawing.Size(494, 92)
         Me.dgv_Estudiantes_Mostrar.TabIndex = 39
+        '
+        'Nombre
+        '
+        Me.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Nombre.DataPropertyName = "Nombre"
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.MinimumWidth = 10
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.ReadOnly = True
+        '
+        'Identificacion
+        '
+        Me.Identificacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Identificacion.DataPropertyName = "Identificacion"
+        Me.Identificacion.HeaderText = "Identificacion"
+        Me.Identificacion.MinimumWidth = 10
+        Me.Identificacion.Name = "Identificacion"
+        Me.Identificacion.ReadOnly = True
         '
         'pnlEstadoEstudiantes
         '
@@ -95,34 +109,32 @@ Partial Class Panel_Estados
         Me.pnlEstadoEstudiantes.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(101, Byte), Integer))
         Me.pnlEstadoEstudiantes.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.pnlEstadoEstudiantes.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.pnlEstadoEstudiantes.Location = New System.Drawing.Point(799, 253)
-        Me.pnlEstadoEstudiantes.Margin = New System.Windows.Forms.Padding(6)
+        Me.pnlEstadoEstudiantes.Location = New System.Drawing.Point(210, 115)
         Me.pnlEstadoEstudiantes.Name = "pnlEstadoEstudiantes"
-        Me.pnlEstadoEstudiantes.Size = New System.Drawing.Size(315, 82)
+        Me.pnlEstadoEstudiantes.Size = New System.Drawing.Size(494, 52)
         Me.pnlEstadoEstudiantes.TabIndex = 40
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(112, 29)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(178, 8)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(168, 31)
+        Me.Label3.Size = New System.Drawing.Size(134, 37)
         Me.Label3.TabIndex = 34
-        Me.Label3.Text = "Estudiantes"
+        Me.Label3.Text = "ESTADOS"
         '
         'Guna2PictureBox2
         '
         Me.Guna2PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
         Me.Guna2PictureBox2.ImageRotate = 0!
-        Me.Guna2PictureBox2.Location = New System.Drawing.Point(4, 2)
-        Me.Guna2PictureBox2.Margin = New System.Windows.Forms.Padding(6)
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(2, 1)
         Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
-        Me.Guna2PictureBox2.Size = New System.Drawing.Size(104, 77)
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(52, 40)
         Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Guna2PictureBox2.TabIndex = 6
         Me.Guna2PictureBox2.TabStop = False
@@ -144,7 +156,7 @@ Partial Class Panel_Estados
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgv_Estudiantes_Estados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgv_Estudiantes_Estados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_Estudiantes_Estados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Estudiante, Me.Apellidos, Me.Materia, Me.Estado})
+        Me.dgv_Estudiantes_Estados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Estudiante, Me.Apellidos, Me.Materia, Me.Estado})
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSeaGreen
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -155,19 +167,19 @@ Partial Class Panel_Estados
         Me.dgv_Estudiantes_Estados.DefaultCellStyle = DataGridViewCellStyle4
         Me.dgv_Estudiantes_Estados.EnableHeadersVisualStyles = False
         Me.dgv_Estudiantes_Estados.GridColor = System.Drawing.Color.White
-        Me.dgv_Estudiantes_Estados.Location = New System.Drawing.Point(248, 662)
-        Me.dgv_Estudiantes_Estados.Margin = New System.Windows.Forms.Padding(8)
+        Me.dgv_Estudiantes_Estados.Location = New System.Drawing.Point(124, 308)
+        Me.dgv_Estudiantes_Estados.Margin = New System.Windows.Forms.Padding(4)
         Me.dgv_Estudiantes_Estados.Name = "dgv_Estudiantes_Estados"
         Me.dgv_Estudiantes_Estados.RowHeadersVisible = False
         Me.dgv_Estudiantes_Estados.RowHeadersWidth = 82
-        Me.dgv_Estudiantes_Estados.Size = New System.Drawing.Size(1364, 114)
+        Me.dgv_Estudiantes_Estados.Size = New System.Drawing.Size(682, 131)
         Me.dgv_Estudiantes_Estados.TabIndex = 41
         '
         'btnBuscarIdentificacion
         '
         Me.btnBuscarIdentificacion.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnBuscarIdentificacion.AutoRoundedCorners = True
-        Me.btnBuscarIdentificacion.BorderRadius = 34
+        Me.btnBuscarIdentificacion.BorderRadius = 9
         Me.btnBuscarIdentificacion.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBuscarIdentificacion.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btnBuscarIdentificacion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
@@ -179,59 +191,16 @@ Partial Class Panel_Estados
         Me.btnBuscarIdentificacion.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnBuscarIdentificacion.ForeColor = System.Drawing.Color.White
         Me.btnBuscarIdentificacion.Image = CType(resources.GetObject("btnBuscarIdentificacion.Image"), System.Drawing.Image)
-        Me.btnBuscarIdentificacion.Location = New System.Drawing.Point(1505, 579)
-        Me.btnBuscarIdentificacion.Margin = New System.Windows.Forms.Padding(6)
+        Me.btnBuscarIdentificacion.Location = New System.Drawing.Point(752, 275)
         Me.btnBuscarIdentificacion.Name = "btnBuscarIdentificacion"
-        Me.btnBuscarIdentificacion.Size = New System.Drawing.Size(99, 71)
+        Me.btnBuscarIdentificacion.Size = New System.Drawing.Size(54, 20)
         Me.btnBuscarIdentificacion.TabIndex = 42
-        '
-        'pnl_BuscarEstados
-        '
-        Me.pnl_BuscarEstados.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.pnl_BuscarEstados.Controls.Add(Me.Label1)
-        Me.pnl_BuscarEstados.Controls.Add(Me.Guna2PictureBox1)
-        Me.pnl_BuscarEstados.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(101, Byte), Integer))
-        Me.pnl_BuscarEstados.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(101, Byte), Integer))
-        Me.pnl_BuscarEstados.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.pnl_BuscarEstados.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.pnl_BuscarEstados.Location = New System.Drawing.Point(248, 569)
-        Me.pnl_BuscarEstados.Margin = New System.Windows.Forms.Padding(6)
-        Me.pnl_BuscarEstados.Name = "pnl_BuscarEstados"
-        Me.pnl_BuscarEstados.Size = New System.Drawing.Size(315, 79)
-        Me.pnl_BuscarEstados.TabIndex = 43
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(121, 33)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(120, 31)
-        Me.Label1.TabIndex = 34
-        Me.Label1.Text = "Estados"
-        '
-        'Guna2PictureBox1
-        '
-        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(4, 2)
-        Me.Guna2PictureBox1.Margin = New System.Windows.Forms.Padding(6)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(104, 77)
-        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Guna2PictureBox1.TabIndex = 6
-        Me.Guna2PictureBox1.TabStop = False
-        Me.Guna2PictureBox1.UseTransparentBackground = True
         '
         'txt_Buscar_Identificacion
         '
         Me.txt_Buscar_Identificacion.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txt_Buscar_Identificacion.AutoRoundedCorners = True
-        Me.txt_Buscar_Identificacion.BorderRadius = 21
+        Me.txt_Buscar_Identificacion.BorderRadius = 12
         Me.txt_Buscar_Identificacion.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txt_Buscar_Identificacion.DefaultText = ""
         Me.txt_Buscar_Identificacion.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -239,17 +208,23 @@ Partial Class Panel_Estados
         Me.txt_Buscar_Identificacion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_Buscar_Identificacion.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_Buscar_Identificacion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_Buscar_Identificacion.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_Buscar_Identificacion.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.txt_Buscar_Identificacion.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_Buscar_Identificacion.IconLeft = CType(resources.GetObject("txt_Buscar_Identificacion.IconLeft"), System.Drawing.Image)
-        Me.txt_Buscar_Identificacion.Location = New System.Drawing.Point(575, 592)
-        Me.txt_Buscar_Identificacion.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.txt_Buscar_Identificacion.Location = New System.Drawing.Point(133, 272)
         Me.txt_Buscar_Identificacion.Name = "txt_Buscar_Identificacion"
         Me.txt_Buscar_Identificacion.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_Buscar_Identificacion.PlaceholderText = ""
+        Me.txt_Buscar_Identificacion.PlaceholderText = "Buscar"
         Me.txt_Buscar_Identificacion.SelectedText = ""
-        Me.txt_Buscar_Identificacion.Size = New System.Drawing.Size(911, 44)
+        Me.txt_Buscar_Identificacion.Size = New System.Drawing.Size(613, 26)
         Me.txt_Buscar_Identificacion.TabIndex = 44
+        '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "Identificacion"
+        Me.Column1.HeaderText = "Identificacion"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
         '
         'Estudiante
         '
@@ -287,46 +262,23 @@ Partial Class Panel_Estados
         Me.Estado.Name = "Estado"
         Me.Estado.ReadOnly = True
         '
-        'Nombre
-        '
-        Me.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Nombre.DataPropertyName = "Nombre"
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.MinimumWidth = 10
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.ReadOnly = True
-        '
-        'Identificacion
-        '
-        Me.Identificacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Identificacion.DataPropertyName = "Identificacion"
-        Me.Identificacion.HeaderText = "Identificacion"
-        Me.Identificacion.MinimumWidth = 10
-        Me.Identificacion.Name = "Identificacion"
-        Me.Identificacion.ReadOnly = True
-        '
         'Panel_Estados
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.Controls.Add(Me.txt_Buscar_Identificacion)
-        Me.Controls.Add(Me.pnl_BuscarEstados)
         Me.Controls.Add(Me.btnBuscarIdentificacion)
         Me.Controls.Add(Me.dgv_Estudiantes_Estados)
         Me.Controls.Add(Me.pnlEstadoEstudiantes)
         Me.Controls.Add(Me.dgv_Estudiantes_Mostrar)
-        Me.Margin = New System.Windows.Forms.Padding(6)
         Me.Name = "Panel_Estados"
-        Me.Size = New System.Drawing.Size(1670, 883)
+        Me.Size = New System.Drawing.Size(835, 459)
         CType(Me.dgv_Estudiantes_Mostrar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlEstadoEstudiantes.ResumeLayout(False)
         Me.pnlEstadoEstudiantes.PerformLayout()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv_Estudiantes_Estados, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnl_BuscarEstados.ResumeLayout(False)
-        Me.pnl_BuscarEstados.PerformLayout()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -337,14 +289,12 @@ Partial Class Panel_Estados
     Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents dgv_Estudiantes_Estados As DataGridView
     Friend WithEvents btnBuscarIdentificacion As Guna.UI2.WinForms.Guna2GradientButton
-    Friend WithEvents pnl_BuscarEstados As Guna.UI2.WinForms.Guna2CustomGradientPanel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents txt_Buscar_Identificacion As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Nombre As DataGridViewTextBoxColumn
+    Friend WithEvents Identificacion As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Estudiante As DataGridViewTextBoxColumn
     Friend WithEvents Apellidos As DataGridViewTextBoxColumn
     Friend WithEvents Materia As DataGridViewTextBoxColumn
     Friend WithEvents Estado As DataGridViewTextBoxColumn
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Identificacion As DataGridViewTextBoxColumn
 End Class

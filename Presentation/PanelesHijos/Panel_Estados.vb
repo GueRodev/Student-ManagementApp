@@ -44,5 +44,23 @@ Public Class Panel_Estados
         dgv_Estudiantes_Mostrar.DataSource = dtEstudiantes
     End Sub
 
+    Private Sub btnBuscarIdentificacion_Click(sender As Object, e As EventArgs) Handles btnBuscarIdentificacion.Click
+        Dim identificacion As String = txt_Buscar_Identificacion.Text
+        If Not String.IsNullOrEmpty(identificacion) Then
+            Dim estadosModelo As New EstadosModelo()
+            Dim dtEstudiantes As DataTable = estadosModelo.ObtenerEstudiantesPorIdentificacion(identificacion)
+
+            ' Verificar si el DataTable está vacío
+            If dtEstudiantes.Rows.Count > 0 Then
+                ' Asignar los datos al DataGridView
+                dgv_Estudiantes_Estados.DataSource = dtEstudiantes
+            Else
+                MessageBox.Show("No se encontraron registros para la identificación proporcionada.")
+            End If
+        Else
+            MessageBox.Show("Ingrese un número de identificación válido.")
+        End If
+    End Sub
+
 
 End Class

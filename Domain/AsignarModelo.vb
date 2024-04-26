@@ -18,5 +18,10 @@ Public Class AsignarModelo
         Return datosMateria.ObtenerMaterias()
     End Function
 
+    Public Function EliminarUltimaAsignacion() As Boolean
+        Dim datosAsignar As New Datos_Asignar()
+        Return datosAsignar.EliminarUltimaAsignacion()
+    End Function
+
 
 End Class

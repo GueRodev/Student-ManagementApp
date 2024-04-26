@@ -65,5 +65,27 @@ Public Class Datos_Asignar
         Return count > 0
     End Function
 
+    Public Function EliminarUltimaAsignacion() As Boolean
+        Try
+            ' Consulta SQL para eliminar el último registro de asignación de materia
+            Dim query As String = "DELETE FROM materiasasignadas ORDER BY ID DESC LIMIT 1"
+
+            ' Ejecutar la consulta
+            Using connection = GetConnection()
+                connection.Open()
+                Using command = New MySqlCommand(query, connection)
+                    Dim rowsAffected = command.ExecuteNonQuery()
+                    Return rowsAffected > 0
+                End Using
+            End Using
+        Catch ex As Exception
+            ' Manejo de excepciones
+            MsgBox("Error al eliminar la última asignación de materia: " & ex.Message)
+            Return False
+        End Try
+    End Function
+
+
+
 End Class
 

@@ -23,10 +23,10 @@ Partial Class Panel_Asignar
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Panel_Asignar))
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnl_VistaMaterias = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.lbl_Materias_Asignar = New System.Windows.Forms.Label()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
@@ -39,13 +39,14 @@ Partial Class Panel_Asignar
         Me.cbo_AsignarEstado = New System.Windows.Forms.ComboBox()
         Me.btnAsignarMateria = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.dgv_AsignarMateria = New System.Windows.Forms.DataGridView()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Materia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgv_AsignarEstudiante = New System.Windows.Forms.DataGridView()
         Me.EstudianteID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estudiante = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Materia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lbl_IDEstudiante = New System.Windows.Forms.Label()
         Me.lbl_IDMateria = New System.Windows.Forms.Label()
+        Me.btnDeshacerUltimoRegistro = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.pnl_VistaMaterias.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlEstadoEstudiantes.SuspendLayout()
@@ -63,7 +64,7 @@ Partial Class Panel_Asignar
         Me.pnl_VistaMaterias.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(101, Byte), Integer))
         Me.pnl_VistaMaterias.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.pnl_VistaMaterias.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.pnl_VistaMaterias.Location = New System.Drawing.Point(182, 244)
+        Me.pnl_VistaMaterias.Location = New System.Drawing.Point(182, 252)
         Me.pnl_VistaMaterias.Name = "pnl_VistaMaterias"
         Me.pnl_VistaMaterias.Size = New System.Drawing.Size(549, 40)
         Me.pnl_VistaMaterias.TabIndex = 44
@@ -74,7 +75,7 @@ Partial Class Panel_Asignar
         Me.lbl_Materias_Asignar.BackColor = System.Drawing.Color.Transparent
         Me.lbl_Materias_Asignar.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_Materias_Asignar.ForeColor = System.Drawing.Color.White
-        Me.lbl_Materias_Asignar.Location = New System.Drawing.Point(184, 6)
+        Me.lbl_Materias_Asignar.Location = New System.Drawing.Point(184, 8)
         Me.lbl_Materias_Asignar.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_Materias_Asignar.Name = "lbl_Materias_Asignar"
         Me.lbl_Materias_Asignar.Size = New System.Drawing.Size(195, 29)
@@ -103,9 +104,9 @@ Partial Class Panel_Asignar
         Me.pnlEstadoEstudiantes.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(101, Byte), Integer))
         Me.pnlEstadoEstudiantes.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.pnlEstadoEstudiantes.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.pnlEstadoEstudiantes.Location = New System.Drawing.Point(287, 121)
+        Me.pnlEstadoEstudiantes.Location = New System.Drawing.Point(182, 121)
         Me.pnlEstadoEstudiantes.Name = "pnlEstadoEstudiantes"
-        Me.pnlEstadoEstudiantes.Size = New System.Drawing.Size(358, 39)
+        Me.pnlEstadoEstudiantes.Size = New System.Drawing.Size(549, 41)
         Me.pnlEstadoEstudiantes.TabIndex = 46
         '
         'Label3
@@ -114,12 +115,12 @@ Partial Class Panel_Asignar
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(76, 6)
+        Me.Label3.Location = New System.Drawing.Point(146, 9)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(231, 29)
+        Me.Label3.Size = New System.Drawing.Size(282, 29)
         Me.Label3.TabIndex = 34
-        Me.Label3.Text = "Asignar Estudiante"
+        Me.Label3.Text = "Seleccionar Estudiante"
         '
         'Guna2PictureBox2
         '
@@ -147,14 +148,14 @@ Partial Class Panel_Asignar
         Me.txt_Asignar_Estudiante.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.txt_Asignar_Estudiante.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txt_Asignar_Estudiante.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_Asignar_Estudiante.Location = New System.Drawing.Point(182, 406)
+        Me.txt_Asignar_Estudiante.Location = New System.Drawing.Point(182, 386)
         Me.txt_Asignar_Estudiante.Margin = New System.Windows.Forms.Padding(7)
         Me.txt_Asignar_Estudiante.Name = "txt_Asignar_Estudiante"
         Me.txt_Asignar_Estudiante.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_Asignar_Estudiante.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txt_Asignar_Estudiante.PlaceholderText = "Nombre "
         Me.txt_Asignar_Estudiante.SelectedText = ""
-        Me.txt_Asignar_Estudiante.Size = New System.Drawing.Size(120, 21)
+        Me.txt_Asignar_Estudiante.Size = New System.Drawing.Size(138, 21)
         Me.txt_Asignar_Estudiante.TabIndex = 47
         '
         'txt_Asignar_Materia
@@ -170,7 +171,7 @@ Partial Class Panel_Asignar
         Me.txt_Asignar_Materia.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.txt_Asignar_Materia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txt_Asignar_Materia.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_Asignar_Materia.Location = New System.Drawing.Point(312, 406)
+        Me.txt_Asignar_Materia.Location = New System.Drawing.Point(329, 386)
         Me.txt_Asignar_Materia.Margin = New System.Windows.Forms.Padding(7)
         Me.txt_Asignar_Materia.Name = "txt_Asignar_Materia"
         Me.txt_Asignar_Materia.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -182,11 +183,12 @@ Partial Class Panel_Asignar
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(569, 386)
+        Me.Label1.Location = New System.Drawing.Point(676, 387)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(58, 17)
@@ -195,10 +197,11 @@ Partial Class Panel_Asignar
         '
         'cbo_AsignarEstado
         '
+        Me.cbo_AsignarEstado.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.cbo_AsignarEstado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.cbo_AsignarEstado.FormattingEnabled = True
         Me.cbo_AsignarEstado.Items.AddRange(New Object() {"APROBADO", "MATRICULADO", "PENDIENTE"})
-        Me.cbo_AsignarEstado.Location = New System.Drawing.Point(547, 406)
+        Me.cbo_AsignarEstado.Location = New System.Drawing.Point(565, 386)
         Me.cbo_AsignarEstado.Name = "cbo_AsignarEstado"
         Me.cbo_AsignarEstado.Size = New System.Drawing.Size(106, 21)
         Me.cbo_AsignarEstado.TabIndex = 49
@@ -206,8 +209,6 @@ Partial Class Panel_Asignar
         'btnAsignarMateria
         '
         Me.btnAsignarMateria.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.btnAsignarMateria.AutoRoundedCorners = True
-        Me.btnAsignarMateria.BorderRadius = 17
         Me.btnAsignarMateria.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnAsignarMateria.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btnAsignarMateria.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
@@ -219,10 +220,11 @@ Partial Class Panel_Asignar
         Me.btnAsignarMateria.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnAsignarMateria.ForeColor = System.Drawing.Color.White
         Me.btnAsignarMateria.Image = CType(resources.GetObject("btnAsignarMateria.Image"), System.Drawing.Image)
-        Me.btnAsignarMateria.Location = New System.Drawing.Point(681, 390)
+        Me.btnAsignarMateria.Location = New System.Drawing.Point(329, 410)
         Me.btnAsignarMateria.Name = "btnAsignarMateria"
-        Me.btnAsignarMateria.Size = New System.Drawing.Size(50, 37)
+        Me.btnAsignarMateria.Size = New System.Drawing.Size(102, 26)
         Me.btnAsignarMateria.TabIndex = 50
+        Me.btnAsignarMateria.Text = "Asignar"
         '
         'dgv_AsignarMateria
         '
@@ -231,24 +233,24 @@ Partial Class Panel_Asignar
         Me.dgv_AsignarMateria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv_AsignarMateria.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.dgv_AsignarMateria.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_AsignarMateria.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_AsignarMateria.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_AsignarMateria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_AsignarMateria.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Materia})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.DarkSeaGreen
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_AsignarMateria.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSeaGreen
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_AsignarMateria.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_AsignarMateria.EnableHeadersVisualStyles = False
         Me.dgv_AsignarMateria.GridColor = System.Drawing.Color.White
         Me.dgv_AsignarMateria.Location = New System.Drawing.Point(182, 292)
@@ -256,8 +258,21 @@ Partial Class Panel_Asignar
         Me.dgv_AsignarMateria.Name = "dgv_AsignarMateria"
         Me.dgv_AsignarMateria.RowHeadersVisible = False
         Me.dgv_AsignarMateria.RowHeadersWidth = 82
-        Me.dgv_AsignarMateria.Size = New System.Drawing.Size(549, 51)
+        Me.dgv_AsignarMateria.Size = New System.Drawing.Size(549, 91)
         Me.dgv_AsignarMateria.TabIndex = 51
+        '
+        'ID
+        '
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        '
+        'Materia
+        '
+        Me.Materia.DataPropertyName = "Nombre"
+        Me.Materia.HeaderText = "Nombre"
+        Me.Materia.Name = "Materia"
+        Me.Materia.ReadOnly = True
         '
         'dgv_AsignarEstudiante
         '
@@ -266,32 +281,32 @@ Partial Class Panel_Asignar
         Me.dgv_AsignarEstudiante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv_AsignarEstudiante.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.dgv_AsignarEstudiante.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_AsignarEstudiante.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_AsignarEstudiante.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgv_AsignarEstudiante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_AsignarEstudiante.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.EstudianteID, Me.Estudiante})
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.DarkSeaGreen
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_AsignarEstudiante.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSeaGreen
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_AsignarEstudiante.DefaultCellStyle = DataGridViewCellStyle4
         Me.dgv_AsignarEstudiante.EnableHeadersVisualStyles = False
         Me.dgv_AsignarEstudiante.GridColor = System.Drawing.Color.White
-        Me.dgv_AsignarEstudiante.Location = New System.Drawing.Point(182, 169)
+        Me.dgv_AsignarEstudiante.Location = New System.Drawing.Point(182, 160)
         Me.dgv_AsignarEstudiante.Margin = New System.Windows.Forms.Padding(4)
         Me.dgv_AsignarEstudiante.Name = "dgv_AsignarEstudiante"
         Me.dgv_AsignarEstudiante.RowHeadersVisible = False
         Me.dgv_AsignarEstudiante.RowHeadersWidth = 82
-        Me.dgv_AsignarEstudiante.Size = New System.Drawing.Size(549, 51)
+        Me.dgv_AsignarEstudiante.Size = New System.Drawing.Size(549, 85)
         Me.dgv_AsignarEstudiante.TabIndex = 52
         '
         'EstudianteID
@@ -308,44 +323,56 @@ Partial Class Panel_Asignar
         Me.Estudiante.Name = "Estudiante"
         Me.Estudiante.ReadOnly = True
         '
-        'ID
-        '
-        Me.ID.HeaderText = "ID"
-        Me.ID.Name = "ID"
-        Me.ID.ReadOnly = True
-        '
-        'Materia
-        '
-        Me.Materia.DataPropertyName = "Nombre"
-        Me.Materia.HeaderText = "Nombre"
-        Me.Materia.Name = "Materia"
-        Me.Materia.ReadOnly = True
-        '
         'lbl_IDEstudiante
         '
         Me.lbl_IDEstudiante.AutoSize = True
+        Me.lbl_IDEstudiante.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_IDEstudiante.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.lbl_IDEstudiante.Location = New System.Drawing.Point(122, 197)
         Me.lbl_IDEstudiante.Name = "lbl_IDEstudiante"
-        Me.lbl_IDEstudiante.Size = New System.Drawing.Size(29, 13)
+        Me.lbl_IDEstudiante.Size = New System.Drawing.Size(22, 17)
         Me.lbl_IDEstudiante.TabIndex = 53
-        Me.lbl_IDEstudiante.Text = "label"
+        Me.lbl_IDEstudiante.Text = "ID"
+        Me.lbl_IDEstudiante.Visible = False
         '
         'lbl_IDMateria
         '
         Me.lbl_IDMateria.AutoSize = True
+        Me.lbl_IDMateria.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_IDMateria.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.lbl_IDMateria.Location = New System.Drawing.Point(122, 308)
         Me.lbl_IDMateria.Name = "lbl_IDMateria"
-        Me.lbl_IDMateria.Size = New System.Drawing.Size(29, 13)
+        Me.lbl_IDMateria.Size = New System.Drawing.Size(22, 17)
         Me.lbl_IDMateria.TabIndex = 54
-        Me.lbl_IDMateria.Text = "label"
+        Me.lbl_IDMateria.Text = "ID"
+        Me.lbl_IDMateria.Visible = False
+        '
+        'btnDeshacerUltimoRegistro
+        '
+        Me.btnDeshacerUltimoRegistro.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnDeshacerUltimoRegistro.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDeshacerUltimoRegistro.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnDeshacerUltimoRegistro.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnDeshacerUltimoRegistro.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnDeshacerUltimoRegistro.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnDeshacerUltimoRegistro.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnDeshacerUltimoRegistro.FillColor = System.Drawing.Color.Snow
+        Me.btnDeshacerUltimoRegistro.FillColor2 = System.Drawing.Color.Red
+        Me.btnDeshacerUltimoRegistro.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btnDeshacerUltimoRegistro.ForeColor = System.Drawing.Color.White
+        Me.btnDeshacerUltimoRegistro.Image = CType(resources.GetObject("btnDeshacerUltimoRegistro.Image"), System.Drawing.Image)
+        Me.btnDeshacerUltimoRegistro.Location = New System.Drawing.Point(453, 410)
+        Me.btnDeshacerUltimoRegistro.Name = "btnDeshacerUltimoRegistro"
+        Me.btnDeshacerUltimoRegistro.Size = New System.Drawing.Size(102, 26)
+        Me.btnDeshacerUltimoRegistro.TabIndex = 55
+        Me.btnDeshacerUltimoRegistro.Text = "Deshacer"
         '
         'Panel_Asignar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.Controls.Add(Me.btnDeshacerUltimoRegistro)
         Me.Controls.Add(Me.lbl_IDMateria)
         Me.Controls.Add(Me.lbl_IDEstudiante)
         Me.Controls.Add(Me.dgv_AsignarEstudiante)
@@ -390,4 +417,5 @@ Partial Class Panel_Asignar
     Friend WithEvents Estudiante As DataGridViewTextBoxColumn
     Friend WithEvents lbl_IDEstudiante As Label
     Friend WithEvents lbl_IDMateria As Label
+    Friend WithEvents btnDeshacerUltimoRegistro As Guna.UI2.WinForms.Guna2GradientButton
 End Class

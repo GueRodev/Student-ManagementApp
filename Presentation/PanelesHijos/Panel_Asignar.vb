@@ -3,7 +3,6 @@ Imports System.Text.RegularExpressions
 Imports Domain
 Imports Common
 
-
 Public Class Panel_Asignar
 
     ' Inicializar Constructor
@@ -96,24 +95,70 @@ Public Class Panel_Asignar
         Dim idMateria As String = lbl_IDMateria.Text
 
         If Not String.IsNullOrEmpty(idEstudiante) AndAlso Not String.IsNullOrEmpty(idMateria) Then
-            ' Obtener el estado seleccionado
-            Dim estado As String = cbo_AsignarEstado.SelectedItem.ToString()
+            ' Verificar si hay un elemento seleccionado en el ComboBox
+            If cbo_AsignarEstado.SelectedItem IsNot Nothing Then
+                ' Obtener el estado seleccionado
+                Dim estado As String = cbo_AsignarEstado.SelectedItem.ToString()
 
-            ' Instanciar el modelo y llamar al método para asignar la materia al estudiante
-            Dim asignarModelo As New AsignarModelo()
-            Dim exito As Boolean = asignarModelo.AsignarMateriaAEstudiante(idEstudiante, idMateria, estado)
+                ' Confirmar la asignación con el usuario
+                Dim confirmResult As DialogResult = MessageBox.Show("¿Estás seguro de asignar esta materia al estudiante?", "Confirmar Asignación", MessageBoxButtons.YesNo)
+                If confirmResult = DialogResult.Yes Then
+                    ' Instanciar el modelo y llamar al método para asignar la materia al estudiante
+                    Dim asignarModelo As New AsignarModelo()
+                    Dim exito As Boolean = asignarModelo.AsignarMateriaAEstudiante(idEstudiante, idMateria, estado)
 
-            If exito Then
-                MessageBox.Show("Materia asignada correctamente.")
+                    If exito Then
+                        MessageBox.Show("Materia asignada correctamente.")
+
+                        ' Limpiar los campos después de agregar el registro
+                        LimpiarCampos()
+                    Else
+                        MessageBox.Show("Error al asignar la materia.")
+                    End If
+                End If
             Else
-                MessageBox.Show("Error al asignar la materia.")
+                MessageBox.Show("Por favor, seleccione un estado.")
             End If
         Else
             MessageBox.Show("Por favor, seleccione un estudiante y una materia.")
         End If
     End Sub
 
+    Private Sub btnDeshacerUltimoRegistro_Click(sender As Object, e As EventArgs) Handles btnDeshacerUltimoRegistro.Click
+        ' Confirmar con el usuario antes de deshacer el último registro
+        Dim confirmResult As DialogResult = MessageBox.Show("¿Estás seguro de deshacer el último registro de asignación?", "Confirmar Deshacer Registro", MessageBoxButtons.YesNo)
+        If confirmResult = DialogResult.Yes Then
+            Try
+                Dim asignarModelo As New AsignarModelo()
+                Dim exito As Boolean = asignarModelo.EliminarUltimaAsignacion()
 
+                If exito Then
+                    MessageBox.Show("Última asignación eliminada correctamente.")
+
+                    ' Limpiar los campos después de deshacer el registro
+                    LimpiarCampos()
+                Else
+                    MessageBox.Show("Error al eliminar la última asignación.")
+                End If
+            Catch ex As Exception
+                MessageBox.Show("Error al eliminar la última asignación: " & ex.Message)
+            End Try
+        End If
+    End Sub
+
+
+    Private Sub LimpiarCampos()
+        ' Limpiar los campos de texto
+        txt_Asignar_Estudiante.Clear()
+        txt_Asignar_Materia.Clear()
+
+        ' Limpiar los labels
+        lbl_IDEstudiante.Text = ""
+        lbl_IDMateria.Text = ""
+
+        ' Limpiar el ComboBox
+        cbo_AsignarEstado.SelectedIndex = -1
+    End Sub
 
 End Class
 
