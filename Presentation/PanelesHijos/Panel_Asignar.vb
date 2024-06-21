@@ -73,8 +73,19 @@ Public Class Panel_Asignar
         If e.RowIndex >= 0 Then
             ' Obtener los valores de la fila seleccionada y mostrarlos en los campos de texto
             Dim selectedRow As DataGridViewRow = dgv_AsignarEstudiante.Rows(e.RowIndex)
-            lbl_IDEstudiante.Text = dgv_AsignarEstudiante.CurrentRow.Cells(0).Value
-            txt_Asignar_Estudiante.Text = selectedRow.Cells(1).Value.ToString()
+
+            ' Verificar si la celda contiene un valor válido antes de asignarlo
+            If Not IsDBNull(selectedRow.Cells(0).Value) Then
+                lbl_IDEstudiante.Text = selectedRow.Cells(0).Value.ToString()
+            Else
+                lbl_IDEstudiante.Text = String.Empty
+            End If
+
+            If Not IsDBNull(selectedRow.Cells(1).Value) Then
+                txt_Asignar_Estudiante.Text = selectedRow.Cells(1).Value.ToString()
+            Else
+                txt_Asignar_Estudiante.Text = String.Empty
+            End If
         End If
     End Sub
 
@@ -83,9 +94,19 @@ Public Class Panel_Asignar
         If e.RowIndex >= 0 Then
             ' Obtener los valores de la fila seleccionada y mostrarlos en los campos de texto
             Dim selectedRow As DataGridViewRow = dgv_AsignarMateria.Rows(e.RowIndex)
-            lbl_IDMateria.Text = dgv_AsignarMateria.CurrentRow.Cells(0).Value
-            txt_Asignar_Materia.Text = selectedRow.Cells(1).Value.ToString()
 
+            ' Verificar si la celda contiene un valor válido antes de asignarlo
+            If Not IsDBNull(selectedRow.Cells(0).Value) Then
+                lbl_IDMateria.Text = selectedRow.Cells(0).Value.ToString()
+            Else
+                lbl_IDMateria.Text = String.Empty
+            End If
+
+            If Not IsDBNull(selectedRow.Cells(1).Value) Then
+                txt_Asignar_Materia.Text = selectedRow.Cells(1).Value.ToString()
+            Else
+                txt_Asignar_Materia.Text = String.Empty
+            End If
         End If
     End Sub
 
