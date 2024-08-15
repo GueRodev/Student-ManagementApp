@@ -62,6 +62,21 @@ Public Class RegistroUsuario
                 Return
             End If
 
+            ' Instanciar UsuarioModelo
+            Dim usuarioModelo As New UsuarioModelo()
+
+            ' Verificar si ya existe un usuario con el mismo nombre de usuario
+            If usuarioModelo.ExisteUsuarioPorNombreUsuario(usuario) Then
+                MessageBox.Show("Ya existe un usuario con el mismo nombre de usuario.", "Error de usuario", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+
+            ' Verificar si ya existe un usuario con el mismo correo electrónico
+            If usuarioModelo.ExisteUsuarioPorCorreoElectronico(email) Then
+                MessageBox.Show("Ya existe un usuario con el mismo correo electrónico.", "Error de correo electrónico", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+
             ' Validar el nombre de usuario
             If Not ValidarUsuario(usuario) Then
                 MessageBox.Show("El nombre de usuario debe tener máximo 8 caracteres y como máximo 2 números.", "Error de usuario", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -80,27 +95,13 @@ Public Class RegistroUsuario
                 Return
             End If
 
-            'Instanciar UsuarioModelo
-            Dim usuarioModelo As New UsuarioModelo()
-
             ' Llamar al método dominio_Registrar para registrar el nuevo usuario con la contraseña encriptada
             Dim registroExitoso As Boolean = usuarioModelo.dominio_Registrar(usuario, contraseña, email)
-
-            ' Verificar si ya existe un usuario con el mismo nombre de usuario
-            If usuarioModelo.ExisteUsuarioPorNombreUsuario(usuario) Then
-                MessageBox.Show("Ya existe un usuario con el mismo nombre de usuario.", "Error de usuario", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Return
-            End If
-
-            ' Verificar si ya existe un usuario con el mismo correo electrónico
-            If usuarioModelo.ExisteUsuarioPorCorreoElectronico(email) Then
-                MessageBox.Show("Ya existe un usuario con el mismo correo electrónico.", "Error de correo electrónico", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Return
-            End If
 
             ' Verificar si el registro fue exitoso
             If registroExitoso Then
                 MessageBox.Show("Usuario registrado correctamente.")
+
                 ' Limpia los campos después de registrar el usuario
                 LimpiarCampos()
             Else
@@ -108,6 +109,7 @@ Public Class RegistroUsuario
             End If
         End If
     End Sub
+
 
     Private Function ValidarUsuario(usuario As String) As Boolean
         ' Verificar que el usuario no tenga más de 8 caracteres

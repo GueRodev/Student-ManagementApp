@@ -78,9 +78,6 @@ Public Class Form1
         End If
     End Sub
 
-
-
-
     Private Sub CerrarForm1()
         If Me.InvokeRequired Then
             Me.Invoke(New Action(AddressOf CerrarForm1))

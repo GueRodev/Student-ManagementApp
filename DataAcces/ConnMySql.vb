@@ -1,6 +1,4 @@
-﻿
-
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 ' Clase abstracta para manejar la conexión a MySQL
 Public MustInherit Class ConnMySql
 
