@@ -195,6 +195,12 @@
     <Compile Include="PanelesHijos\Panel_Materias.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="PanelesHijos\Panel_Matricular.Designer.vb">
+      <DependentUpon>Panel_Matricular.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PanelesHijos\Panel_Matricular.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="PanelesHijos\Panel_Usuarios.Designer.vb">
       <DependentUpon>Panel_Usuarios.vb</DependentUpon>
     </Compile>
@@ -241,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PanelesHijos\Panel_Materias.resx">
       <DependentUpon>Panel_Materias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelesHijos\Panel_Matricular.resx">
+      <DependentUpon>Panel_Matricular.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PanelesHijos\Panel_Usuarios.resx">
       <DependentUpon>Panel_Usuarios.vb</DependentUpon>

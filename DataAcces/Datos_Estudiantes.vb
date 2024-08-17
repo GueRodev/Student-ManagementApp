@@ -37,8 +37,6 @@ Public Class Datos_Estudiantes
         End Try
     End Function
 
-
-
     Public Function ObtenerEstudiantes() As DataTable
         Dim dtEstudiantes As New DataTable()
 
@@ -68,7 +66,6 @@ Public Class Datos_Estudiantes
                 MsgBox("Error al actualizar correo.")
                 Return False
             End If
-
 
             Using connection = GetConnection()
                 connection.Open()
@@ -147,8 +144,6 @@ Public Class Datos_Estudiantes
 
         Return count > 0
     End Function
-
-
 
     Public Function ObtenerEstudiantePorId(id As Integer) As DataRow
         Dim dtEstudiante As New DataTable()

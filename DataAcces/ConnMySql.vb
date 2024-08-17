@@ -7,7 +7,7 @@ Public MustInherit Class ConnMySql
 
     ' Constructor protegido para evitar la creación directa de instancias de esta clase
     Protected Sub New()
-        connectionString = "Server=localhost;userid=root;password='';database=uta_database"
+        connectionString = "Server=localhost;userid=root;password='';database=uta_database2"
     End Sub
 
     'Función protegida para obtener una conexión a MySQL

@@ -185,6 +185,14 @@ Public Class FormPrincipal
         AddUserControl(panelAsignar)
     End Sub
 
+    Private Sub btnMatricular_Click(sender As Object, e As EventArgs) Handles btnMatricular.Click
+        'Instanciar
+        Dim panelMatricular As New Panel_Matricular()
+        'Llamar al metodo AddUsercontrol para mostrar el control Panel_Matricular
+        AddUserControl(panelMatricular)
+
+    End Sub
+
     Private Sub btnEstados_Click(sender As Object, e As EventArgs) Handles btnEstados.Click
 
         'Instanciar
@@ -209,4 +217,6 @@ Public Class FormPrincipal
             Me.Close()
         End If
     End Sub
+
+
 End Class

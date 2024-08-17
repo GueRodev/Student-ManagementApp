@@ -167,7 +167,6 @@ Public Class Panel_Asignar
         End If
     End Sub
 
-
     Private Sub LimpiarCampos()
         ' Limpiar los campos de texto
         txt_Asignar_Estudiante.Clear()
