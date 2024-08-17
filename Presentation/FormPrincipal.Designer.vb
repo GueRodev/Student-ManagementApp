@@ -387,7 +387,7 @@ Partial Class FormPrincipal
         Me.btnAsignar.ForeColor = System.Drawing.Color.White
         Me.btnAsignar.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnAsignar.HoverState.FillColor = System.Drawing.Color.DarkSeaGreen
-        Me.btnAsignar.Location = New System.Drawing.Point(552, 1)
+        Me.btnAsignar.Location = New System.Drawing.Point(572, 1)
         Me.btnAsignar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAsignar.Name = "btnAsignar"
         Me.btnAsignar.Size = New System.Drawing.Size(163, 48)
@@ -409,12 +409,12 @@ Partial Class FormPrincipal
         Me.btnMaterias.ForeColor = System.Drawing.Color.White
         Me.btnMaterias.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnMaterias.HoverState.FillColor = System.Drawing.Color.DarkSeaGreen
-        Me.btnMaterias.Location = New System.Drawing.Point(394, 1)
+        Me.btnMaterias.Location = New System.Drawing.Point(397, 1)
         Me.btnMaterias.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnMaterias.Name = "btnMaterias"
         Me.btnMaterias.Size = New System.Drawing.Size(163, 48)
         Me.btnMaterias.TabIndex = 4
-        Me.btnMaterias.Text = "Materias"
+        Me.btnMaterias.Text = "Cursos"
         '
         'btnEstudiantes
         '
@@ -453,7 +453,7 @@ Partial Class FormPrincipal
         Me.btnUsuarios.ForeColor = System.Drawing.Color.White
         Me.btnUsuarios.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnUsuarios.HoverState.FillColor = System.Drawing.Color.DarkSeaGreen
-        Me.btnUsuarios.Location = New System.Drawing.Point(58, 1)
+        Me.btnUsuarios.Location = New System.Drawing.Point(53, 1)
         Me.btnUsuarios.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnUsuarios.Name = "btnUsuarios"
         Me.btnUsuarios.Size = New System.Drawing.Size(163, 48)
@@ -483,7 +483,7 @@ Partial Class FormPrincipal
         Me.btnMatricular.ForeColor = System.Drawing.Color.White
         Me.btnMatricular.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnMatricular.HoverState.FillColor = System.Drawing.Color.DarkSeaGreen
-        Me.btnMatricular.Location = New System.Drawing.Point(728, 1)
+        Me.btnMatricular.Location = New System.Drawing.Point(751, 1)
         Me.btnMatricular.Margin = New System.Windows.Forms.Padding(4)
         Me.btnMatricular.Name = "btnMatricular"
         Me.btnMatricular.Size = New System.Drawing.Size(163, 48)
