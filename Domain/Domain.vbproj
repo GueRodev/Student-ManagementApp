@@ -68,6 +68,7 @@
     <Compile Include="EstadosModelo.vb" />
     <Compile Include="EstudianteModelo.vb" />
     <Compile Include="MateriaModelo.vb" />
+    <Compile Include="MatricularModelo.vb" />
     <Compile Include="UsuarioModelo.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
