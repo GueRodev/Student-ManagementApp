@@ -187,15 +187,17 @@ Public Class Panel_Estudiantes
         If e.RowIndex >= 0 Then
             ' Obtener los valores de la fila seleccionada y mostrarlos en los campos de texto
             Dim selectedRow As DataGridViewRow = dgv_estudiantes.Rows(e.RowIndex)
-            txt_ID_Estudiante.Text = selectedRow.Cells(0).Value.ToString()
-            txtNombreEstudiante.Text = selectedRow.Cells(1).Value.ToString()
-            txtApellidosEstudiante.Text = selectedRow.Cells(2).Value.ToString()
-            txtIdentificacionEstudiante.Text = selectedRow.Cells(3).Value.ToString()
-            txtCorreoEstudiante.Text = selectedRow.Cells(4).Value.ToString()
-            txtCarreraEstudiante.Text = selectedRow.Cells(5).Value.ToString()
-            txtFechaEstudiante.Text = selectedRow.Cells(6).Value.ToString()
+
+            txt_ID_Estudiante.Text = If(selectedRow.Cells(0).Value IsNot Nothing, selectedRow.Cells(0).Value.ToString(), "")
+            txtNombreEstudiante.Text = If(selectedRow.Cells(1).Value IsNot Nothing, selectedRow.Cells(1).Value.ToString(), "")
+            txtApellidosEstudiante.Text = If(selectedRow.Cells(2).Value IsNot Nothing, selectedRow.Cells(2).Value.ToString(), "")
+            txtIdentificacionEstudiante.Text = If(selectedRow.Cells(3).Value IsNot Nothing, selectedRow.Cells(3).Value.ToString(), "")
+            txtCorreoEstudiante.Text = If(selectedRow.Cells(4).Value IsNot Nothing, selectedRow.Cells(4).Value.ToString(), "")
+            txtCarreraEstudiante.Text = If(selectedRow.Cells(5).Value IsNot Nothing, selectedRow.Cells(5).Value.ToString(), "")
+            txtFechaEstudiante.Text = If(selectedRow.Cells(6).Value IsNot Nothing, selectedRow.Cells(6).Value.ToString(), "")
         End If
     End Sub
+
 
     Private Sub btnEditarEstudiante_Click(sender As Object, e As EventArgs) Handles btnEditarEstudiante.Click
 
@@ -318,12 +320,12 @@ Public Class Panel_Estudiantes
                 ' Instanciar EstudianteModelo
                 Dim estudianteModelo As New EstudianteModelo()
 
-                ' Llamar al método dominio_EliminarEstudiante para eliminar el estudiante
-                Dim eliminacionExitosa As Boolean = estudianteModelo.dominio_EliminarEstudiante(idEstudiante)
+                ' Llamar al método dominio_EliminarEstudiante para eliminar el estudiante y sus materias
+                Dim eliminacionExitosa As Boolean = estudianteModelo.Dominio_EliminarEstudiante(idEstudiante)
 
                 ' Verificar si la eliminación fue exitosa
                 If eliminacionExitosa Then
-                    MessageBox.Show("Estudiante eliminado correctamente.")
+                    MessageBox.Show("Estudiante y sus materias asociadas eliminados correctamente.")
 
                     ' Recargar los datos del DataGridView para reflejar los cambios en tiempo real
                     CargarDatosEstudiantes()
@@ -331,13 +333,14 @@ Public Class Panel_Estudiantes
                     ' Limpiar los campos después de eliminar el estudiante
                     LimpiarCampos()
                 Else
-                    MessageBox.Show("Error al eliminar el estudiante. Inténtelo de nuevo.")
+                    MessageBox.Show("Error al eliminar al estudiante y sus materias. Inténtelo de nuevo.")
                 End If
             End If
         Else
             MessageBox.Show("Por favor, seleccione un estudiante de la lista para eliminar.")
         End If
     End Sub
+
 
     Private Sub CargarDatosEstudiantes()
         ' Obtener los datos actualizados de los estudiantes y cargarlos en el DataGridView

@@ -91,28 +91,41 @@ Public Class Datos_Estudiantes
     End Function
 
     Public Function EliminarEstudiante(id As Integer) As Boolean
+        Dim transaction As MySqlTransaction = Nothing
         Try
             Using connection = GetConnection()
                 connection.Open()
+                transaction = connection.BeginTransaction()
+
                 Using command = New MySqlCommand()
                     command.Connection = connection
-                    command.CommandText = "DELETE FROM Estudiantes WHERE ID = @ID"
+                    command.Transaction = transaction
+
+                    ' Eliminar las materias del estudiante en la tabla EstudianteMateria
+                    command.CommandText = "DELETE FROM EstudianteMateria WHERE EstudianteID = @ID"
                     command.Parameters.AddWithValue("@ID", id)
-                    command.CommandType = CommandType.Text
-                    Dim rowsAffected = command.ExecuteNonQuery()
+                    command.ExecuteNonQuery()
+
+                    ' Eliminar el estudiante en la tabla Estudiantes
+                    command.CommandText = "DELETE FROM Estudiantes WHERE ID = @ID"
+                    command.ExecuteNonQuery()
 
                     ' Reiniciar el valor del auto incremento después de eliminar el estudiante
-                    Dim cmdResetAutoIncrement As New MySqlCommand("ALTER TABLE Estudiantes AUTO_INCREMENT = 1", connection)
+                    Dim cmdResetAutoIncrement As New MySqlCommand("ALTER TABLE Estudiantes AUTO_INCREMENT = 1", connection, transaction)
                     cmdResetAutoIncrement.ExecuteNonQuery()
 
-                    Return rowsAffected > 0
+                    ' Confirmar la transacción
+                    transaction.Commit()
+                    Return True
                 End Using
             End Using
         Catch ex As Exception
+            If transaction IsNot Nothing Then transaction.Rollback()
             MsgBox(ex.Message)
             Return False
         End Try
     End Function
+
 
     Public Function ContarEstudiantes() As Integer
         Dim count As Integer = 0

@@ -19,10 +19,11 @@ Public Class EstudianteModelo
         Return datos_estudiante.ActualizarEstudiante(id, nombre, apellidos, identificacion, correo, carrera, fechaIngreso)
     End Function
 
-    Public Function dominio_EliminarEstudiante(id As Integer) As Boolean
-        Dim datos_estudiante As New Datos_Estudiantes()
-        Return datos_estudiante.EliminarEstudiante(id)
+    Public Function Dominio_EliminarEstudiante(id As Integer) As Boolean
+        Dim datosEstudiante As New Datos_Estudiantes()
+        Return datosEstudiante.EliminarEstudiante(id)
     End Function
+
 
     Public Function dominio_ContarEstudiantes() As Integer
         Dim datosEstudiante As New Datos_Estudiantes()
