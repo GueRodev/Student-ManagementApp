@@ -28,10 +28,11 @@ Public Class Panel_Estudiantes
         dgv_estudiantes.AutoGenerateColumns = False ' Deshabilitar la generación automática de columnas
 
         ' Agregar las columnas necesarias
-        Dim colID As New DataGridViewTextBoxColumn()
-        colID.DataPropertyName = "ID"
-        colID.HeaderText = "ID"
-        dgv_estudiantes.Columns.Add(colID)
+
+        Dim colIDEstudiante As New DataGridViewTextBoxColumn()
+        colIDEstudiante.DataPropertyName = "ID"
+        colIDEstudiante.HeaderText = "ID"
+        dgv_estudiantes.Columns.Add(colIDEstudiante)
 
         Dim colNombre As New DataGridViewTextBoxColumn()
         colNombre.DataPropertyName = "Nombre"
@@ -45,23 +46,23 @@ Public Class Panel_Estudiantes
 
         Dim colIdentificacion As New DataGridViewTextBoxColumn()
         colIdentificacion.DataPropertyName = "Identificacion"
-        colIdentificacion.HeaderText = "Identificación"
+        colIdentificacion.HeaderText = "Identificacion"
         dgv_estudiantes.Columns.Add(colIdentificacion)
+
+        Dim colCarnet As New DataGridViewTextBoxColumn()
+        colCarnet.DataPropertyName = "Carnet"
+        colCarnet.HeaderText = "Carnet"
+        dgv_estudiantes.Columns.Add(colCarnet)
 
         Dim colCorreo As New DataGridViewTextBoxColumn()
         colCorreo.DataPropertyName = "Correo"
         colCorreo.HeaderText = "Correo"
         dgv_estudiantes.Columns.Add(colCorreo)
 
-        Dim colCarrera As New DataGridViewTextBoxColumn()
-        colCarrera.DataPropertyName = "Carrera"
-        colCarrera.HeaderText = "Carrera"
-        dgv_estudiantes.Columns.Add(colCarrera)
-
-        Dim colFechaIngreso As New DataGridViewTextBoxColumn()
-        colFechaIngreso.DataPropertyName = "Fecha_Ingreso"
-        colFechaIngreso.HeaderText = "Fecha de Ingreso"
-        dgv_estudiantes.Columns.Add(colFechaIngreso)
+        Dim colTelefono As New DataGridViewTextBoxColumn()
+        colTelefono.DataPropertyName = "Telefono"
+        colTelefono.HeaderText = "Telefono"
+        dgv_estudiantes.Columns.Add(colTelefono)
 
         ' Asignar los datos al DataGridView
         dgv_estudiantes.DataSource = dtEstudiantes
@@ -173,12 +174,13 @@ Public Class Panel_Estudiantes
 
     Private Sub LimpiarCampos()
         ' Limpiar los campos del formulario
+        txt_ID_Estudiante.Clear()
         txtNombreEstudiante.Clear()
         txtApellidosEstudiante.Clear()
         txtIdentificacionEstudiante.Clear()
+        txtCarnetEstudiante.Clear()
         txtCorreoEstudiante.Clear()
-        txtCarreraEstudiante.Clear()
-        txtFechaEstudiante.Clear()
+        txtTelefonoEstudiante.Clear()
         txtNombreEstudiante.Focus()
     End Sub
 
@@ -187,14 +189,13 @@ Public Class Panel_Estudiantes
         If e.RowIndex >= 0 Then
             ' Obtener los valores de la fila seleccionada y mostrarlos en los campos de texto
             Dim selectedRow As DataGridViewRow = dgv_estudiantes.Rows(e.RowIndex)
-
             txt_ID_Estudiante.Text = If(selectedRow.Cells(0).Value IsNot Nothing, selectedRow.Cells(0).Value.ToString(), "")
             txtNombreEstudiante.Text = If(selectedRow.Cells(1).Value IsNot Nothing, selectedRow.Cells(1).Value.ToString(), "")
             txtApellidosEstudiante.Text = If(selectedRow.Cells(2).Value IsNot Nothing, selectedRow.Cells(2).Value.ToString(), "")
             txtIdentificacionEstudiante.Text = If(selectedRow.Cells(3).Value IsNot Nothing, selectedRow.Cells(3).Value.ToString(), "")
-            txtCorreoEstudiante.Text = If(selectedRow.Cells(4).Value IsNot Nothing, selectedRow.Cells(4).Value.ToString(), "")
-            txtCarreraEstudiante.Text = If(selectedRow.Cells(5).Value IsNot Nothing, selectedRow.Cells(5).Value.ToString(), "")
-            txtFechaEstudiante.Text = If(selectedRow.Cells(6).Value IsNot Nothing, selectedRow.Cells(6).Value.ToString(), "")
+            txtCarnetEstudiante.Text = If(selectedRow.Cells(4).Value IsNot Nothing, selectedRow.Cells(4).Value.ToString(), "")
+            txtCorreoEstudiante.Text = If(selectedRow.Cells(5).Value IsNot Nothing, selectedRow.Cells(5).Value.ToString(), "")
+            txtTelefonoEstudiante.Text = If(selectedRow.Cells(6).Value IsNot Nothing, selectedRow.Cells(6).Value.ToString(), "")
         End If
     End Sub
 
@@ -264,8 +265,6 @@ Public Class Panel_Estudiantes
                 Return
             End If
 
-
-
             ' Validar que el campo de carrera no esté vacío y cumpla con los requisitos de longitud y contenido
             If String.IsNullOrWhiteSpace(carrera) OrElse carrera.Length > 30 OrElse Not EsNombreValido(carrera) Then
                 MessageBox.Show("Ingrese Datos Validos para la carrera.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -325,7 +324,7 @@ Public Class Panel_Estudiantes
 
                 ' Verificar si la eliminación fue exitosa
                 If eliminacionExitosa Then
-                    MessageBox.Show("Estudiante y sus materias asociadas eliminados correctamente.")
+                    MessageBox.Show("Estudiante eliminado correctamente.")
 
                     ' Recargar los datos del DataGridView para reflejar los cambios en tiempo real
                     CargarDatosEstudiantes()

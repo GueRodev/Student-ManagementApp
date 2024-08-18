@@ -90,6 +90,18 @@ Public Class Datos_Estudiantes
         End Try
     End Function
 
+
+    Public Function ContarEstudiantes() As Integer
+        Dim count As Integer = 0
+        Using connection = GetConnection()
+            connection.Open()
+            Using command = New MySqlCommand("SELECT COUNT(*) FROM Estudiantes", connection)
+                count = Convert.ToInt32(command.ExecuteScalar())
+            End Using
+        End Using
+        Return count
+    End Function
+
     Public Function EliminarEstudiante(id As Integer) As Boolean
         Dim transaction As MySqlTransaction = Nothing
         Try
@@ -124,18 +136,6 @@ Public Class Datos_Estudiantes
             MsgBox(ex.Message)
             Return False
         End Try
-    End Function
-
-
-    Public Function ContarEstudiantes() As Integer
-        Dim count As Integer = 0
-        Using connection = GetConnection()
-            connection.Open()
-            Using command = New MySqlCommand("SELECT COUNT(*) FROM Estudiantes", connection)
-                count = Convert.ToInt32(command.ExecuteScalar())
-            End Using
-        End Using
-        Return count
     End Function
 
     Public Function ExisteEstudiantePorIdentificacion(identificacion As String) As Boolean
