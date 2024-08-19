@@ -1,91 +1,61 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports Common
 Imports System.Data
+
 Public Class Datos_Asignar
-    'Herencia
     Inherits ConnMySql
 
-    Public Function InsertarMateriaAsignada(idEstudiante As String, idMateria As String, estado As String) As Boolean
+    ' Método para obtener la lista de estudiantes con sus carreras
+    Public Function ObtenerEstudiantesConCarrera() As DataTable
+        Dim dtEstudiantes As New DataTable()
         Try
-            ' Verificar si el estudiante ya tiene la materia asignada
-            If Not EstudianteTieneMateria(idEstudiante, idMateria) Then
-                ' Si el estudiante no tiene la materia asignada, realizar la inserción
-                Using connection = GetConnection()
-                    connection.Open()
-                    Using command = New MySqlCommand()
-                        command.Connection = connection
-                        command.CommandText = "INSERT INTO materiasasignadas (EstudianteID, MateriaID, Estado) VALUES (@EstudianteID, @MateriaID, @Estado)"
-                        command.Parameters.AddWithValue("@EstudianteID", idEstudiante)
-                        command.Parameters.AddWithValue("@MateriaID", idMateria)
-                        command.Parameters.AddWithValue("@Estado", estado)
-                        command.CommandType = CommandType.Text
-
-                        Dim rowsAffected = command.ExecuteNonQuery()
-                        Return rowsAffected > 0
-                    End Using
-                End Using
-            Else
-                ' Si el estudiante ya tiene la materia asignada, mostrar un mensaje de error
-                MsgBox("El estudiante ya tiene asignada esta materia.")
-                Return False
-            End If
-        Catch ex As Exception
-            ' Manejo de excepciones
-            MsgBox("Error al asignar la materia: " & ex.Message)
-            Return False
-        End Try
-    End Function
-
-    Private Function EstudianteTieneMateria(idEstudiante As String, idMateria As String) As Boolean
-        ' Consulta SQL para verificar si el estudiante ya tiene la materia asignada
-        Dim query As String = "SELECT COUNT(*) FROM materiasasignadas WHERE EstudianteID = @EstudianteID AND MateriaID = @MateriaID"
-
-        ' Variables para almacenar el resultado de la consulta
-        Dim count As Integer
-
-        Try
-            ' Ejecutar la consulta
             Using connection = GetConnection()
                 connection.Open()
-                Using command = New MySqlCommand(query, connection)
-                    command.Parameters.AddWithValue("@EstudianteID", idEstudiante)
-                    command.Parameters.AddWithValue("@MateriaID", idMateria)
+                Using command = New MySqlCommand()
+                    command.Connection = connection
+                    command.CommandText = "SELECT " &
+                                          "Estudiantes.Identificacion, " &
+                                          "Estudiantes.Nombre, " &
+                                          "Estudiantes.Apellidos, " &
+                                          "Carreras.Nombre AS Carrera " &
+                                          "FROM Estudiantes " &
+                                          "JOIN Carreras ON Estudiantes.CarreraID = Carreras.ID"
 
-                    ' Obtener el resultado de la consulta
-                    count = Convert.ToInt32(command.ExecuteScalar())
+                    Dim adapter As New MySqlDataAdapter(command)
+                    adapter.Fill(dtEstudiantes)
                 End Using
             End Using
         Catch ex As Exception
-            ' Manejo de excepciones
-            MsgBox("Error al verificar la asignación de materia: " & ex.Message)
-            Return False
+            MsgBox(ex.Message)
         End Try
-
-        ' Si count es mayor que cero, significa que el estudiante ya tiene la materia asignada
-        Return count > 0
+        Return dtEstudiantes
     End Function
 
-    Public Function EliminarUltimaAsignacion() As Boolean
+    ' Método para obtener la lista de materias asociadas a un estudiante
+    Public Function ObtenerMateriasPorEstudiante(identificacion As String) As DataTable
+        Dim dtMaterias As New DataTable()
         Try
-            ' Consulta SQL para eliminar el último registro de asignación de materia
-            Dim query As String = "DELETE FROM materiasasignadas ORDER BY ID DESC LIMIT 1"
-
-            ' Ejecutar la consulta
             Using connection = GetConnection()
                 connection.Open()
-                Using command = New MySqlCommand(query, connection)
-                    Dim rowsAffected = command.ExecuteNonQuery()
-                    Return rowsAffected > 0
+                Using command = New MySqlCommand()
+                    command.Connection = connection
+                    command.CommandText = "SELECT Materias.Nombre AS Materia, " &
+                                          "EstadoMateria.Estado, " &
+                                          "EstudianteMateria.Nota " &
+                                          "FROM EstudianteMateria " &
+                                          "JOIN Estudiantes ON EstudianteMateria.EstudianteID = Estudiantes.ID " &
+                                          "JOIN Materias ON EstudianteMateria.MateriaID = Materias.ID " &
+                                          "JOIN EstadoMateria ON EstudianteMateria.EstadoID = EstadoMateria.ID " &
+                                          "WHERE Estudiantes.Identificacion = @identificacion"
+                    command.Parameters.AddWithValue("@identificacion", identificacion)
+
+                    Dim adapter As New MySqlDataAdapter(command)
+                    adapter.Fill(dtMaterias)
                 End Using
             End Using
         Catch ex As Exception
-            ' Manejo de excepciones
-            MsgBox("Error al eliminar la última asignación de materia: " & ex.Message)
-            Return False
+            MsgBox(ex.Message)
         End Try
+        Return dtMaterias
     End Function
-
-
-
 End Class
-

@@ -1,27 +1,16 @@
-﻿Imports System.Text
+﻿Imports System.Data
 Imports DataAcces
 
 Public Class AsignarModelo
-
-    Public Function AsignarMateriaAEstudiante(idEstudiante As String, idMateria As String, estado As String) As Boolean
+    ' Método para obtener los estudiantes con sus carreras
+    Public Function Dominio_ObtenerEstudiantesConCarrera() As DataTable
         Dim datosAsignar As New Datos_Asignar()
-        Return datosAsignar.InsertarMateriaAsignada(idEstudiante, idMateria, estado)
+        Return datosAsignar.ObtenerEstudiantesConCarrera()
     End Function
 
-    Public Function dominio_ObtenerEstudiantes() As DataTable
-        Dim datos_estudiante As New Datos_Estudiantes()
-        Return datos_estudiante.ObtenerEstudiantes()
-    End Function
-
-    Public Function Dominio_ObtenerMaterias() As DataTable
-        Dim datosMateria As New Datos_Materias()
-        Return datosMateria.ObtenerMaterias()
-    End Function
-
-    Public Function EliminarUltimaAsignacion() As Boolean
+    ' Método para obtener las materias asociadas a un estudiante
+    Public Function ObtenerMateriasPorEstudiante(identificacion As String) As DataTable
         Dim datosAsignar As New Datos_Asignar()
-        Return datosAsignar.EliminarUltimaAsignacion()
+        Return datosAsignar.ObtenerMateriasPorEstudiante(identificacion)
     End Function
-
-
 End Class
