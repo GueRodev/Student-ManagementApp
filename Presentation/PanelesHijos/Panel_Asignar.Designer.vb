@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Panel_Asignar
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Panel_Asignar
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Panel_Asignar))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -33,23 +33,26 @@ Partial Class Panel_Asignar
         Me.pnlEstadoEstudiantes = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.txtMateriaNombre = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.txtNota = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txt_Materia = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txt_Nota = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cboEstado = New System.Windows.Forms.ComboBox()
-        Me.btnAsignarMateria = New Guna.UI2.WinForms.Guna2GradientButton()
+        Me.btn_Asignar_Estado_Nota = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.dgv_Materias = New System.Windows.Forms.DataGridView()
         Me.dgv_EstudiantesMaterias = New System.Windows.Forms.DataGridView()
-        Me.lbl_IDEstudiante = New System.Windows.Forms.Label()
-        Me.lbl_IDMateria = New System.Windows.Forms.Label()
-        Me.btnDeshacer = New Guna.UI2.WinForms.Guna2GradientButton()
-        Me.Materia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nota = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Identificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Apellidos = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Carrera = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lbl_IDEstudiante = New System.Windows.Forms.Label()
+        Me.lbl_IDMateria = New System.Windows.Forms.Label()
+        Me.btnDeshacer = New Guna.UI2.WinForms.Guna2GradientButton()
+        Me.txt_Estado = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnl_VistaMaterias.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlEstadoEstudiantes.SuspendLayout()
@@ -67,7 +70,7 @@ Partial Class Panel_Asignar
         Me.pnl_VistaMaterias.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(101, Byte), Integer))
         Me.pnl_VistaMaterias.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.pnl_VistaMaterias.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.pnl_VistaMaterias.Location = New System.Drawing.Point(243, 310)
+        Me.pnl_VistaMaterias.Location = New System.Drawing.Point(199, 310)
         Me.pnl_VistaMaterias.Margin = New System.Windows.Forms.Padding(4)
         Me.pnl_VistaMaterias.Name = "pnl_VistaMaterias"
         Me.pnl_VistaMaterias.Size = New System.Drawing.Size(865, 49)
@@ -79,11 +82,11 @@ Partial Class Panel_Asignar
         Me.lbl_Materias_Asignar.BackColor = System.Drawing.Color.Transparent
         Me.lbl_Materias_Asignar.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_Materias_Asignar.ForeColor = System.Drawing.Color.White
-        Me.lbl_Materias_Asignar.Location = New System.Drawing.Point(327, 10)
+        Me.lbl_Materias_Asignar.Location = New System.Drawing.Point(313, 10)
         Me.lbl_Materias_Asignar.Name = "lbl_Materias_Asignar"
-        Me.lbl_Materias_Asignar.Size = New System.Drawing.Size(239, 36)
+        Me.lbl_Materias_Asignar.Size = New System.Drawing.Size(249, 36)
         Me.lbl_Materias_Asignar.TabIndex = 34
-        Me.lbl_Materias_Asignar.Text = "Asignar Materia"
+        Me.lbl_Materias_Asignar.Text = "Asignar Estados"
         '
         'Guna2PictureBox1
         '
@@ -108,7 +111,7 @@ Partial Class Panel_Asignar
         Me.pnlEstadoEstudiantes.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(101, Byte), Integer))
         Me.pnlEstadoEstudiantes.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.pnlEstadoEstudiantes.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.pnlEstadoEstudiantes.Location = New System.Drawing.Point(243, 149)
+        Me.pnlEstadoEstudiantes.Location = New System.Drawing.Point(199, 149)
         Me.pnlEstadoEstudiantes.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlEstadoEstudiantes.Name = "pnlEstadoEstudiantes"
         Me.pnlEstadoEstudiantes.Size = New System.Drawing.Size(865, 50)
@@ -140,51 +143,51 @@ Partial Class Panel_Asignar
         Me.Guna2PictureBox2.TabStop = False
         Me.Guna2PictureBox2.UseTransparentBackground = True
         '
-        'txtMateriaNombre
+        'txt_Materia
         '
-        Me.txtMateriaNombre.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txtMateriaNombre.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtMateriaNombre.DefaultText = ""
-        Me.txtMateriaNombre.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtMateriaNombre.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtMateriaNombre.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtMateriaNombre.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtMateriaNombre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtMateriaNombre.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.txtMateriaNombre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.txtMateriaNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtMateriaNombre.Location = New System.Drawing.Point(243, 475)
-        Me.txtMateriaNombre.Margin = New System.Windows.Forms.Padding(9)
-        Me.txtMateriaNombre.Name = "txtMateriaNombre"
-        Me.txtMateriaNombre.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtMateriaNombre.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.txtMateriaNombre.PlaceholderText = "Materia"
-        Me.txtMateriaNombre.SelectedText = ""
-        Me.txtMateriaNombre.Size = New System.Drawing.Size(184, 26)
-        Me.txtMateriaNombre.TabIndex = 47
+        Me.txt_Materia.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.txt_Materia.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_Materia.DefaultText = ""
+        Me.txt_Materia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_Materia.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_Materia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_Materia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_Materia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_Materia.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.txt_Materia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.txt_Materia.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_Materia.Location = New System.Drawing.Point(199, 475)
+        Me.txt_Materia.Margin = New System.Windows.Forms.Padding(9)
+        Me.txt_Materia.Name = "txt_Materia"
+        Me.txt_Materia.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_Materia.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.txt_Materia.PlaceholderText = "Materia"
+        Me.txt_Materia.SelectedText = ""
+        Me.txt_Materia.Size = New System.Drawing.Size(283, 26)
+        Me.txt_Materia.TabIndex = 47
         '
-        'txtNota
+        'txt_Nota
         '
-        Me.txtNota.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txtNota.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtNota.DefaultText = ""
-        Me.txtNota.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtNota.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtNota.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtNota.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtNota.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtNota.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.txtNota.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.txtNota.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtNota.Location = New System.Drawing.Point(439, 475)
-        Me.txtNota.Margin = New System.Windows.Forms.Padding(9)
-        Me.txtNota.Name = "txtNota"
-        Me.txtNota.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtNota.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.txtNota.PlaceholderText = "Nota"
-        Me.txtNota.SelectedText = ""
-        Me.txtNota.Size = New System.Drawing.Size(301, 26)
-        Me.txtNota.TabIndex = 48
+        Me.txt_Nota.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.txt_Nota.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_Nota.DefaultText = ""
+        Me.txt_Nota.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_Nota.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_Nota.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_Nota.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_Nota.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_Nota.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.txt_Nota.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.txt_Nota.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_Nota.Location = New System.Drawing.Point(780, 475)
+        Me.txt_Nota.Margin = New System.Windows.Forms.Padding(9)
+        Me.txt_Nota.Name = "txt_Nota"
+        Me.txt_Nota.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_Nota.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.txt_Nota.PlaceholderText = "Nota"
+        Me.txt_Nota.SelectedText = ""
+        Me.txt_Nota.Size = New System.Drawing.Size(284, 26)
+        Me.txt_Nota.TabIndex = 48
         '
         'Label1
         '
@@ -193,7 +196,7 @@ Partial Class Panel_Asignar
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.125!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(901, 476)
+        Me.Label1.Location = New System.Drawing.Point(879, 47)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(67, 20)
         Me.Label1.TabIndex = 34
@@ -204,33 +207,32 @@ Partial Class Panel_Asignar
         Me.cboEstado.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.cboEstado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.cboEstado.FormattingEnabled = True
-        Me.cboEstado.Items.AddRange(New Object() {"APROBADO", "MATRICULADO", "PENDIENTE"})
-        Me.cboEstado.Location = New System.Drawing.Point(753, 475)
+        Me.cboEstado.Location = New System.Drawing.Point(732, 43)
         Me.cboEstado.Margin = New System.Windows.Forms.Padding(4)
         Me.cboEstado.Name = "cboEstado"
         Me.cboEstado.Size = New System.Drawing.Size(140, 24)
         Me.cboEstado.TabIndex = 49
         '
-        'btnAsignarMateria
+        'btn_Asignar_Estado_Nota
         '
-        Me.btnAsignarMateria.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.btnAsignarMateria.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAsignarMateria.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnAsignarMateria.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnAsignarMateria.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnAsignarMateria.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnAsignarMateria.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnAsignarMateria.FillColor = System.Drawing.Color.Aqua
-        Me.btnAsignarMateria.FillColor2 = System.Drawing.Color.DodgerBlue
-        Me.btnAsignarMateria.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btnAsignarMateria.ForeColor = System.Drawing.Color.White
-        Me.btnAsignarMateria.Image = CType(resources.GetObject("btnAsignarMateria.Image"), System.Drawing.Image)
-        Me.btnAsignarMateria.Location = New System.Drawing.Point(439, 505)
-        Me.btnAsignarMateria.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnAsignarMateria.Name = "btnAsignarMateria"
-        Me.btnAsignarMateria.Size = New System.Drawing.Size(136, 32)
-        Me.btnAsignarMateria.TabIndex = 50
-        Me.btnAsignarMateria.Text = "Asignar"
+        Me.btn_Asignar_Estado_Nota.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btn_Asignar_Estado_Nota.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_Asignar_Estado_Nota.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_Asignar_Estado_Nota.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_Asignar_Estado_Nota.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_Asignar_Estado_Nota.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_Asignar_Estado_Nota.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_Asignar_Estado_Nota.FillColor = System.Drawing.Color.Aqua
+        Me.btn_Asignar_Estado_Nota.FillColor2 = System.Drawing.Color.DodgerBlue
+        Me.btn_Asignar_Estado_Nota.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_Asignar_Estado_Nota.ForeColor = System.Drawing.Color.White
+        Me.btn_Asignar_Estado_Nota.Image = CType(resources.GetObject("btn_Asignar_Estado_Nota.Image"), System.Drawing.Image)
+        Me.btn_Asignar_Estado_Nota.Location = New System.Drawing.Point(518, 514)
+        Me.btn_Asignar_Estado_Nota.Margin = New System.Windows.Forms.Padding(4)
+        Me.btn_Asignar_Estado_Nota.Name = "btn_Asignar_Estado_Nota"
+        Me.btn_Asignar_Estado_Nota.Size = New System.Drawing.Size(136, 32)
+        Me.btn_Asignar_Estado_Nota.TabIndex = 50
+        Me.btn_Asignar_Estado_Nota.Text = "Asignar"
         '
         'dgv_Materias
         '
@@ -248,7 +250,7 @@ Partial Class Panel_Asignar
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgv_Materias.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_Materias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_Materias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Materia, Me.Estado, Me.Nota})
+        Me.dgv_Materias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column5, Me.Column2, Me.Column3, Me.Column4})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSeaGreen
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -259,7 +261,7 @@ Partial Class Panel_Asignar
         Me.dgv_Materias.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_Materias.EnableHeadersVisualStyles = False
         Me.dgv_Materias.GridColor = System.Drawing.Color.White
-        Me.dgv_Materias.Location = New System.Drawing.Point(243, 359)
+        Me.dgv_Materias.Location = New System.Drawing.Point(199, 359)
         Me.dgv_Materias.Margin = New System.Windows.Forms.Padding(5)
         Me.dgv_Materias.Name = "dgv_Materias"
         Me.dgv_Materias.RowHeadersVisible = False
@@ -294,13 +296,41 @@ Partial Class Panel_Asignar
         Me.dgv_EstudiantesMaterias.DefaultCellStyle = DataGridViewCellStyle4
         Me.dgv_EstudiantesMaterias.EnableHeadersVisualStyles = False
         Me.dgv_EstudiantesMaterias.GridColor = System.Drawing.Color.White
-        Me.dgv_EstudiantesMaterias.Location = New System.Drawing.Point(243, 197)
+        Me.dgv_EstudiantesMaterias.Location = New System.Drawing.Point(199, 197)
         Me.dgv_EstudiantesMaterias.Margin = New System.Windows.Forms.Padding(5)
         Me.dgv_EstudiantesMaterias.Name = "dgv_EstudiantesMaterias"
         Me.dgv_EstudiantesMaterias.RowHeadersVisible = False
         Me.dgv_EstudiantesMaterias.RowHeadersWidth = 82
         Me.dgv_EstudiantesMaterias.Size = New System.Drawing.Size(865, 105)
         Me.dgv_EstudiantesMaterias.TabIndex = 52
+        '
+        'Identificacion
+        '
+        Me.Identificacion.DataPropertyName = "Identificacion"
+        Me.Identificacion.HeaderText = "Identificación"
+        Me.Identificacion.MinimumWidth = 6
+        Me.Identificacion.Name = "Identificacion"
+        '
+        'Nombre
+        '
+        Me.Nombre.DataPropertyName = "Nombre"
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.MinimumWidth = 6
+        Me.Nombre.Name = "Nombre"
+        '
+        'Apellidos
+        '
+        Me.Apellidos.DataPropertyName = "Apellidos"
+        Me.Apellidos.HeaderText = "Apellidos"
+        Me.Apellidos.MinimumWidth = 6
+        Me.Apellidos.Name = "Apellidos"
+        '
+        'Carrera
+        '
+        Me.Carrera.DataPropertyName = "Carrera"
+        Me.Carrera.HeaderText = "Carrera"
+        Me.Carrera.MinimumWidth = 6
+        Me.Carrera.Name = "Carrera"
         '
         'lbl_IDEstudiante
         '
@@ -342,74 +372,84 @@ Partial Class Panel_Asignar
         Me.btnDeshacer.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnDeshacer.ForeColor = System.Drawing.Color.White
         Me.btnDeshacer.Image = CType(resources.GetObject("btnDeshacer.Image"), System.Drawing.Image)
-        Me.btnDeshacer.Location = New System.Drawing.Point(604, 505)
+        Me.btnDeshacer.Location = New System.Drawing.Point(565, 35)
         Me.btnDeshacer.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDeshacer.Name = "btnDeshacer"
         Me.btnDeshacer.Size = New System.Drawing.Size(136, 32)
         Me.btnDeshacer.TabIndex = 55
         Me.btnDeshacer.Text = "Deshacer"
         '
-        'Materia
+        'txt_Estado
         '
-        Me.Materia.HeaderText = "Materia"
-        Me.Materia.MinimumWidth = 6
-        Me.Materia.Name = "Materia"
+        Me.txt_Estado.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.txt_Estado.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_Estado.DefaultText = ""
+        Me.txt_Estado.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_Estado.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_Estado.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_Estado.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_Estado.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_Estado.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.txt_Estado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.txt_Estado.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_Estado.Location = New System.Drawing.Point(488, 475)
+        Me.txt_Estado.Margin = New System.Windows.Forms.Padding(9)
+        Me.txt_Estado.Name = "txt_Estado"
+        Me.txt_Estado.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_Estado.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.txt_Estado.PlaceholderText = "Estado"
+        Me.txt_Estado.SelectedText = ""
+        Me.txt_Estado.Size = New System.Drawing.Size(287, 26)
+        Me.txt_Estado.TabIndex = 56
         '
-        'Estado
+        'Column1
         '
-        Me.Estado.HeaderText = "Estado"
-        Me.Estado.MinimumWidth = 6
-        Me.Estado.Name = "Estado"
+        Me.Column1.HeaderText = "EstudianteId"
+        Me.Column1.MinimumWidth = 6
+        Me.Column1.Name = "Column1"
+        Me.Column1.Visible = False
         '
-        'Nota
+        'Column5
         '
-        Me.Nota.HeaderText = "Nota"
-        Me.Nota.MinimumWidth = 6
-        Me.Nota.Name = "Nota"
+        Me.Column5.HeaderText = "MateriaId"
+        Me.Column5.MinimumWidth = 6
+        Me.Column5.Name = "Column5"
+        Me.Column5.Visible = False
         '
-        'Identificacion
+        'Column2
         '
-        Me.Identificacion.DataPropertyName = "Identificacion"
-        Me.Identificacion.HeaderText = "Identificación"
-        Me.Identificacion.MinimumWidth = 6
-        Me.Identificacion.Name = "Identificacion"
+        Me.Column2.HeaderText = "Materia"
+        Me.Column2.MinimumWidth = 6
+        Me.Column2.Name = "Column2"
         '
-        'Nombre
+        'Column3
         '
-        Me.Nombre.DataPropertyName = "Nombre"
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.MinimumWidth = 6
-        Me.Nombre.Name = "Nombre"
+        Me.Column3.HeaderText = "Estado"
+        Me.Column3.MinimumWidth = 6
+        Me.Column3.Name = "Column3"
         '
-        'Apellidos
+        'Column4
         '
-        Me.Apellidos.DataPropertyName = "Apellidos"
-        Me.Apellidos.HeaderText = "Apellidos"
-        Me.Apellidos.MinimumWidth = 6
-        Me.Apellidos.Name = "Apellidos"
-        '
-        'Carrera
-        '
-        Me.Carrera.DataPropertyName = "Carrera"
-        Me.Carrera.HeaderText = "Carrera"
-        Me.Carrera.MinimumWidth = 6
-        Me.Carrera.Name = "Carrera"
+        Me.Column4.HeaderText = "Nota"
+        Me.Column4.MinimumWidth = 6
+        Me.Column4.Name = "Column4"
         '
         'Panel_Asignar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.Controls.Add(Me.txt_Estado)
         Me.Controls.Add(Me.btnDeshacer)
         Me.Controls.Add(Me.lbl_IDMateria)
         Me.Controls.Add(Me.lbl_IDEstudiante)
         Me.Controls.Add(Me.dgv_EstudiantesMaterias)
         Me.Controls.Add(Me.dgv_Materias)
-        Me.Controls.Add(Me.btnAsignarMateria)
+        Me.Controls.Add(Me.btn_Asignar_Estado_Nota)
         Me.Controls.Add(Me.cboEstado)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtNota)
-        Me.Controls.Add(Me.txtMateriaNombre)
+        Me.Controls.Add(Me.txt_Nota)
+        Me.Controls.Add(Me.txt_Materia)
         Me.Controls.Add(Me.pnlEstadoEstudiantes)
         Me.Controls.Add(Me.pnl_VistaMaterias)
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -433,21 +473,24 @@ Partial Class Panel_Asignar
     Friend WithEvents pnlEstadoEstudiantes As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents Label3 As Label
     Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents txtMateriaNombre As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents txtNota As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txt_Materia As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txt_Nota As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents cboEstado As ComboBox
-    Friend WithEvents btnAsignarMateria As Guna.UI2.WinForms.Guna2GradientButton
+    Friend WithEvents btn_Asignar_Estado_Nota As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents dgv_Materias As DataGridView
     Friend WithEvents dgv_EstudiantesMaterias As DataGridView
     Friend WithEvents lbl_IDEstudiante As Label
     Friend WithEvents lbl_IDMateria As Label
     Friend WithEvents btnDeshacer As Guna.UI2.WinForms.Guna2GradientButton
-    Friend WithEvents Materia As DataGridViewTextBoxColumn
-    Friend WithEvents Estado As DataGridViewTextBoxColumn
-    Friend WithEvents Nota As DataGridViewTextBoxColumn
     Friend WithEvents Identificacion As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents Apellidos As DataGridViewTextBoxColumn
     Friend WithEvents Carrera As DataGridViewTextBoxColumn
+    Friend WithEvents txt_Estado As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
 End Class

@@ -7,16 +7,17 @@ Public Class Datos_Materias
     Inherits ConnMySql
 
     ' Método para insertar una nueva materia
-    Public Function InsertarMateria(nombre As String, codigo As String, creditos As Integer) As Boolean
+    Public Function InsertarMateria(nombre As String, codigo As String, creditos As Integer, requisitos As String) As Boolean
         Try
             Using connection = GetConnection()
                 connection.Open()
                 Using command = New MySqlCommand()
                     command.Connection = connection
-                    command.CommandText = "INSERT INTO Materias (Nombre, Codigo, Creditos) VALUES (@Nombre, @Codigo, @Creditos)"
+                    command.CommandText = "INSERT INTO Materias (Nombre, Codigo, Creditos, Requisitos) VALUES (@Nombre, @Codigo, @Creditos, @Requisitos)"
                     command.Parameters.AddWithValue("@Nombre", nombre)
                     command.Parameters.AddWithValue("@Codigo", codigo)
                     command.Parameters.AddWithValue("@Creditos", creditos)
+                    command.Parameters.AddWithValue("@Requisitos", requisitos)
                     command.CommandType = CommandType.Text
                     Dim rowsAffected = command.ExecuteNonQuery()
                     Return rowsAffected > 0
@@ -52,17 +53,18 @@ Public Class Datos_Materias
     End Function
 
     ' Método para actualizar una materia existente
-    Public Function ActualizarMateria(id As Integer, nombre As String, codigo As String, creditos As Integer) As Boolean
+    Public Function ActualizarMateria(id As Integer, nombre As String, codigo As String, creditos As Integer, requisitos As String) As Boolean
         Try
             Using connection = GetConnection()
                 connection.Open()
                 Using command = New MySqlCommand()
                     command.Connection = connection
-                    command.CommandText = "UPDATE Materias SET Nombre = @Nombre, Codigo = @Codigo, Creditos = @Creditos WHERE ID = @ID"
+                    command.CommandText = "UPDATE Materias SET Nombre = @Nombre, Codigo = @Codigo, Creditos = @Creditos, Requisitos = @Requisitos WHERE ID = @ID"
                     command.Parameters.AddWithValue("@ID", id)
                     command.Parameters.AddWithValue("@Nombre", nombre)
                     command.Parameters.AddWithValue("@Codigo", codigo)
                     command.Parameters.AddWithValue("@Creditos", creditos)
+                    command.Parameters.AddWithValue("@Requisitos", requisitos)
                     command.CommandType = CommandType.Text
                     Dim rowsAffected = command.ExecuteNonQuery()
                     Return rowsAffected > 0

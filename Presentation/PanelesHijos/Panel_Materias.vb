@@ -47,6 +47,11 @@ Public Class Panel_Materias
         colCreditos.HeaderText = "Creditos"
         dgv_materias.Columns.Add(colCreditos)
 
+        Dim colRequisitos As New DataGridViewTextBoxColumn()
+        colRequisitos.DataPropertyName = "Requisitos"
+        colRequisitos.HeaderText = "Requisitos"
+        dgv_materias.Columns.Add(colRequisitos)
+
         ' Asignar los datos al DataGridView
         dgv_materias.DataSource = dtMaterias
     End Sub
@@ -62,6 +67,7 @@ Public Class Panel_Materias
         Dim nombre As String = txtNombreMateria.Text
         Dim codigo As String = txtCodigoMateria.Text
         Dim creditosStr As String = txtCreditosMateria.Text
+        Dim requisitos As String = txtRequisitos.Text
 
         ' Validar que los campos no estén vacíos
         If String.IsNullOrWhiteSpace(nombre) OrElse String.IsNullOrWhiteSpace(codigo) OrElse String.IsNullOrWhiteSpace(creditosStr) Then
@@ -92,7 +98,7 @@ Public Class Panel_Materias
         Dim materiaModelo As New MateriaModelo()
 
         ' Llamar al método dominio_InsertarMateria para guardar la nueva materia
-        Dim insercionExitosa As Boolean = materiaModelo.Dominio_InsertarMateria(nombre, codigo, creditos)
+        Dim insercionExitosa As Boolean = materiaModelo.Dominio_InsertarMateria(nombre, codigo, creditos, requisitos)
 
         ' Verificar si la inserción fue exitosa
         If insercionExitosa Then
@@ -155,6 +161,7 @@ Public Class Panel_Materias
             Dim nombre As String = txtNombreMateria.Text
             Dim codigo As String = txtCodigoMateria.Text
             Dim creditosStr As String = txtCreditosMateria.Text
+            Dim requisitos As String = txtRequisitos.Text
 
             ' Validar que los campos no estén vacíos
             If String.IsNullOrWhiteSpace(nombre) OrElse String.IsNullOrWhiteSpace(codigo) OrElse String.IsNullOrWhiteSpace(creditosStr) Then
@@ -185,7 +192,7 @@ Public Class Panel_Materias
             Dim materiaModelo As New MateriaModelo()
 
             ' Llamar al método Dominio_ActualizarMateria para actualizar la materia
-            Dim actualizacionExitosa As Boolean = materiaModelo.Dominio_ActualizarMateria(idMateria, nombre, codigo, creditos)
+            Dim actualizacionExitosa As Boolean = materiaModelo.Dominio_ActualizarMateria(idMateria, nombre, codigo, creditos, requisitos)
 
             ' Verificar si la actualización fue exitosa
             If actualizacionExitosa Then
@@ -237,6 +244,7 @@ Public Class Panel_Materias
         txtNombreMateria.Clear()
         txtCodigoMateria.Clear()
         txtCreditosMateria.Clear()
+        txtRequisitos.Clear()
         txtNombreMateria.Focus()
     End Sub
 
@@ -249,6 +257,7 @@ Public Class Panel_Materias
             txtNombreMateria.Text = selectedRow.Cells(1).Value.ToString()
             txtCodigoMateria.Text = selectedRow.Cells(2).Value.ToString()
             txtCreditosMateria.Text = selectedRow.Cells(3).Value.ToString()
+            txtRequisitos.Text = selectedRow.Cells(4).Value.ToString()
         End If
     End Sub
 
