@@ -120,11 +120,7 @@ Public Class Panel_Estudiantes
             Return
         End If
 
-        ' Validar que el campo de carrera no esté vacío y cumpla con los requisitos de longitud y contenido
-        If String.IsNullOrWhiteSpace(carrera) OrElse carrera.Length > 30 OrElse Not EsNombreValido(carrera) Then
-            MessageBox.Show("Ingrese Datos Validos para la carrera.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return ' Cancelar la operación si no se cumple la validación
-        End If
+
 
         ' Convertir el campo de fecha de ingreso a tipo Date
         Dim fechaIngreso As Date

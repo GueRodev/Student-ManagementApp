@@ -14,4 +14,28 @@ Public Class MatricularModelo
         Return dataMatricular.ObtenerMaterias_PorCarrera(carreraID)
     End Function
 
+    ' Método para verificar si un correo ya existe
+    Public Function Dominio_CorreoExiste(correo As String) As Boolean
+        Dim dataMatricular As New Data_Matricular()
+        Return dataMatricular.CorreoExiste(correo)
+    End Function
+
+    Public Function Dominio_TelefonoExiste(telefono As String) As Boolean
+        Dim dataMatricular As New Data_Matricular()
+        Return dataMatricular.TelefonoExiste(telefono)
+    End Function
+
+    Public Function Dominio_CarnetExiste(carnet As String) As Boolean
+        Dim dataMatricular As New Data_Matricular()
+        Return dataMatricular.CarnetExiste(carnet)
+    End Function
+
+    Public Function Dominio_IdentificacionExiste(identificacion As String) As Boolean
+        Dim dataMatricular As New Data_Matricular()
+        Return dataMatricular.IdentificacionExiste(identificacion)
+    End Function
+
+
+
+
 End Class

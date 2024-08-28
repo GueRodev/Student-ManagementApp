@@ -83,9 +83,69 @@ Public Class Panel_Matricular
     End Sub
 
     Private Sub btn_Matricular_Click(sender As Object, e As EventArgs) Handles btn_Matricular.Click
+
+        ' Instanciar MatricularModelo
+        Dim matricularModelo As New MatricularModelo()
+
         ' Validar que los campos no estén vacíos
         If Not ValidarCamposNoVacios() Then
             Return ' Cancelar la operación si algún campo está vacío
+        End If
+
+        ' Validar que el nombre y el apellido no contengan números enteros y no excedan los 16 caracteres
+        If Not EsNombreValido(txtNombre_Matricular.Text) Or Not EsNombreValido(txtApellidos_Matricular.Text) Then
+            MessageBox.Show("El nombre y el apellido no pueden contener números y deben tener máximo 16 caracteres.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return ' Cancelar la operación si no se cumple la validación
+        End If
+
+        ' Validar el formato del correo electrónico
+        If Not EsCorreoValido(txtCorreo_Matricular.Text) Then
+            MessageBox.Show("Ingrese un correo electrónico válido.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return ' Cancelar la operación si no se cumple la validación
+        End If
+
+        ' Verificar si el correo ya existe
+        If matricularModelo.Dominio_CorreoExiste(txtCorreo_Matricular.Text) Then
+            MessageBox.Show("El correo electrónico ya está registrado en el sistema.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtCorreo_Matricular.Focus()
+            Return ' Cancelar la operación si el correo ya existe
+        End If
+
+        ' Verificar si el número de teléfono ya existe
+        If matricularModelo.Dominio_TelefonoExiste(txtTelefono_Matricular.Text) Then
+            MessageBox.Show("El número de teléfono ya está registrado en el sistema.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtTelefono_Matricular.Focus()
+            Return ' Cancelar la operación si el teléfono ya existe
+        End If
+
+        ' Verificar si el carnet ya existe
+        If matricularModelo.Dominio_CarnetExiste(txtCarnet_Matricular.Text) Then
+            MessageBox.Show("El carnet ya está registrado en el sistema.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtCarnet_Matricular.Focus()
+            Return ' Cancelar la operación si el carnet ya existe
+        End If
+
+        ' Verificar si la identificación ya existe
+        If matricularModelo.Dominio_IdentificacionExiste(txtIdentificacion_Matricular.Text) Then
+            MessageBox.Show("La identificación ya está registrada en el sistema.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtIdentificacion_Matricular.Focus()
+            Return ' Cancelar la operación si la identificación ya existe
+        End If
+
+        ' Validar que la identificación sea válida
+        If Not EsIdentificacionValida(txtIdentificacion_Matricular.Text) Then
+            MessageBox.Show("La identificación debe ser un número de máximo 10 dígitos.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return ' Cancelar la operación si no se cumple la validación
+        End If
+
+        ' Validar el teléfono antes de continuar
+        If Not ValidarTelefono(txtTelefono_Matricular.Text) Then
+            Return ' Cancelar la operación si el teléfono no es válido
+        End If
+
+        ' Validar el formato del carnet antes de continuar
+        If Not ValidarFormatoCarnet(txtCarnet_Matricular.Text) Then
+            Return ' Cancelar la operación si el carnet no tiene el formato correcto
         End If
 
         ' Validar si el usuario está seguro de matricular al estudiante
@@ -94,7 +154,7 @@ Public Class Panel_Matricular
             Return ' Cancelar la operación si el usuario no está seguro
         End If
 
-        ' Obtener los datos del estudiante desde los campos del formulario
+        ' Si todas las validaciones son exitosas, proceder con la matriculación
         Dim nombre As String = txtNombre_Matricular.Text
         Dim apellidos As String = txtApellidos_Matricular.Text
         Dim identificacion As String = txtIdentificacion_Matricular.Text
@@ -103,9 +163,6 @@ Public Class Panel_Matricular
         Dim telefono As String = txtTelefono_Matricular.Text
         Dim carreraID As Integer = DirectCast(cbo_Carreras.SelectedItem, KeyValuePair(Of String, Integer)).Value
         Dim fechaIngreso As Date = DateTime_Matricular.Value
-
-        ' Instanciar MatricularModelo
-        Dim matricularModelo As New MatricularModelo()
 
         ' Llamar al método Dominio_MatricularEstudiante para guardar el nuevo estudiante y sus materias
         Dim matriculaExitosa As Boolean = matricularModelo.Dominio_MatricularEstudiante(nombre, apellidos, identificacion, carnet, correo, telefono, carreraID, fechaIngreso)
@@ -120,6 +177,83 @@ Public Class Panel_Matricular
         End If
     End Sub
 
+
+
+
+    Private Function EsNombreValido(nombre As String) As Boolean
+        ' Validar que el nombre no contenga números enteros y no exceda los 16 caracteres
+        Return Not nombre.Any(Function(c) Char.IsDigit(c)) AndAlso nombre.Length <= 16
+    End Function
+
+    Private Function EsCorreoValido(correo As String) As Boolean
+        ' Validar el formato del correo electrónico
+        Return correo.Contains("@") AndAlso correo.EndsWith(".com")
+    End Function
+
+
+
+    Private Function EsIdentificacionValida(identificacion As String) As Boolean
+        ' Validar que la identificación tenga máximo 10 dígitos enteros y solo contenga números enteros
+        Dim esNumerico As Boolean = Integer.TryParse(identificacion, Nothing)
+        Return esNumerico AndAlso identificacion.Length <= 10
+    End Function
+
+    Private Function ValidarTelefono(telefono As String) As Boolean
+        ' Eliminar espacios en blanco al principio y al final del número de teléfono
+        telefono = telefono.Trim()
+
+        ' Verificar que el teléfono solo contenga números
+        If Not telefono.All(Function(c) Char.IsDigit(c)) Then
+            MessageBox.Show("El campo 'Teléfono' solo puede contener números.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtTelefono_Matricular.Focus()
+            Return False
+        End If
+
+        ' Verificar la longitud del teléfono (por ejemplo, entre 8 y 10 dígitos)
+        If telefono.Length < 8 OrElse telefono.Length > 10 Then
+            MessageBox.Show("El número de teléfono debe tener entre 8 y 10 dígitos.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtTelefono_Matricular.Focus()
+            Return False
+        End If
+
+        ' Si el teléfono es válido, devolver True
+        Return True
+    End Function
+
+
+
+    Private Function ValidarFormatoCarnet(carnet As String) As Boolean
+        ' Verificar que el carnet tenga exactamente 5 caracteres
+        If carnet.Length <> 5 Then
+            MessageBox.Show("El carnet debe tener el formato 44-13.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtCarnet_Matricular.Focus()
+            Return False
+        End If
+
+        ' Verificar que los primeros dos caracteres sean números
+        If Not Char.IsDigit(carnet(0)) OrElse Not Char.IsDigit(carnet(1)) Then
+            MessageBox.Show("El carnet debe empezar con dos números.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtCarnet_Matricular.Focus()
+            Return False
+        End If
+
+        ' Verificar que el tercer carácter sea un guion '-'
+        If carnet(2) <> "-"c Then
+            MessageBox.Show("El tercer carácter del carnet debe ser un guion '-'.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtCarnet_Matricular.Focus()
+            Return False
+        End If
+
+        ' Verificar que los últimos dos caracteres sean números
+        If Not Char.IsDigit(carnet(3)) OrElse Not Char.IsDigit(carnet(4)) Then
+            MessageBox.Show("El carnet debe terminar con dos números.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtCarnet_Matricular.Focus()
+            Return False
+        End If
+
+        ' Si el formato es válido, devolver True
+        Return True
+    End Function
 
     Private Function ValidarCamposNoVacios() As Boolean
         ' Verificar que los campos de texto no estén vacíos
