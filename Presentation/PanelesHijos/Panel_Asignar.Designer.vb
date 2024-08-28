@@ -39,6 +39,11 @@ Partial Class Panel_Asignar
         Me.cboEstado = New System.Windows.Forms.ComboBox()
         Me.btn_Asignar_Estado_Nota = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.dgv_Materias = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgv_EstudiantesMaterias = New System.Windows.Forms.DataGridView()
         Me.Identificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -48,11 +53,6 @@ Partial Class Panel_Asignar
         Me.lbl_IDMateria = New System.Windows.Forms.Label()
         Me.btnDeshacer = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.txt_Estado = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnl_VistaMaterias.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlEstadoEstudiantes.SuspendLayout()
@@ -255,7 +255,7 @@ Partial Class Panel_Asignar
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSeaGreen
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.ForestGreen
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgv_Materias.DefaultCellStyle = DataGridViewCellStyle2
@@ -268,6 +268,38 @@ Partial Class Panel_Asignar
         Me.dgv_Materias.RowHeadersWidth = 82
         Me.dgv_Materias.Size = New System.Drawing.Size(865, 112)
         Me.dgv_Materias.TabIndex = 51
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "EstudianteId"
+        Me.Column1.MinimumWidth = 6
+        Me.Column1.Name = "Column1"
+        Me.Column1.Visible = False
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "MateriaId"
+        Me.Column5.MinimumWidth = 6
+        Me.Column5.Name = "Column5"
+        Me.Column5.Visible = False
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Materia"
+        Me.Column2.MinimumWidth = 6
+        Me.Column2.Name = "Column2"
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Estado"
+        Me.Column3.MinimumWidth = 6
+        Me.Column3.Name = "Column3"
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Nota"
+        Me.Column4.MinimumWidth = 6
+        Me.Column4.Name = "Column4"
         '
         'dgv_EstudiantesMaterias
         '
@@ -290,7 +322,7 @@ Partial Class Panel_Asignar
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSeaGreen
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.ForestGreen
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgv_EstudiantesMaterias.DefaultCellStyle = DataGridViewCellStyle4
@@ -401,38 +433,6 @@ Partial Class Panel_Asignar
         Me.txt_Estado.SelectedText = ""
         Me.txt_Estado.Size = New System.Drawing.Size(287, 26)
         Me.txt_Estado.TabIndex = 56
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "EstudianteId"
-        Me.Column1.MinimumWidth = 6
-        Me.Column1.Name = "Column1"
-        Me.Column1.Visible = False
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "MateriaId"
-        Me.Column5.MinimumWidth = 6
-        Me.Column5.Name = "Column5"
-        Me.Column5.Visible = False
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Materia"
-        Me.Column2.MinimumWidth = 6
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Estado"
-        Me.Column3.MinimumWidth = 6
-        Me.Column3.Name = "Column3"
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Nota"
-        Me.Column4.MinimumWidth = 6
-        Me.Column4.Name = "Column4"
         '
         'Panel_Asignar
         '

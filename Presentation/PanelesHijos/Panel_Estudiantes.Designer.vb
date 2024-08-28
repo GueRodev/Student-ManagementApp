@@ -25,6 +25,7 @@ Partial Class Panel_Estudiantes
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Panel_Estudiantes))
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.txtNombreEstudiante = New Guna.UI2.WinForms.Guna2TextBox()
@@ -32,6 +33,13 @@ Partial Class Panel_Estudiantes
         Me.btnEditarEstudiante = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.btnGuardarEstudiante = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.dgv_estudiantes = New System.Windows.Forms.DataGridView()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Apellidos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Identificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Carnet = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtApellidosEstudiante = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtIdentificacionEstudiante = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtCorreoEstudiante = New Guna.UI2.WinForms.Guna2TextBox()
@@ -41,13 +49,6 @@ Partial Class Panel_Estudiantes
         Me.txt_ID_Estudiante = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtFechaEstudiante = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtCarreraEstudiante = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Apellidos = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Identificacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Carnet = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_estudiantes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -70,7 +71,7 @@ Partial Class Panel_Estudiantes
         Me.txtNombreEstudiante.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtNombreEstudiante.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtNombreEstudiante.Location = New System.Drawing.Point(928, 211)
-        Me.txtNombreEstudiante.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtNombreEstudiante.Margin = New System.Windows.Forms.Padding(5)
         Me.txtNombreEstudiante.Name = "txtNombreEstudiante"
         Me.txtNombreEstudiante.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtNombreEstudiante.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
@@ -96,7 +97,7 @@ Partial Class Panel_Estudiantes
         Me.btnEliminarEstudiante.ForeColor = System.Drawing.Color.White
         Me.btnEliminarEstudiante.Image = CType(resources.GetObject("btnEliminarEstudiante.Image"), System.Drawing.Image)
         Me.btnEliminarEstudiante.Location = New System.Drawing.Point(793, 161)
-        Me.btnEliminarEstudiante.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnEliminarEstudiante.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEliminarEstudiante.Name = "btnEliminarEstudiante"
         Me.btnEliminarEstudiante.Size = New System.Drawing.Size(124, 28)
         Me.btnEliminarEstudiante.TabIndex = 24
@@ -119,7 +120,7 @@ Partial Class Panel_Estudiantes
         Me.btnEditarEstudiante.ForeColor = System.Drawing.Color.White
         Me.btnEditarEstudiante.Image = CType(resources.GetObject("btnEditarEstudiante.Image"), System.Drawing.Image)
         Me.btnEditarEstudiante.Location = New System.Drawing.Point(661, 161)
-        Me.btnEditarEstudiante.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnEditarEstudiante.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEditarEstudiante.Name = "btnEditarEstudiante"
         Me.btnEditarEstudiante.Size = New System.Drawing.Size(124, 28)
         Me.btnEditarEstudiante.TabIndex = 23
@@ -142,7 +143,7 @@ Partial Class Panel_Estudiantes
         Me.btnGuardarEstudiante.ForeColor = System.Drawing.Color.White
         Me.btnGuardarEstudiante.Image = CType(resources.GetObject("btnGuardarEstudiante.Image"), System.Drawing.Image)
         Me.btnGuardarEstudiante.Location = New System.Drawing.Point(529, 161)
-        Me.btnGuardarEstudiante.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnGuardarEstudiante.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGuardarEstudiante.Name = "btnGuardarEstudiante"
         Me.btnGuardarEstudiante.Size = New System.Drawing.Size(124, 28)
         Me.btnGuardarEstudiante.TabIndex = 22
@@ -169,19 +170,84 @@ Partial Class Panel_Estudiantes
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSeaGreen
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.ForestGreen
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgv_estudiantes.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_estudiantes.EnableHeadersVisualStyles = False
         Me.dgv_estudiantes.GridColor = System.Drawing.Color.White
         Me.dgv_estudiantes.Location = New System.Drawing.Point(200, 211)
-        Me.dgv_estudiantes.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.dgv_estudiantes.Margin = New System.Windows.Forms.Padding(5)
         Me.dgv_estudiantes.Name = "dgv_estudiantes"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.ForestGreen
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_estudiantes.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgv_estudiantes.RowHeadersVisible = False
         Me.dgv_estudiantes.RowHeadersWidth = 51
         Me.dgv_estudiantes.Size = New System.Drawing.Size(718, 248)
         Me.dgv_estudiantes.TabIndex = 21
+        '
+        'ID
+        '
+        Me.ID.DataPropertyName = "ID"
+        Me.ID.HeaderText = "ID"
+        Me.ID.MinimumWidth = 6
+        Me.ID.Name = "ID"
+        '
+        'Nombre
+        '
+        Me.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Nombre.DataPropertyName = "Nombre"
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.MinimumWidth = 6
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.ReadOnly = True
+        '
+        'Apellidos
+        '
+        Me.Apellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Apellidos.DataPropertyName = "Apellidos"
+        Me.Apellidos.HeaderText = "Apellidos"
+        Me.Apellidos.MinimumWidth = 6
+        Me.Apellidos.Name = "Apellidos"
+        Me.Apellidos.ReadOnly = True
+        '
+        'Identificacion
+        '
+        Me.Identificacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Identificacion.DataPropertyName = "Identificacion"
+        Me.Identificacion.HeaderText = "Identificacion"
+        Me.Identificacion.MinimumWidth = 6
+        Me.Identificacion.Name = "Identificacion"
+        Me.Identificacion.ReadOnly = True
+        '
+        'Carnet
+        '
+        Me.Carnet.DataPropertyName = "Carnet"
+        Me.Carnet.HeaderText = "Carnet"
+        Me.Carnet.MinimumWidth = 6
+        Me.Carnet.Name = "Carnet"
+        '
+        'Correo
+        '
+        Me.Correo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Correo.DataPropertyName = "Correo"
+        Me.Correo.HeaderText = "Correo"
+        Me.Correo.MinimumWidth = 6
+        Me.Correo.Name = "Correo"
+        Me.Correo.ReadOnly = True
+        '
+        'Telefono
+        '
+        Me.Telefono.DataPropertyName = "Telefono"
+        Me.Telefono.HeaderText = "Telefono"
+        Me.Telefono.MinimumWidth = 6
+        Me.Telefono.Name = "Telefono"
         '
         'txtApellidosEstudiante
         '
@@ -197,7 +263,7 @@ Partial Class Panel_Estudiantes
         Me.txtApellidosEstudiante.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtApellidosEstudiante.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtApellidosEstudiante.Location = New System.Drawing.Point(928, 243)
-        Me.txtApellidosEstudiante.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtApellidosEstudiante.Margin = New System.Windows.Forms.Padding(5)
         Me.txtApellidosEstudiante.Name = "txtApellidosEstudiante"
         Me.txtApellidosEstudiante.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtApellidosEstudiante.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
@@ -220,7 +286,7 @@ Partial Class Panel_Estudiantes
         Me.txtIdentificacionEstudiante.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtIdentificacionEstudiante.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtIdentificacionEstudiante.Location = New System.Drawing.Point(928, 274)
-        Me.txtIdentificacionEstudiante.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtIdentificacionEstudiante.Margin = New System.Windows.Forms.Padding(5)
         Me.txtIdentificacionEstudiante.Name = "txtIdentificacionEstudiante"
         Me.txtIdentificacionEstudiante.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtIdentificacionEstudiante.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
@@ -243,7 +309,7 @@ Partial Class Panel_Estudiantes
         Me.txtCorreoEstudiante.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtCorreoEstudiante.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtCorreoEstudiante.Location = New System.Drawing.Point(928, 342)
-        Me.txtCorreoEstudiante.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtCorreoEstudiante.Margin = New System.Windows.Forms.Padding(5)
         Me.txtCorreoEstudiante.Name = "txtCorreoEstudiante"
         Me.txtCorreoEstudiante.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtCorreoEstudiante.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
@@ -269,7 +335,7 @@ Partial Class Panel_Estudiantes
         Me.btnLimpiarEstudiante.ForeColor = System.Drawing.Color.White
         Me.btnLimpiarEstudiante.Image = CType(resources.GetObject("btnLimpiarEstudiante.Image"), System.Drawing.Image)
         Me.btnLimpiarEstudiante.Location = New System.Drawing.Point(453, 161)
-        Me.btnLimpiarEstudiante.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnLimpiarEstudiante.Margin = New System.Windows.Forms.Padding(4)
         Me.btnLimpiarEstudiante.Name = "btnLimpiarEstudiante"
         Me.btnLimpiarEstudiante.Size = New System.Drawing.Size(68, 28)
         Me.btnLimpiarEstudiante.TabIndex = 34
@@ -392,63 +458,6 @@ Partial Class Panel_Estudiantes
         Me.txtCarreraEstudiante.TabIndex = 41
         Me.txtCarreraEstudiante.Visible = False
         '
-        'ID
-        '
-        Me.ID.DataPropertyName = "ID"
-        Me.ID.HeaderText = "ID"
-        Me.ID.MinimumWidth = 6
-        Me.ID.Name = "ID"
-        '
-        'Nombre
-        '
-        Me.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Nombre.DataPropertyName = "Nombre"
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.MinimumWidth = 6
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.ReadOnly = True
-        '
-        'Apellidos
-        '
-        Me.Apellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Apellidos.DataPropertyName = "Apellidos"
-        Me.Apellidos.HeaderText = "Apellidos"
-        Me.Apellidos.MinimumWidth = 6
-        Me.Apellidos.Name = "Apellidos"
-        Me.Apellidos.ReadOnly = True
-        '
-        'Identificacion
-        '
-        Me.Identificacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Identificacion.DataPropertyName = "Identificacion"
-        Me.Identificacion.HeaderText = "Identificacion"
-        Me.Identificacion.MinimumWidth = 6
-        Me.Identificacion.Name = "Identificacion"
-        Me.Identificacion.ReadOnly = True
-        '
-        'Carnet
-        '
-        Me.Carnet.DataPropertyName = "Carnet"
-        Me.Carnet.HeaderText = "Carnet"
-        Me.Carnet.MinimumWidth = 6
-        Me.Carnet.Name = "Carnet"
-        '
-        'Correo
-        '
-        Me.Correo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Correo.DataPropertyName = "Correo"
-        Me.Correo.HeaderText = "Correo"
-        Me.Correo.MinimumWidth = 6
-        Me.Correo.Name = "Correo"
-        Me.Correo.ReadOnly = True
-        '
-        'Telefono
-        '
-        Me.Telefono.DataPropertyName = "Telefono"
-        Me.Telefono.HeaderText = "Telefono"
-        Me.Telefono.MinimumWidth = 6
-        Me.Telefono.Name = "Telefono"
-        '
         'Panel_Estudiantes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -468,7 +477,7 @@ Partial Class Panel_Estudiantes
         Me.Controls.Add(Me.btnEditarEstudiante)
         Me.Controls.Add(Me.btnGuardarEstudiante)
         Me.Controls.Add(Me.dgv_estudiantes)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Panel_Estudiantes"
         Me.Size = New System.Drawing.Size(1113, 565)
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()

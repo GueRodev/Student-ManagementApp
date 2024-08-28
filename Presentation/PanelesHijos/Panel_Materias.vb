@@ -26,10 +26,12 @@ Public Class Panel_Materias
         dgv_materias.Columns.Clear() ' Limpiar las columnas existentes
         dgv_materias.AutoGenerateColumns = False ' Deshabilitar la generación automática de columnas
 
+
         ' Agregar las columnas necesarias
         Dim colID As New DataGridViewTextBoxColumn()
         colID.DataPropertyName = "ID"
         colID.HeaderText = "ID"
+        colID.Visible = False ' Ocultar la columna ID
         dgv_materias.Columns.Add(colID)
 
         Dim colNombre As New DataGridViewTextBoxColumn()
@@ -54,6 +56,8 @@ Public Class Panel_Materias
 
         ' Asignar los datos al DataGridView
         dgv_materias.DataSource = dtMaterias
+
+
     End Sub
 
     Private Sub btnGuardarMateria_Click(sender As Object, e As EventArgs) Handles btnGuardarMateria.Click
@@ -83,7 +87,13 @@ Public Class Panel_Materias
 
         ' Validar el formato del código de la materia
         If Not EsCodigoValido(codigo) Then
-            MessageBox.Show("Formato Incorrecto. Ingrese un formato de 2 Mayusculas, 1 guion '-' y 4 números.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Formato Incorrecto. Formato de Codigo Incorrecto, Ingrese 2 Mayusculas, 1 guion '-' y 4 números.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return ' Cancelar la operación si no se cumple la validación
+        End If
+
+        ' Validar el formato del código de la materia
+        If Not EsCodigoValido(requisitos) Then
+            MessageBox.Show("Formato Incorrecto. Formato de Requisito Incorrecto, Ingrese 2 Mayusculas, 1 guion '-' y 4 números.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return ' Cancelar la operación si no se cumple la validación
         End If
 

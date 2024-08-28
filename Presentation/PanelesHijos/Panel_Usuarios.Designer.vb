@@ -23,8 +23,9 @@ Partial Class Panel_Usuarios
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Panel_Usuarios))
         Me.dgv_usuarios = New System.Windows.Forms.DataGridView()
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -51,30 +52,39 @@ Partial Class Panel_Usuarios
         Me.dgv_usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv_usuarios.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.dgv_usuarios.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_usuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_usuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_usuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Usuario, Me.Email, Me.Rol})
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSeaGreen
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_usuarios.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSeaGreen
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.ForestGreen
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_usuarios.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_usuarios.EnableHeadersVisualStyles = False
         Me.dgv_usuarios.GridColor = System.Drawing.Color.White
         Me.dgv_usuarios.Location = New System.Drawing.Point(127, 175)
         Me.dgv_usuarios.Margin = New System.Windows.Forms.Padding(4)
         Me.dgv_usuarios.Name = "dgv_usuarios"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.ForestGreen
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_usuarios.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgv_usuarios.RowHeadersVisible = False
+        Me.dgv_usuarios.RowHeadersWidth = 51
         Me.dgv_usuarios.Size = New System.Drawing.Size(646, 173)
         Me.dgv_usuarios.TabIndex = 13
         '
@@ -84,6 +94,7 @@ Partial Class Panel_Usuarios
         Me.ID.DataPropertyName = "ID"
         Me.ID.FillWeight = 20.0!
         Me.ID.HeaderText = "ID"
+        Me.ID.MinimumWidth = 6
         Me.ID.Name = "ID"
         Me.ID.ReadOnly = True
         '
@@ -92,6 +103,7 @@ Partial Class Panel_Usuarios
         Me.Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.Usuario.DataPropertyName = "Usuario"
         Me.Usuario.HeaderText = "Usuario"
+        Me.Usuario.MinimumWidth = 6
         Me.Usuario.Name = "Usuario"
         Me.Usuario.ReadOnly = True
         '
@@ -100,6 +112,7 @@ Partial Class Panel_Usuarios
         Me.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.Email.DataPropertyName = "Email"
         Me.Email.HeaderText = "Email"
+        Me.Email.MinimumWidth = 6
         Me.Email.Name = "Email"
         Me.Email.ReadOnly = True
         '
@@ -108,6 +121,7 @@ Partial Class Panel_Usuarios
         Me.Rol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.Rol.DataPropertyName = "Rol"
         Me.Rol.HeaderText = "Rol"
+        Me.Rol.MinimumWidth = 6
         Me.Rol.Name = "Rol"
         Me.Rol.ReadOnly = True
         '
@@ -192,6 +206,7 @@ Partial Class Panel_Usuarios
         Me.txtGuardarUsuario.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtGuardarUsuario.IconLeft = CType(resources.GetObject("txtGuardarUsuario.IconLeft"), System.Drawing.Image)
         Me.txtGuardarUsuario.Location = New System.Drawing.Point(168, 149)
+        Me.txtGuardarUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtGuardarUsuario.Name = "txtGuardarUsuario"
         Me.txtGuardarUsuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtGuardarUsuario.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
@@ -215,6 +230,7 @@ Partial Class Panel_Usuarios
         Me.txtGuardarEmailUsuario.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtGuardarEmailUsuario.IconLeft = CType(resources.GetObject("txtGuardarEmailUsuario.IconLeft"), System.Drawing.Image)
         Me.txtGuardarEmailUsuario.Location = New System.Drawing.Point(369, 149)
+        Me.txtGuardarEmailUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtGuardarEmailUsuario.Name = "txtGuardarEmailUsuario"
         Me.txtGuardarEmailUsuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtGuardarEmailUsuario.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
@@ -237,6 +253,7 @@ Partial Class Panel_Usuarios
         Me.txt_ID_Usuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txt_ID_Usuario.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_ID_Usuario.Location = New System.Drawing.Point(127, 149)
+        Me.txt_ID_Usuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_ID_Usuario.Name = "txt_ID_Usuario"
         Me.txt_ID_Usuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_ID_Usuario.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
@@ -264,6 +281,7 @@ Partial Class Panel_Usuarios
         Me.txtGuardarPasswordUsuario.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtGuardarPasswordUsuario.IconLeft = CType(resources.GetObject("txtGuardarPasswordUsuario.IconLeft"), System.Drawing.Image)
         Me.txtGuardarPasswordUsuario.Location = New System.Drawing.Point(577, 149)
+        Me.txtGuardarPasswordUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtGuardarPasswordUsuario.Name = "txtGuardarPasswordUsuario"
         Me.txtGuardarPasswordUsuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.txtGuardarPasswordUsuario.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
@@ -295,7 +313,7 @@ Partial Class Panel_Usuarios
         '
         'Panel_Usuarios
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.Controls.Add(Me.btnLimpiarUsuario)

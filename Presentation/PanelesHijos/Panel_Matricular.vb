@@ -83,6 +83,11 @@ Public Class Panel_Matricular
     End Sub
 
     Private Sub btn_Matricular_Click(sender As Object, e As EventArgs) Handles btn_Matricular.Click
+        ' Validar que los campos no estén vacíos
+        If Not ValidarCamposNoVacios() Then
+            Return ' Cancelar la operación si algún campo está vacío
+        End If
+
         ' Validar si el usuario está seguro de matricular al estudiante
         Dim confirmacion As DialogResult = MessageBox.Show("¿Está seguro de que desea matricular a este estudiante?", "Confirmar Matricula", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If confirmacion = DialogResult.No Then
@@ -114,6 +119,57 @@ Public Class Panel_Matricular
             MessageBox.Show("Error al matricular al estudiante. Inténtelo de nuevo.")
         End If
     End Sub
+
+
+    Private Function ValidarCamposNoVacios() As Boolean
+        ' Verificar que los campos de texto no estén vacíos
+        If String.IsNullOrWhiteSpace(txtNombre_Matricular.Text) Then
+            MessageBox.Show("El campo 'Nombre' no puede estar vacío.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtNombre_Matricular.Focus()
+            Return False
+        End If
+
+        If String.IsNullOrWhiteSpace(txtApellidos_Matricular.Text) Then
+            MessageBox.Show("El campo 'Apellidos' no puede estar vacío.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtApellidos_Matricular.Focus()
+            Return False
+        End If
+
+        If String.IsNullOrWhiteSpace(txtIdentificacion_Matricular.Text) Then
+            MessageBox.Show("El campo 'Identificación' no puede estar vacío.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtIdentificacion_Matricular.Focus()
+            Return False
+        End If
+
+        If String.IsNullOrWhiteSpace(txtCarnet_Matricular.Text) Then
+            MessageBox.Show("El campo 'Carnet' no puede estar vacío.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtCarnet_Matricular.Focus()
+            Return False
+        End If
+
+        If String.IsNullOrWhiteSpace(txtCorreo_Matricular.Text) Then
+            MessageBox.Show("El campo 'Correo' no puede estar vacío.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtCorreo_Matricular.Focus()
+            Return False
+        End If
+
+        If String.IsNullOrWhiteSpace(txtTelefono_Matricular.Text) Then
+            MessageBox.Show("El campo 'Teléfono' no puede estar vacío.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtTelefono_Matricular.Focus()
+            Return False
+        End If
+
+        ' Verificar que se haya seleccionado una carrera válida
+        If cbo_Carreras.SelectedIndex = 0 Then
+            MessageBox.Show("Debe seleccionar una carrera.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            cbo_Carreras.Focus()
+            Return False
+        End If
+
+        ' Si todos los campos son válidos, devolver True
+        Return True
+    End Function
+
 
     Private Sub LimpiarCampos()
         ' Limpiar los campos del formulario de matrícula
