@@ -28,10 +28,6 @@ Partial Class Panel_Usuarios
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Panel_Usuarios))
         Me.dgv_usuarios = New System.Windows.Forms.DataGridView()
-        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Email = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Rol = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnGuardarUsuario = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.btnEditarUsuario = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.btnEliminarUsuario = New Guna.UI2.WinForms.Guna2GradientButton()
@@ -41,6 +37,10 @@ Partial Class Panel_Usuarios
         Me.ErrorIconoUsuario = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.txtGuardarPasswordUsuario = New Guna.UI2.WinForms.Guna2TextBox()
         Me.btnLimpiarUsuario = New Guna.UI2.WinForms.Guna2GradientButton()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Email = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Rol = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgv_usuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorIconoUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -87,43 +87,6 @@ Partial Class Panel_Usuarios
         Me.dgv_usuarios.RowHeadersWidth = 51
         Me.dgv_usuarios.Size = New System.Drawing.Size(646, 173)
         Me.dgv_usuarios.TabIndex = 13
-        '
-        'ID
-        '
-        Me.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.ID.DataPropertyName = "ID"
-        Me.ID.FillWeight = 20.0!
-        Me.ID.HeaderText = "ID"
-        Me.ID.MinimumWidth = 6
-        Me.ID.Name = "ID"
-        Me.ID.ReadOnly = True
-        '
-        'Usuario
-        '
-        Me.Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Usuario.DataPropertyName = "Usuario"
-        Me.Usuario.HeaderText = "Usuario"
-        Me.Usuario.MinimumWidth = 6
-        Me.Usuario.Name = "Usuario"
-        Me.Usuario.ReadOnly = True
-        '
-        'Email
-        '
-        Me.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Email.DataPropertyName = "Email"
-        Me.Email.HeaderText = "Email"
-        Me.Email.MinimumWidth = 6
-        Me.Email.Name = "Email"
-        Me.Email.ReadOnly = True
-        '
-        'Rol
-        '
-        Me.Rol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Rol.DataPropertyName = "Rol"
-        Me.Rol.HeaderText = "Rol"
-        Me.Rol.MinimumWidth = 6
-        Me.Rol.Name = "Rol"
-        Me.Rol.ReadOnly = True
         '
         'btnGuardarUsuario
         '
@@ -205,14 +168,14 @@ Partial Class Panel_Usuarios
         Me.txtGuardarUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtGuardarUsuario.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtGuardarUsuario.IconLeft = CType(resources.GetObject("txtGuardarUsuario.IconLeft"), System.Drawing.Image)
-        Me.txtGuardarUsuario.Location = New System.Drawing.Point(168, 149)
+        Me.txtGuardarUsuario.Location = New System.Drawing.Point(127, 149)
         Me.txtGuardarUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtGuardarUsuario.Name = "txtGuardarUsuario"
         Me.txtGuardarUsuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtGuardarUsuario.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtGuardarUsuario.PlaceholderText = "Usuario"
         Me.txtGuardarUsuario.SelectedText = ""
-        Me.txtGuardarUsuario.Size = New System.Drawing.Size(195, 21)
+        Me.txtGuardarUsuario.Size = New System.Drawing.Size(217, 21)
         Me.txtGuardarUsuario.TabIndex = 17
         '
         'txtGuardarEmailUsuario
@@ -229,14 +192,14 @@ Partial Class Panel_Usuarios
         Me.txtGuardarEmailUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtGuardarEmailUsuario.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtGuardarEmailUsuario.IconLeft = CType(resources.GetObject("txtGuardarEmailUsuario.IconLeft"), System.Drawing.Image)
-        Me.txtGuardarEmailUsuario.Location = New System.Drawing.Point(369, 149)
+        Me.txtGuardarEmailUsuario.Location = New System.Drawing.Point(350, 149)
         Me.txtGuardarEmailUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtGuardarEmailUsuario.Name = "txtGuardarEmailUsuario"
         Me.txtGuardarEmailUsuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtGuardarEmailUsuario.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtGuardarEmailUsuario.PlaceholderText = "Email"
         Me.txtGuardarEmailUsuario.SelectedText = ""
-        Me.txtGuardarEmailUsuario.Size = New System.Drawing.Size(202, 21)
+        Me.txtGuardarEmailUsuario.Size = New System.Drawing.Size(205, 21)
         Me.txtGuardarEmailUsuario.TabIndex = 19
         '
         'txt_ID_Usuario
@@ -281,14 +244,14 @@ Partial Class Panel_Usuarios
         Me.txtGuardarPasswordUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtGuardarPasswordUsuario.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtGuardarPasswordUsuario.IconLeft = CType(resources.GetObject("txtGuardarPasswordUsuario.IconLeft"), System.Drawing.Image)
-        Me.txtGuardarPasswordUsuario.Location = New System.Drawing.Point(577, 149)
+        Me.txtGuardarPasswordUsuario.Location = New System.Drawing.Point(560, 149)
         Me.txtGuardarPasswordUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtGuardarPasswordUsuario.Name = "txtGuardarPasswordUsuario"
         Me.txtGuardarPasswordUsuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9679)
         Me.txtGuardarPasswordUsuario.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtGuardarPasswordUsuario.PlaceholderText = "Password"
         Me.txtGuardarPasswordUsuario.SelectedText = ""
-        Me.txtGuardarPasswordUsuario.Size = New System.Drawing.Size(196, 21)
+        Me.txtGuardarPasswordUsuario.Size = New System.Drawing.Size(213, 21)
         Me.txtGuardarPasswordUsuario.TabIndex = 18
         '
         'btnLimpiarUsuario
@@ -311,6 +274,44 @@ Partial Class Panel_Usuarios
         Me.btnLimpiarUsuario.Name = "btnLimpiarUsuario"
         Me.btnLimpiarUsuario.Size = New System.Drawing.Size(51, 23)
         Me.btnLimpiarUsuario.TabIndex = 35
+        '
+        'ID
+        '
+        Me.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ID.DataPropertyName = "ID"
+        Me.ID.FillWeight = 20.0!
+        Me.ID.HeaderText = "ID"
+        Me.ID.MinimumWidth = 6
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        Me.ID.Visible = False
+        '
+        'Usuario
+        '
+        Me.Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Usuario.DataPropertyName = "Usuario"
+        Me.Usuario.HeaderText = "Usuario"
+        Me.Usuario.MinimumWidth = 6
+        Me.Usuario.Name = "Usuario"
+        Me.Usuario.ReadOnly = True
+        '
+        'Email
+        '
+        Me.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Email.DataPropertyName = "Email"
+        Me.Email.HeaderText = "Email"
+        Me.Email.MinimumWidth = 6
+        Me.Email.Name = "Email"
+        Me.Email.ReadOnly = True
+        '
+        'Rol
+        '
+        Me.Rol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Rol.DataPropertyName = "Rol"
+        Me.Rol.HeaderText = "Rol"
+        Me.Rol.MinimumWidth = 6
+        Me.Rol.Name = "Rol"
+        Me.Rol.ReadOnly = True
         '
         'Panel_Usuarios
         '
@@ -344,9 +345,9 @@ Partial Class Panel_Usuarios
     Friend WithEvents txt_ID_Usuario As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents ErrorIconoUsuario As ErrorProvider
     Friend WithEvents txtGuardarPasswordUsuario As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents btnLimpiarUsuario As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents ID As DataGridViewTextBoxColumn
     Friend WithEvents Usuario As DataGridViewTextBoxColumn
     Friend WithEvents Email As DataGridViewTextBoxColumn
     Friend WithEvents Rol As DataGridViewTextBoxColumn
-    Friend WithEvents btnLimpiarUsuario As Guna.UI2.WinForms.Guna2GradientButton
 End Class

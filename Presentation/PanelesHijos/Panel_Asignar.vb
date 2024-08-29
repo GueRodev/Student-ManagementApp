@@ -132,27 +132,61 @@ Public Class Panel_Asignar
             ' Obtener la fila seleccionada
             Dim selectedRow As DataGridViewRow = dgv_Materias.Rows(e.RowIndex)
 
-            ' Asignar los valores de las celdas a los TextBox correspondientes
+            ' Asignar los valores de las celdas a los controles correspondientes
             txt_Materia.Text = selectedRow.Cells("Materia").Value.ToString()
-            txt_Estado.Text = selectedRow.Cells("Estado").Value.ToString()
             txt_Nota.Text = selectedRow.Cells("Nota").Value.ToString()
+
+            ' Cargar los estados disponibles en el ComboBox
+            cbo_Estado.Items.Clear()
+            cbo_Estado.Items.Add("Matriculada")
+            cbo_Estado.Items.Add("Aprobada")
+            cbo_Estado.Items.Add("Pendiente")
+
+            ' Seleccionar el estado actual en el ComboBox
+            cbo_Estado.SelectedItem = selectedRow.Cells("Estado").Value.ToString()
         End If
     End Sub
 
     Private Sub btn_Asignar_Estado_Nota_Click(sender As Object, e As EventArgs) Handles btn_Asignar_Estado_Nota.Click
         Try
-            ' Obtener los valores de los TextBox
-            Dim materiaId As Integer = CInt(dgv_Materias.CurrentRow.Cells("MateriaId").Value) ' Asumiendo que tienes el ID de la materia en una columna oculta o visible
-            Dim estudianteId As Integer = CInt(dgv_Materias.CurrentRow.Cells("EstudianteId").Value) ' Asumiendo que tienes el ID del estudiante en una columna oculta o visible
-            Dim estadoId As Integer = ObtenerEstadoId(txt_Estado.Text) ' Método que convierte el texto en el ID correspondiente
+
+            ' Validación de que el estado "Matriculada" solo puede tener nota 0
+            If cbo_Estado.SelectedItem.ToString() = "Matriculada" AndAlso CInt(txt_Nota.Text) <> 0 Then
+                MessageBox.Show("El estado 'Matriculada' solo puede tener nota 0. Por favor, corrige la nota.", "Validación de Estado", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Return
+            End If
+
+            ' Validación de que el estado "Pendiente" solo puede tener nota entre 0 y 69
+            If cbo_Estado.SelectedItem.ToString() = "Pendiente" AndAlso (CInt(txt_Nota.Text) < 0 OrElse CInt(txt_Nota.Text) > 69) Then
+                MessageBox.Show("El estado 'Pendiente' solo puede tener una nota entre 0 y 69. Por favor, corrige la nota.", "Validación de Estado", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Return
+            End If
+
+            ' Validación de que el estado "Aprobada" solo puede tener nota entre 70 y 100
+            If cbo_Estado.SelectedItem.ToString() = "Aprobada" AndAlso (CInt(txt_Nota.Text) < 70 OrElse CInt(txt_Nota.Text) > 100) Then
+                MessageBox.Show("El estado 'Aprobada' solo puede tener una nota entre 70 y 100. Por favor, corrige la nota.", "Validación de Estado", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Return
+            End If
+
+            ' Mostrar un cuadro de diálogo de confirmación
+            Dim confirmResult As DialogResult = MessageBox.Show("¿Estás seguro de que desea asignar?", "Confirmar Asignación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+            ' Si el usuario selecciona 'No', se cancela la operación
+            If confirmResult = DialogResult.No Then
+                Return
+            End If
+
+            ' Obtener los valores de los controles
+            Dim materiaId As Integer = CInt(dgv_Materias.CurrentRow.Cells("MateriaId").Value)
+            Dim estudianteId As Integer = CInt(dgv_Materias.CurrentRow.Cells("EstudianteId").Value)
+            Dim estadoId As Integer = ObtenerEstadoId(cbo_Estado.SelectedItem.ToString()) ' Obtener el ID desde el ComboBox
             Dim nota As Integer = CInt(txt_Nota.Text)
 
             ' Llamar al método de la capa de dominio para actualizar los datos
             Dim asignarModelo As New AsignarModelo()
             If asignarModelo.EditarEstadoYNota(estudianteId, materiaId, estadoId, nota) Then
                 MessageBox.Show("Los datos se han actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                ' Aquí puedes agregar código para refrescar el DataGridView si es necesario
-                ' Volver a cargar las materias del estudiante seleccionado
+                ' Recargar las materias del estudiante seleccionado
                 CargarMateriasPorEstudiante(dgv_EstudiantesMaterias.CurrentRow.Cells("Identificacion").Value.ToString())
             Else
                 MessageBox.Show("No se pudo actualizar los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -162,6 +196,7 @@ Public Class Panel_Asignar
             MessageBox.Show("Ocurrió un error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
 
     ' Método auxiliar para convertir el texto del estado en su correspondiente ID
     Private Function ObtenerEstadoId(estado As String) As Integer
@@ -176,6 +211,16 @@ Public Class Panel_Asignar
                 Throw New ArgumentException("Estado no válido.")
         End Select
     End Function
+
+    Private Sub btn_Limpiar_Estados_Click(sender As Object, e As EventArgs) Handles btn_Limpiar_Estados.Click
+
+        ' Limpiar el TextBox de la nota
+        txt_Nota.Clear()
+
+        ' Limpiar la selección del ComboBox (opcional)
+        cbo_Estado.SelectedIndex = -1
+
+    End Sub
 
 
 
