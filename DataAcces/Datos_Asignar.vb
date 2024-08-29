@@ -14,13 +14,8 @@ Public Class Datos_Asignar
                 connection.Open()
                 Using command = New MySqlCommand()
                     command.Connection = connection
-                    command.CommandText = "SELECT " &
-                                          "Estudiantes.Identificacion, " &
-                                          "Estudiantes.Nombre, " &
-                                          "Estudiantes.Apellidos, " &
-                                          "Carreras.Nombre AS Carrera " &
-                                          "FROM Estudiantes " &
-                                          "JOIN Carreras ON Estudiantes.CarreraID = Carreras.ID"
+                    ' Modificar la consulta para usar la vista en lugar de escribir la consulta completa
+                    command.CommandText = "SELECT * FROM vista_estudiante_carrera"
 
                     Dim adapter As New MySqlDataAdapter(command)
                     adapter.Fill(dtEstudiantes)
@@ -32,7 +27,7 @@ Public Class Datos_Asignar
         Return dtEstudiantes
     End Function
 
-    ' Método para obtener la lista de materias asociadas a un estudiante
+
     ' Método para obtener la lista de materias asociadas a un estudiante
     Public Function ObtenerMateriasPorEstudiante(identificacion As String) As DataTable
         Dim dtMaterias As New DataTable()
@@ -41,16 +36,8 @@ Public Class Datos_Asignar
                 connection.Open()
                 Using command = New MySqlCommand()
                     command.Connection = connection
-                    command.CommandText = "SELECT EstudianteMateria.MateriaID, " &
-                                      "EstudianteMateria.EstudianteID, " &
-                                      "Materias.Nombre AS Materia, " &
-                                      "EstadoMateria.Estado, " &
-                                      "EstudianteMateria.Nota " &
-                                      "FROM EstudianteMateria " &
-                                      "JOIN Estudiantes ON EstudianteMateria.EstudianteID = Estudiantes.ID " &
-                                      "JOIN Materias ON EstudianteMateria.MateriaID = Materias.ID " &
-                                      "JOIN EstadoMateria ON EstudianteMateria.EstadoID = EstadoMateria.ID " &
-                                      "WHERE Estudiantes.Identificacion = @identificacion"
+                    ' Modificar la consulta para usar la vista en lugar de escribir la consulta completa
+                    command.CommandText = "SELECT * FROM vista_estudiante_materia WHERE EstudianteID = (SELECT ID FROM Estudiantes WHERE Identificacion = @identificacion)"
                     command.Parameters.AddWithValue("@identificacion", identificacion)
 
                     Dim adapter As New MySqlDataAdapter(command)
@@ -62,6 +49,7 @@ Public Class Datos_Asignar
         End Try
         Return dtMaterias
     End Function
+
 
 
     ' Método para editar las columnas Estado y Nota en la tabla EstudianteMateria
