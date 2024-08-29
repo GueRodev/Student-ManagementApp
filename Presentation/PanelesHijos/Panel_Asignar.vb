@@ -228,14 +228,4 @@ Public Class Panel_Asignar
 
     End Sub
 
-
-
-    'txt_Materia
-    'txt_Estado
-    'txt_Nota
-
-    'btn_Asignar_Estado_Nota
-
-
-
 End Class

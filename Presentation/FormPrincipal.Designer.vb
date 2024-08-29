@@ -99,7 +99,7 @@ Partial Class FormPrincipal
         Me.btnUsuarios.ForeColor = System.Drawing.Color.Black
         Me.btnUsuarios.Image = CType(resources.GetObject("btnUsuarios.Image"), System.Drawing.Image)
         Me.btnUsuarios.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnUsuarios.Location = New System.Drawing.Point(1, 308)
+        Me.btnUsuarios.Location = New System.Drawing.Point(1, 313)
         Me.btnUsuarios.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUsuarios.Name = "btnUsuarios"
         Me.btnUsuarios.Size = New System.Drawing.Size(163, 57)
@@ -158,7 +158,7 @@ Partial Class FormPrincipal
         Me.btnEstados.ForeColor = System.Drawing.Color.Black
         Me.btnEstados.Image = CType(resources.GetObject("btnEstados.Image"), System.Drawing.Image)
         Me.btnEstados.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnEstados.Location = New System.Drawing.Point(0, 235)
+        Me.btnEstados.Location = New System.Drawing.Point(0, 243)
         Me.btnEstados.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEstados.Name = "btnEstados"
         Me.btnEstados.Size = New System.Drawing.Size(163, 57)
@@ -196,7 +196,7 @@ Partial Class FormPrincipal
         Me.btnHome.ForeColor = System.Drawing.Color.Black
         Me.btnHome.Image = CType(resources.GetObject("btnHome.Image"), System.Drawing.Image)
         Me.btnHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnHome.Location = New System.Drawing.Point(0, 172)
+        Me.btnHome.Location = New System.Drawing.Point(0, 174)
         Me.btnHome.Margin = New System.Windows.Forms.Padding(4)
         Me.btnHome.Name = "btnHome"
         Me.btnHome.Size = New System.Drawing.Size(163, 57)

@@ -73,7 +73,7 @@ Partial Class Panel_Matricular
         Me.dgv_Matricular.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_Matricular.EnableHeadersVisualStyles = False
         Me.dgv_Matricular.GridColor = System.Drawing.Color.White
-        Me.dgv_Matricular.Location = New System.Drawing.Point(187, 176)
+        Me.dgv_Matricular.Location = New System.Drawing.Point(374, 143)
         Me.dgv_Matricular.Margin = New System.Windows.Forms.Padding(5)
         Me.dgv_Matricular.Name = "dgv_Matricular"
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -138,7 +138,7 @@ Partial Class Panel_Matricular
         Me.txtNombre_Matricular.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.txtNombre_Matricular.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtNombre_Matricular.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtNombre_Matricular.Location = New System.Drawing.Point(907, 176)
+        Me.txtNombre_Matricular.Location = New System.Drawing.Point(1089, 143)
         Me.txtNombre_Matricular.Margin = New System.Windows.Forms.Padding(5)
         Me.txtNombre_Matricular.Name = "txtNombre_Matricular"
         Me.txtNombre_Matricular.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -161,7 +161,7 @@ Partial Class Panel_Matricular
         Me.txtTelefono_Matricular.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.txtTelefono_Matricular.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtTelefono_Matricular.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtTelefono_Matricular.Location = New System.Drawing.Point(907, 354)
+        Me.txtTelefono_Matricular.Location = New System.Drawing.Point(1089, 366)
         Me.txtTelefono_Matricular.Margin = New System.Windows.Forms.Padding(5)
         Me.txtTelefono_Matricular.Name = "txtTelefono_Matricular"
         Me.txtTelefono_Matricular.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -184,7 +184,7 @@ Partial Class Panel_Matricular
         Me.txtCarnet_Matricular.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.txtCarnet_Matricular.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtCarnet_Matricular.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtCarnet_Matricular.Location = New System.Drawing.Point(907, 283)
+        Me.txtCarnet_Matricular.Location = New System.Drawing.Point(1089, 277)
         Me.txtCarnet_Matricular.Margin = New System.Windows.Forms.Padding(5)
         Me.txtCarnet_Matricular.Name = "txtCarnet_Matricular"
         Me.txtCarnet_Matricular.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -207,7 +207,7 @@ Partial Class Panel_Matricular
         Me.txtIdentificacion_Matricular.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.txtIdentificacion_Matricular.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtIdentificacion_Matricular.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtIdentificacion_Matricular.Location = New System.Drawing.Point(907, 248)
+        Me.txtIdentificacion_Matricular.Location = New System.Drawing.Point(1089, 233)
         Me.txtIdentificacion_Matricular.Margin = New System.Windows.Forms.Padding(5)
         Me.txtIdentificacion_Matricular.Name = "txtIdentificacion_Matricular"
         Me.txtIdentificacion_Matricular.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -230,7 +230,7 @@ Partial Class Panel_Matricular
         Me.txtApellidos_Matricular.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.txtApellidos_Matricular.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtApellidos_Matricular.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtApellidos_Matricular.Location = New System.Drawing.Point(907, 212)
+        Me.txtApellidos_Matricular.Location = New System.Drawing.Point(1089, 188)
         Me.txtApellidos_Matricular.Margin = New System.Windows.Forms.Padding(5)
         Me.txtApellidos_Matricular.Name = "txtApellidos_Matricular"
         Me.txtApellidos_Matricular.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -242,22 +242,22 @@ Partial Class Panel_Matricular
         '
         'cbo_Carreras
         '
-        Me.cbo_Carreras.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cbo_Carreras.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.cbo_Carreras.Font = New System.Drawing.Font("Segoe UI Black", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbo_Carreras.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.cbo_Carreras.FormattingEnabled = True
-        Me.cbo_Carreras.Location = New System.Drawing.Point(893, 410)
+        Me.cbo_Carreras.Location = New System.Drawing.Point(1089, 427)
         Me.cbo_Carreras.Name = "cbo_Carreras"
-        Me.cbo_Carreras.Size = New System.Drawing.Size(214, 31)
+        Me.cbo_Carreras.Size = New System.Drawing.Size(212, 31)
         Me.cbo_Carreras.TabIndex = 41
         '
         'Label1
         '
-        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(889, 387)
+        Me.Label1.Location = New System.Drawing.Point(1091, 404)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(60, 20)
         Me.Label1.TabIndex = 42
@@ -265,23 +265,23 @@ Partial Class Panel_Matricular
         '
         'DateTime_Matricular
         '
-        Me.DateTime_Matricular.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DateTime_Matricular.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.DateTime_Matricular.CalendarFont = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTime_Matricular.CalendarForeColor = System.Drawing.Color.Coral
         Me.DateTime_Matricular.CalendarTitleForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.DateTime_Matricular.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTime_Matricular.Location = New System.Drawing.Point(893, 469)
+        Me.DateTime_Matricular.Location = New System.Drawing.Point(1089, 492)
         Me.DateTime_Matricular.Name = "DateTime_Matricular"
-        Me.DateTime_Matricular.Size = New System.Drawing.Size(214, 30)
+        Me.DateTime_Matricular.Size = New System.Drawing.Size(212, 30)
         Me.DateTime_Matricular.TabIndex = 43
         '
         'Label2
         '
-        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(891, 445)
+        Me.Label2.Location = New System.Drawing.Point(1091, 465)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(106, 20)
         Me.Label2.TabIndex = 44
@@ -303,7 +303,7 @@ Partial Class Panel_Matricular
         Me.btnLimpiar_Matricula.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnLimpiar_Matricula.ForeColor = System.Drawing.Color.White
         Me.btnLimpiar_Matricula.Image = CType(resources.GetObject("btnLimpiar_Matricula.Image"), System.Drawing.Image)
-        Me.btnLimpiar_Matricula.Location = New System.Drawing.Point(279, 493)
+        Me.btnLimpiar_Matricula.Location = New System.Drawing.Point(468, 467)
         Me.btnLimpiar_Matricula.Margin = New System.Windows.Forms.Padding(4)
         Me.btnLimpiar_Matricula.Name = "btnLimpiar_Matricula"
         Me.btnLimpiar_Matricula.Size = New System.Drawing.Size(83, 38)
@@ -325,7 +325,7 @@ Partial Class Panel_Matricular
         Me.btn_Matricular.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Matricular.ForeColor = System.Drawing.Color.White
         Me.btn_Matricular.Image = CType(resources.GetObject("btn_Matricular.Image"), System.Drawing.Image)
-        Me.btn_Matricular.Location = New System.Drawing.Point(383, 493)
+        Me.btn_Matricular.Location = New System.Drawing.Point(566, 467)
         Me.btn_Matricular.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_Matricular.Name = "btn_Matricular"
         Me.btn_Matricular.Size = New System.Drawing.Size(408, 38)
@@ -345,7 +345,7 @@ Partial Class Panel_Matricular
         Me.txtCorreo_Matricular.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.txtCorreo_Matricular.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txtCorreo_Matricular.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtCorreo_Matricular.Location = New System.Drawing.Point(907, 318)
+        Me.txtCorreo_Matricular.Location = New System.Drawing.Point(1089, 321)
         Me.txtCorreo_Matricular.Margin = New System.Windows.Forms.Padding(5)
         Me.txtCorreo_Matricular.Name = "txtCorreo_Matricular"
         Me.txtCorreo_Matricular.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -374,7 +374,7 @@ Partial Class Panel_Matricular
         Me.Controls.Add(Me.txtNombre_Matricular)
         Me.Controls.Add(Me.dgv_Matricular)
         Me.Name = "Panel_Matricular"
-        Me.Size = New System.Drawing.Size(1143, 623)
+        Me.Size = New System.Drawing.Size(1521, 771)
         CType(Me.dgv_Matricular, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

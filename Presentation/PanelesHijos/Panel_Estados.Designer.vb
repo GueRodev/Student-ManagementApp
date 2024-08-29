@@ -30,9 +30,13 @@ Partial Class Panel_Estados
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlEstadoEstudiantes = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.lbl_Porcentaje_Aprobado = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.dgv_Estudiantes_Estados = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnBuscarIdentificacion = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.txt_Buscar_Identificacion = New Guna.UI2.WinForms.Guna2TextBox()
         Me.dgv_EstudiantesMaterias = New System.Windows.Forms.DataGridView()
@@ -40,10 +44,6 @@ Partial Class Panel_Estados
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Apellidos = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Carrera = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lbl_Porcentaje_Aprobado = New System.Windows.Forms.Label()
         Me.pnlEstadoEstudiantes.SuspendLayout()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_Estudiantes_Estados, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,11 +60,23 @@ Partial Class Panel_Estados
         Me.pnlEstadoEstudiantes.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(101, Byte), Integer))
         Me.pnlEstadoEstudiantes.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.pnlEstadoEstudiantes.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.pnlEstadoEstudiantes.Location = New System.Drawing.Point(198, 142)
+        Me.pnlEstadoEstudiantes.Location = New System.Drawing.Point(198, 145)
         Me.pnlEstadoEstudiantes.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlEstadoEstudiantes.Name = "pnlEstadoEstudiantes"
         Me.pnlEstadoEstudiantes.Size = New System.Drawing.Size(903, 64)
         Me.pnlEstadoEstudiantes.TabIndex = 40
+        '
+        'lbl_Porcentaje_Aprobado
+        '
+        Me.lbl_Porcentaje_Aprobado.AutoSize = True
+        Me.lbl_Porcentaje_Aprobado.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_Porcentaje_Aprobado.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Porcentaje_Aprobado.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.lbl_Porcentaje_Aprobado.Location = New System.Drawing.Point(502, 22)
+        Me.lbl_Porcentaje_Aprobado.Name = "lbl_Porcentaje_Aprobado"
+        Me.lbl_Porcentaje_Aprobado.Size = New System.Drawing.Size(63, 23)
+        Me.lbl_Porcentaje_Aprobado.TabIndex = 54
+        Me.lbl_Porcentaje_Aprobado.Text = "Label1"
         '
         'Label3
         '
@@ -134,6 +146,24 @@ Partial Class Panel_Estados
         Me.dgv_Estudiantes_Estados.RowHeadersWidth = 82
         Me.dgv_Estudiantes_Estados.Size = New System.Drawing.Size(909, 161)
         Me.dgv_Estudiantes_Estados.TabIndex = 41
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Aprobadas"
+        Me.Column1.MinimumWidth = 6
+        Me.Column1.Name = "Column1"
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Pendientes"
+        Me.Column2.MinimumWidth = 6
+        Me.Column2.Name = "Column2"
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Matriculadas"
+        Me.Column3.MinimumWidth = 6
+        Me.Column3.Name = "Column3"
         '
         'btnBuscarIdentificacion
         '
@@ -251,36 +281,6 @@ Partial Class Panel_Estados
         Me.Carrera.HeaderText = "Carrera"
         Me.Carrera.MinimumWidth = 6
         Me.Carrera.Name = "Carrera"
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Aprobadas"
-        Me.Column1.MinimumWidth = 6
-        Me.Column1.Name = "Column1"
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Pendientes"
-        Me.Column2.MinimumWidth = 6
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Matriculadas"
-        Me.Column3.MinimumWidth = 6
-        Me.Column3.Name = "Column3"
-        '
-        'lbl_Porcentaje_Aprobado
-        '
-        Me.lbl_Porcentaje_Aprobado.AutoSize = True
-        Me.lbl_Porcentaje_Aprobado.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_Porcentaje_Aprobado.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Porcentaje_Aprobado.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.lbl_Porcentaje_Aprobado.Location = New System.Drawing.Point(502, 22)
-        Me.lbl_Porcentaje_Aprobado.Name = "lbl_Porcentaje_Aprobado"
-        Me.lbl_Porcentaje_Aprobado.Size = New System.Drawing.Size(63, 23)
-        Me.lbl_Porcentaje_Aprobado.TabIndex = 54
-        Me.lbl_Porcentaje_Aprobado.Text = "Label1"
         '
         'Panel_Estados
         '
