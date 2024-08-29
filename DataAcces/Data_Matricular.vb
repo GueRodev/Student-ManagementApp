@@ -62,7 +62,6 @@ Public Class Data_Matricular
         End Try
     End Function
 
-
     Public Function ObtenerMaterias_PorCarrera(carreraID As Integer) As DataTable
         Dim dtMaterias As New DataTable()
 
@@ -71,7 +70,8 @@ Public Class Data_Matricular
                 connection.Open()
                 Using command = New MySqlCommand()
                     command.Connection = connection
-                    command.CommandText = "SELECT Materias.Nombre, Materias.Codigo, Materias.Creditos, Materias.Requisitos FROM Materias INNER JOIN CarreraMateria ON Materias.ID = CarreraMateria.MateriaID WHERE CarreraMateria.CarreraID = @CarreraID"
+                    ' Modificar la consulta para usar la vista actualizada
+                    command.CommandText = "SELECT * FROM vista_carrera_materia WHERE CarreraID = @CarreraID"
                     command.Parameters.AddWithValue("@CarreraID", carreraID)
                     Dim adapter As New MySqlDataAdapter(command)
                     adapter.Fill(dtMaterias)
@@ -83,6 +83,7 @@ Public Class Data_Matricular
 
         Return dtMaterias
     End Function
+
 
     Public Function ObtenerIDEstudiante_PorIdentificacion(identificacion As String) As Integer
         Dim idEstudiante As Integer = 0

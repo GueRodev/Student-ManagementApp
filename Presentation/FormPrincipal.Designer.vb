@@ -26,6 +26,7 @@ Partial Class FormPrincipal
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPrincipal))
         Me.panelContainer = New System.Windows.Forms.Panel()
         Me.PanelMenu = New System.Windows.Forms.Panel()
+        Me.btnUsuarios = New Guna.UI2.WinForms.Guna2Button()
         Me.btnCerrarSesion = New Guna.UI2.WinForms.Guna2Button()
         Me.btnApagar = New Guna.UI2.WinForms.Guna2Button()
         Me.btnEstados = New Guna.UI2.WinForms.Guna2Button()
@@ -44,13 +45,12 @@ Partial Class FormPrincipal
         Me.lbl_Rol = New System.Windows.Forms.Label()
         Me.lbl_Usuario = New System.Windows.Forms.Label()
         Me.PanelButtons = New System.Windows.Forms.Panel()
+        Me.btnMatricular = New Guna.UI2.WinForms.Guna2Button()
         Me.btnAsignar = New Guna.UI2.WinForms.Guna2Button()
         Me.btnMaterias = New Guna.UI2.WinForms.Guna2Button()
         Me.btnEstudiantes = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnUsuarios = New Guna.UI2.WinForms.Guna2Button()
         Me.tmrOcultarMenu = New System.Windows.Forms.Timer(Me.components)
         Me.tmrMostrarMenu = New System.Windows.Forms.Timer(Me.components)
-        Me.btnMatricular = New Guna.UI2.WinForms.Guna2Button()
         Me.panelContainer.SuspendLayout()
         Me.PanelMenu.SuspendLayout()
         Me.PanelTitulo.SuspendLayout()
@@ -65,7 +65,7 @@ Partial Class FormPrincipal
         Me.panelContainer.Controls.Add(Me.PanelAbajo)
         Me.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelContainer.Location = New System.Drawing.Point(0, 0)
-        Me.panelContainer.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.panelContainer.Margin = New System.Windows.Forms.Padding(4)
         Me.panelContainer.Name = "panelContainer"
         Me.panelContainer.Size = New System.Drawing.Size(924, 505)
         Me.panelContainer.TabIndex = 36
@@ -75,16 +75,36 @@ Partial Class FormPrincipal
         Me.PanelMenu.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.PanelMenu.BackColor = System.Drawing.Color.White
+        Me.PanelMenu.Controls.Add(Me.btnUsuarios)
         Me.PanelMenu.Controls.Add(Me.btnCerrarSesion)
         Me.PanelMenu.Controls.Add(Me.btnApagar)
         Me.PanelMenu.Controls.Add(Me.btnEstados)
         Me.PanelMenu.Controls.Add(Me.btnMenuBar)
         Me.PanelMenu.Controls.Add(Me.btnHome)
         Me.PanelMenu.Location = New System.Drawing.Point(0, 0)
-        Me.PanelMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelMenu.Name = "PanelMenu"
         Me.PanelMenu.Size = New System.Drawing.Size(53, 485)
         Me.PanelMenu.TabIndex = 2
+        '
+        'btnUsuarios
+        '
+        Me.btnUsuarios.BackColor = System.Drawing.Color.Transparent
+        Me.btnUsuarios.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnUsuarios.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnUsuarios.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnUsuarios.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnUsuarios.FillColor = System.Drawing.Color.WhiteSmoke
+        Me.btnUsuarios.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.btnUsuarios.ForeColor = System.Drawing.Color.Black
+        Me.btnUsuarios.Image = CType(resources.GetObject("btnUsuarios.Image"), System.Drawing.Image)
+        Me.btnUsuarios.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnUsuarios.Location = New System.Drawing.Point(1, 308)
+        Me.btnUsuarios.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnUsuarios.Name = "btnUsuarios"
+        Me.btnUsuarios.Size = New System.Drawing.Size(163, 57)
+        Me.btnUsuarios.TabIndex = 7
+        Me.btnUsuarios.Text = "   Usuarios"
         '
         'btnCerrarSesion
         '
@@ -100,7 +120,7 @@ Partial Class FormPrincipal
         Me.btnCerrarSesion.Image = CType(resources.GetObject("btnCerrarSesion.Image"), System.Drawing.Image)
         Me.btnCerrarSesion.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnCerrarSesion.Location = New System.Drawing.Point(0, 364)
-        Me.btnCerrarSesion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCerrarSesion.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCerrarSesion.Name = "btnCerrarSesion"
         Me.btnCerrarSesion.Size = New System.Drawing.Size(163, 57)
         Me.btnCerrarSesion.TabIndex = 6
@@ -120,7 +140,7 @@ Partial Class FormPrincipal
         Me.btnApagar.Image = CType(resources.GetObject("btnApagar.Image"), System.Drawing.Image)
         Me.btnApagar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnApagar.Location = New System.Drawing.Point(0, 426)
-        Me.btnApagar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnApagar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnApagar.Name = "btnApagar"
         Me.btnApagar.Size = New System.Drawing.Size(163, 57)
         Me.btnApagar.TabIndex = 5
@@ -139,7 +159,7 @@ Partial Class FormPrincipal
         Me.btnEstados.Image = CType(resources.GetObject("btnEstados.Image"), System.Drawing.Image)
         Me.btnEstados.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnEstados.Location = New System.Drawing.Point(0, 235)
-        Me.btnEstados.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnEstados.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEstados.Name = "btnEstados"
         Me.btnEstados.Size = New System.Drawing.Size(163, 57)
         Me.btnEstados.TabIndex = 4
@@ -159,7 +179,7 @@ Partial Class FormPrincipal
         Me.btnMenuBar.Image = CType(resources.GetObject("btnMenuBar.Image"), System.Drawing.Image)
         Me.btnMenuBar.ImageSize = New System.Drawing.Size(30, 30)
         Me.btnMenuBar.Location = New System.Drawing.Point(7, 126)
-        Me.btnMenuBar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnMenuBar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnMenuBar.Name = "btnMenuBar"
         Me.btnMenuBar.Size = New System.Drawing.Size(49, 37)
         Me.btnMenuBar.TabIndex = 0
@@ -177,7 +197,7 @@ Partial Class FormPrincipal
         Me.btnHome.Image = CType(resources.GetObject("btnHome.Image"), System.Drawing.Image)
         Me.btnHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnHome.Location = New System.Drawing.Point(0, 172)
-        Me.btnHome.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnHome.Margin = New System.Windows.Forms.Padding(4)
         Me.btnHome.Name = "btnHome"
         Me.btnHome.Size = New System.Drawing.Size(163, 57)
         Me.btnHome.TabIndex = 3
@@ -189,7 +209,7 @@ Partial Class FormPrincipal
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelAbajo.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.PanelAbajo.Location = New System.Drawing.Point(0, 485)
-        Me.PanelAbajo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelAbajo.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelAbajo.Name = "PanelAbajo"
         Me.PanelAbajo.Size = New System.Drawing.Size(924, 20)
         Me.PanelAbajo.TabIndex = 0
@@ -249,7 +269,7 @@ Partial Class FormPrincipal
         Me.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRestaurar.Image = CType(resources.GetObject("btnRestaurar.Image"), System.Drawing.Image)
         Me.btnRestaurar.Location = New System.Drawing.Point(836, -2)
-        Me.btnRestaurar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnRestaurar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnRestaurar.Name = "btnRestaurar"
         Me.btnRestaurar.Size = New System.Drawing.Size(41, 33)
         Me.btnRestaurar.TabIndex = 8
@@ -265,7 +285,7 @@ Partial Class FormPrincipal
         Me.PanelTitulo.Controls.Add(Me.btnSalir)
         Me.PanelTitulo.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelTitulo.Location = New System.Drawing.Point(0, 0)
-        Me.PanelTitulo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelTitulo.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelTitulo.Name = "PanelTitulo"
         Me.PanelTitulo.Size = New System.Drawing.Size(924, 28)
         Me.PanelTitulo.TabIndex = 0
@@ -275,7 +295,7 @@ Partial Class FormPrincipal
         Me.PictureBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(0, -4)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(115, 50)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -304,7 +324,7 @@ Partial Class FormPrincipal
         Me.PanelLogo.Controls.Add(Me.Label1)
         Me.PanelLogo.Controls.Add(Me.PictureBox2)
         Me.PanelLogo.Location = New System.Drawing.Point(0, 28)
-        Me.PanelLogo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelLogo.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelLogo.Name = "PanelLogo"
         Me.PanelLogo.Size = New System.Drawing.Size(1113, 47)
         Me.PanelLogo.TabIndex = 34
@@ -325,7 +345,7 @@ Partial Class FormPrincipal
         Me.btn_LogoCerrarSesion.Image = CType(resources.GetObject("btn_LogoCerrarSesion.Image"), System.Drawing.Image)
         Me.btn_LogoCerrarSesion.ImageSize = New System.Drawing.Size(30, 30)
         Me.btn_LogoCerrarSesion.Location = New System.Drawing.Point(855, 0)
-        Me.btn_LogoCerrarSesion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_LogoCerrarSesion.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_LogoCerrarSesion.Name = "btn_LogoCerrarSesion"
         Me.btn_LogoCerrarSesion.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.btn_LogoCerrarSesion.Size = New System.Drawing.Size(67, 47)
@@ -365,12 +385,33 @@ Partial Class FormPrincipal
         Me.PanelButtons.Controls.Add(Me.btnAsignar)
         Me.PanelButtons.Controls.Add(Me.btnMaterias)
         Me.PanelButtons.Controls.Add(Me.btnEstudiantes)
-        Me.PanelButtons.Controls.Add(Me.btnUsuarios)
         Me.PanelButtons.Location = New System.Drawing.Point(0, 74)
-        Me.PanelButtons.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelButtons.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelButtons.Name = "PanelButtons"
         Me.PanelButtons.Size = New System.Drawing.Size(1115, 52)
         Me.PanelButtons.TabIndex = 35
+        '
+        'btnMatricular
+        '
+        Me.btnMatricular.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton
+        Me.btnMatricular.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnMatricular.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnMatricular.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 3)
+        Me.btnMatricular.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnMatricular.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnMatricular.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnMatricular.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnMatricular.FillColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnMatricular.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.btnMatricular.ForeColor = System.Drawing.Color.White
+        Me.btnMatricular.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnMatricular.HoverState.FillColor = System.Drawing.Color.DarkSeaGreen
+        Me.btnMatricular.Location = New System.Drawing.Point(210, 1)
+        Me.btnMatricular.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnMatricular.Name = "btnMatricular"
+        Me.btnMatricular.Size = New System.Drawing.Size(163, 48)
+        Me.btnMatricular.TabIndex = 6
+        Me.btnMatricular.Text = "Matricula"
         '
         'btnAsignar
         '
@@ -387,8 +428,8 @@ Partial Class FormPrincipal
         Me.btnAsignar.ForeColor = System.Drawing.Color.White
         Me.btnAsignar.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnAsignar.HoverState.FillColor = System.Drawing.Color.DarkSeaGreen
-        Me.btnAsignar.Location = New System.Drawing.Point(572, 1)
-        Me.btnAsignar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAsignar.Location = New System.Drawing.Point(388, 1)
+        Me.btnAsignar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAsignar.Name = "btnAsignar"
         Me.btnAsignar.Size = New System.Drawing.Size(163, 48)
         Me.btnAsignar.TabIndex = 5
@@ -409,8 +450,8 @@ Partial Class FormPrincipal
         Me.btnMaterias.ForeColor = System.Drawing.Color.White
         Me.btnMaterias.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnMaterias.HoverState.FillColor = System.Drawing.Color.DarkSeaGreen
-        Me.btnMaterias.Location = New System.Drawing.Point(397, 1)
-        Me.btnMaterias.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnMaterias.Location = New System.Drawing.Point(567, 1)
+        Me.btnMaterias.Margin = New System.Windows.Forms.Padding(4)
         Me.btnMaterias.Name = "btnMaterias"
         Me.btnMaterias.Size = New System.Drawing.Size(163, 48)
         Me.btnMaterias.TabIndex = 4
@@ -431,34 +472,12 @@ Partial Class FormPrincipal
         Me.btnEstudiantes.ForeColor = System.Drawing.Color.White
         Me.btnEstudiantes.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnEstudiantes.HoverState.FillColor = System.Drawing.Color.DarkSeaGreen
-        Me.btnEstudiantes.Location = New System.Drawing.Point(224, 1)
-        Me.btnEstudiantes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnEstudiantes.Location = New System.Drawing.Point(745, 1)
+        Me.btnEstudiantes.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEstudiantes.Name = "btnEstudiantes"
         Me.btnEstudiantes.Size = New System.Drawing.Size(163, 48)
-        Me.btnEstudiantes.TabIndex = 2
+        Me.btnEstudiantes.TabIndex = 1
         Me.btnEstudiantes.Text = "Estudiantes"
-        '
-        'btnUsuarios
-        '
-        Me.btnUsuarios.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton
-        Me.btnUsuarios.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnUsuarios.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.btnUsuarios.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 3)
-        Me.btnUsuarios.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnUsuarios.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnUsuarios.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnUsuarios.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnUsuarios.FillColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.btnUsuarios.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.btnUsuarios.ForeColor = System.Drawing.Color.White
-        Me.btnUsuarios.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnUsuarios.HoverState.FillColor = System.Drawing.Color.DarkSeaGreen
-        Me.btnUsuarios.Location = New System.Drawing.Point(53, 1)
-        Me.btnUsuarios.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnUsuarios.Name = "btnUsuarios"
-        Me.btnUsuarios.Size = New System.Drawing.Size(163, 48)
-        Me.btnUsuarios.TabIndex = 1
-        Me.btnUsuarios.Text = "Usuarios"
         '
         'tmrOcultarMenu
         '
@@ -467,28 +486,6 @@ Partial Class FormPrincipal
         'tmrMostrarMenu
         '
         Me.tmrMostrarMenu.Interval = 90
-        '
-        'btnMatricular
-        '
-        Me.btnMatricular.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton
-        Me.btnMatricular.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnMatricular.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.btnMatricular.CustomBorderThickness = New System.Windows.Forms.Padding(0, 0, 0, 3)
-        Me.btnMatricular.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnMatricular.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnMatricular.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnMatricular.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnMatricular.FillColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.btnMatricular.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.btnMatricular.ForeColor = System.Drawing.Color.White
-        Me.btnMatricular.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnMatricular.HoverState.FillColor = System.Drawing.Color.DarkSeaGreen
-        Me.btnMatricular.Location = New System.Drawing.Point(751, 1)
-        Me.btnMatricular.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnMatricular.Name = "btnMatricular"
-        Me.btnMatricular.Size = New System.Drawing.Size(163, 48)
-        Me.btnMatricular.TabIndex = 6
-        Me.btnMatricular.Text = "Matricula"
         '
         'FormPrincipal
         '
@@ -501,7 +498,7 @@ Partial Class FormPrincipal
         Me.Controls.Add(Me.PanelTitulo)
         Me.Controls.Add(Me.panelContainer)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FormPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormPrincipal"
@@ -526,7 +523,6 @@ Partial Class FormPrincipal
     Friend WithEvents Label1 As Label
     Friend WithEvents PanelLogo As Panel
     Friend WithEvents PanelButtons As Panel
-    Friend WithEvents btnEstudiantes As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnAsignar As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnMaterias As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents PanelAbajo As Panel
@@ -538,10 +534,11 @@ Partial Class FormPrincipal
     Friend WithEvents btnMenuBar As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents tmrOcultarMenu As Timer
     Friend WithEvents tmrMostrarMenu As Timer
-    Friend WithEvents btnUsuarios As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnEstudiantes As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents tmrHoraActual As Timer
     Friend WithEvents btn_LogoCerrarSesion As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents lbl_Rol As Label
     Friend WithEvents lbl_Usuario As Label
     Friend WithEvents btnMatricular As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnUsuarios As Guna.UI2.WinForms.Guna2Button
 End Class

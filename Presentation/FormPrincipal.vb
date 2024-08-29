@@ -159,16 +159,9 @@ Public Class FormPrincipal
         AddUserControl(panelInicio)
     End Sub
 
-    Private Sub btnUsuarios_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click
-
-        Dim panelUsuarios As New Panel_Usuarios()
-        ' Llamar al método AddUserControl para mostrar el control Panel_Usuarios
-        AddUserControl(panelUsuarios)
-    End Sub
-
     Private Sub btnEstudiantes_Click(sender As Object, e As EventArgs) Handles btnEstudiantes.Click
-        Dim panelEstudiantes As New Panel_Estudiantes()
-        ' Llamar al método AddUserControl para mostrar el control Panel_Estudiantes
+        Dim panelEstudiantes As New Panel_Usuarios()
+        ' Llamar al método AddUserControl para mostrar el control Panel_Usuarios
         AddUserControl(panelEstudiantes)
     End Sub
 
@@ -200,6 +193,12 @@ Public Class FormPrincipal
         ' Llamar al método AddUserControl para mostrar el control Panel_Materias
         AddUserControl(panelEstados)
 
+    End Sub
+
+    Private Sub btnUsuarios_Click_1(sender As Object, e As EventArgs) Handles btnUsuarios.Click
+        Dim panelUsuarios As New Panel_Estudiantes()
+        ' Llamar al método AddUserControl para mostrar el control Panel_Estudiantes
+        AddUserControl(panelUsuarios)
     End Sub
 
     Private Sub btnHome_Click(sender As Object, e As EventArgs) Handles btnHome.Click

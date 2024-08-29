@@ -22,9 +22,9 @@ Partial Class Panel_Matricular
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Panel_Matricular))
         Me.dgv_Matricular = New System.Windows.Forms.DataGridView()
         Me.Materia = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -42,7 +42,6 @@ Partial Class Panel_Matricular
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnLimpiar_Matricula = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.btn_Matricular = New Guna.UI2.WinForms.Guna2GradientButton()
-        Me.btn_Deshacer_Matricula = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.txtCorreo_Matricular = New Guna.UI2.WinForms.Guna2TextBox()
         CType(Me.dgv_Matricular, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -54,37 +53,37 @@ Partial Class Panel_Matricular
         Me.dgv_Matricular.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv_Matricular.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.dgv_Matricular.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_Matricular.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(26, Byte), Integer))
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_Matricular.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgv_Matricular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_Matricular.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Materia, Me.Codigo, Me.Creditos, Me.Requisitos})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSeaGreen
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.ForestGreen
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_Matricular.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.DarkSeaGreen
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.ForestGreen
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_Matricular.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgv_Matricular.EnableHeadersVisualStyles = False
         Me.dgv_Matricular.GridColor = System.Drawing.Color.White
         Me.dgv_Matricular.Location = New System.Drawing.Point(187, 176)
         Me.dgv_Matricular.Margin = New System.Windows.Forms.Padding(5)
         Me.dgv_Matricular.Name = "dgv_Matricular"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.ForestGreen
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_Matricular.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.ForestGreen
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_Matricular.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dgv_Matricular.RowHeadersVisible = False
         Me.dgv_Matricular.RowHeadersWidth = 51
         Me.dgv_Matricular.Size = New System.Drawing.Size(694, 305)
@@ -325,32 +324,9 @@ Partial Class Panel_Matricular
         Me.btn_Matricular.Location = New System.Drawing.Point(383, 493)
         Me.btn_Matricular.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_Matricular.Name = "btn_Matricular"
-        Me.btn_Matricular.Size = New System.Drawing.Size(267, 38)
+        Me.btn_Matricular.Size = New System.Drawing.Size(408, 38)
         Me.btn_Matricular.TabIndex = 45
         Me.btn_Matricular.Text = "Matricular"
-        '
-        'btn_Deshacer_Matricula
-        '
-        Me.btn_Deshacer_Matricula.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.btn_Deshacer_Matricula.AutoRoundedCorners = True
-        Me.btn_Deshacer_Matricula.BorderRadius = 18
-        Me.btn_Deshacer_Matricula.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_Deshacer_Matricula.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btn_Deshacer_Matricula.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btn_Deshacer_Matricula.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btn_Deshacer_Matricula.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btn_Deshacer_Matricula.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btn_Deshacer_Matricula.FillColor = System.Drawing.Color.Snow
-        Me.btn_Deshacer_Matricula.FillColor2 = System.Drawing.Color.Red
-        Me.btn_Deshacer_Matricula.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_Deshacer_Matricula.ForeColor = System.Drawing.Color.White
-        Me.btn_Deshacer_Matricula.Image = CType(resources.GetObject("btn_Deshacer_Matricula.Image"), System.Drawing.Image)
-        Me.btn_Deshacer_Matricula.Location = New System.Drawing.Point(672, 493)
-        Me.btn_Deshacer_Matricula.Margin = New System.Windows.Forms.Padding(4)
-        Me.btn_Deshacer_Matricula.Name = "btn_Deshacer_Matricula"
-        Me.btn_Deshacer_Matricula.Size = New System.Drawing.Size(139, 38)
-        Me.btn_Deshacer_Matricula.TabIndex = 56
-        Me.btn_Deshacer_Matricula.Text = "Estudiantes"
         '
         'txtCorreo_Matricular
         '
@@ -381,7 +357,6 @@ Partial Class Panel_Matricular
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.Controls.Add(Me.txtCorreo_Matricular)
-        Me.Controls.Add(Me.btn_Deshacer_Matricula)
         Me.Controls.Add(Me.btnLimpiar_Matricula)
         Me.Controls.Add(Me.btn_Matricular)
         Me.Controls.Add(Me.Label2)
@@ -418,6 +393,5 @@ Partial Class Panel_Matricular
     Friend WithEvents Codigo As DataGridViewTextBoxColumn
     Friend WithEvents Creditos As DataGridViewTextBoxColumn
     Friend WithEvents Requisitos As DataGridViewTextBoxColumn
-    Friend WithEvents btn_Deshacer_Matricula As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents txtCorreo_Matricular As Guna.UI2.WinForms.Guna2TextBox
 End Class
