@@ -150,6 +150,12 @@ Public Class Panel_Asignar
     Private Sub btn_Asignar_Estado_Nota_Click(sender As Object, e As EventArgs) Handles btn_Asignar_Estado_Nota.Click
         Try
 
+            ' Validación de que hay una fila seleccionada en dgv_Materias
+            If dgv_Materias.CurrentRow Is Nothing Then
+                MessageBox.Show("No se ha seleccionado ninguna materia. Por favor, seleccione una materia.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+
             ' Validación de que el estado "Matriculada" solo puede tener nota 0
             If cbo_Estado.SelectedItem.ToString() = "Matriculada" AndAlso CInt(txt_Nota.Text) <> 0 Then
                 MessageBox.Show("El estado 'Matriculada' solo puede tener nota 0. Por favor, corrige la nota.", "Validación de Estado", MessageBoxButtons.OK, MessageBoxIcon.Warning)
