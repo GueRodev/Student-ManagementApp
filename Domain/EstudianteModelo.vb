@@ -4,19 +4,15 @@ Imports DataAcces
 
 Public Class EstudianteModelo
 
-    Public Function dominio_InsertarEstudiante(nombre As String, apellidos As String, identificacion As String, correo As String, carrera As String, fechaIngreso As Date) As Boolean
-        Dim datosEstudiante As New Datos_Estudiantes()
-        Return datosEstudiante.InsertarEstudiante(nombre, apellidos, identificacion, correo, carrera, fechaIngreso)
-    End Function
 
     Public Function dominio_ObtenerEstudiantes() As DataTable
         Dim datos_estudiante As New Datos_Estudiantes()
         Return datos_estudiante.ObtenerEstudiantes()
     End Function
 
-    Public Function dominio_ActualizarEstudiante(id As Integer, nombre As String, apellidos As String, identificacion As String, correo As String, carrera As String, fechaIngreso As Date) As Boolean
+    Public Function dominio_ActualizarEstudiante(id As Integer, nombre As String, apellidos As String, identificacion As String, carnet As String, correo As String, telefono As String) As Boolean
         Dim datos_estudiante As New Datos_Estudiantes()
-        Return datos_estudiante.ActualizarEstudiante(id, nombre, apellidos, identificacion, correo, carrera, fechaIngreso)
+        Return datos_estudiante.ActualizarEstudiante(id, nombre, apellidos, identificacion, carnet, correo, telefono)
     End Function
 
     Public Function Dominio_EliminarEstudiante(id As Integer) As Boolean
@@ -50,6 +46,15 @@ Public Class EstudianteModelo
         Return datosEstudiantes.ExisteEstudiantePorCorreoExcluyendoId(correo, id)
     End Function
 
+    Public Function ExisteTelefonoExcluyendoId(telefono As String, id As Integer) As Boolean
+        Dim datosEstudiante As New Datos_Estudiantes()
+        Return datosEstudiante.ExisteTelefonoExcluyendoId(telefono, id)
+    End Function
+
+    Public Function ExisteCarnetExcluyendoId(carnet As String, id As Integer) As Boolean
+        Dim datosEstudiante As New Datos_Estudiantes()
+        Return datosEstudiante.ExisteCarnetExcluyendoId(carnet, id)
+    End Function
 
 
 End Class

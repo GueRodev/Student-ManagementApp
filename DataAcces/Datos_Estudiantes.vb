@@ -6,36 +6,6 @@ Imports System.Data
 Public Class Datos_Estudiantes
     'Herencia
     Inherits ConnMySql
-    Public Function InsertarEstudiante(nombre As String, apellidos As String, identificacion As String, correo As String, carrera As String, fechaIngreso As Date) As Boolean
-        Try
-
-            ' Verificar si ya existe un estudiante con el mismo correo electrónico
-            If ExisteEstudiantePorCorreo(correo) Then
-                MsgBox("Error al guardar correo.")
-                Return False
-            End If
-
-            Using connection = GetConnection()
-                connection.Open()
-                Using command = New MySqlCommand()
-                    command.Connection = connection
-                    command.CommandText = "INSERT INTO Estudiantes (Nombre, Apellidos, Identificacion, Correo, Carrera, Fecha_Ingreso) VALUES (@Nombre, @Apellidos, @Identificacion, @Correo, @Carrera, @FechaIngreso)"
-                    command.Parameters.AddWithValue("@Nombre", nombre)
-                    command.Parameters.AddWithValue("@Apellidos", apellidos)
-                    command.Parameters.AddWithValue("@Identificacion", identificacion)
-                    command.Parameters.AddWithValue("@Correo", correo)
-                    command.Parameters.AddWithValue("@Carrera", carrera)
-                    command.Parameters.AddWithValue("@FechaIngreso", fechaIngreso)
-                    command.CommandType = CommandType.Text
-                    Dim rowsAffected = command.ExecuteNonQuery()
-                    Return rowsAffected > 0
-                End Using
-            End Using
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            Return False
-        End Try
-    End Function
 
     Public Function ObtenerEstudiantes() As DataTable
         Dim dtEstudiantes As New DataTable()
@@ -58,7 +28,7 @@ Public Class Datos_Estudiantes
 
         Return dtEstudiantes
     End Function
-    Public Function ActualizarEstudiante(id As Integer, nombre As String, apellidos As String, identificacion As String, correo As String, carrera As String, fechaIngreso As Date) As Boolean
+    Public Function ActualizarEstudiante(id As Integer, nombre As String, apellidos As String, identificacion As String, carnet As String, correo As String, telefono As String) As Boolean
         Try
 
             ' Verificar si ya existe un estudiante con el mismo correo electrónico, excluyendo al estudiante actual
@@ -71,14 +41,14 @@ Public Class Datos_Estudiantes
                 connection.Open()
                 Using command = New MySqlCommand()
                     command.Connection = connection
-                    command.CommandText = "UPDATE Estudiantes SET Nombre = @Nombre, Apellidos = @Apellidos, Identificacion = @Identificacion, Correo = @Correo, Carrera = @Carrera, Fecha_Ingreso = @FechaIngreso WHERE ID = @ID"
+                    command.CommandText = "UPDATE Estudiantes SET Nombre = @Nombre, Apellidos = @Apellidos, Identificacion = @Identificacion, Carnet = @Carnet, Correo = @Correo, Telefono = @Telefono WHERE ID = @ID"
                     command.Parameters.AddWithValue("@ID", id)
                     command.Parameters.AddWithValue("@Nombre", nombre)
                     command.Parameters.AddWithValue("@Apellidos", apellidos)
                     command.Parameters.AddWithValue("@Identificacion", identificacion)
+                    command.Parameters.AddWithValue("@Carnet", carnet)
                     command.Parameters.AddWithValue("@Correo", correo)
-                    command.Parameters.AddWithValue("@Carrera", carrera)
-                    command.Parameters.AddWithValue("@FechaIngreso", fechaIngreso)
+                    command.Parameters.AddWithValue("@Telefono", telefono)
                     command.CommandType = CommandType.Text
                     Dim rowsAffected = command.ExecuteNonQuery()
                     Return rowsAffected > 0
@@ -220,6 +190,48 @@ Public Class Datos_Estudiantes
             End Using
         Catch ex As Exception
             MsgBox("Error al verificar la existencia del estudiante por correo: " & ex.Message)
+            Return False
+        End Try
+
+        Return count > 0
+    End Function
+
+    Public Function ExisteTelefonoExcluyendoId(telefono As String, id As Integer) As Boolean
+        Dim query As String = "SELECT COUNT(*) FROM Estudiantes WHERE Telefono = @Telefono AND ID != @ID"
+        Dim count As Integer
+
+        Try
+            Using connection = GetConnection()
+                connection.Open()
+                Using command = New MySqlCommand(query, connection)
+                    command.Parameters.AddWithValue("@Telefono", telefono)
+                    command.Parameters.AddWithValue("@ID", id)
+                    count = Convert.ToInt32(command.ExecuteScalar())
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox("Error al verificar la existencia del teléfono: " & ex.Message)
+            Return False
+        End Try
+
+        Return count > 0
+    End Function
+
+    Public Function ExisteCarnetExcluyendoId(carnet As String, id As Integer) As Boolean
+        Dim query As String = "SELECT COUNT(*) FROM Estudiantes WHERE Carnet = @Carnet AND ID != @ID"
+        Dim count As Integer
+
+        Try
+            Using connection = GetConnection()
+                connection.Open()
+                Using command = New MySqlCommand(query, connection)
+                    command.Parameters.AddWithValue("@Carnet", carnet)
+                    command.Parameters.AddWithValue("@ID", id)
+                    count = Convert.ToInt32(command.ExecuteScalar())
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox("Error al verificar la existencia del carnet: " & ex.Message)
             Return False
         End Try
 

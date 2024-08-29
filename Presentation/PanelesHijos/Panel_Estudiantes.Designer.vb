@@ -31,7 +31,6 @@ Partial Class Panel_Estudiantes
         Me.txtNombreEstudiante = New Guna.UI2.WinForms.Guna2TextBox()
         Me.btnEliminarEstudiante = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.btnEditarEstudiante = New Guna.UI2.WinForms.Guna2GradientButton()
-        Me.btnGuardarEstudiante = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.dgv_estudiantes = New System.Windows.Forms.DataGridView()
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -125,29 +124,6 @@ Partial Class Panel_Estudiantes
         Me.btnEditarEstudiante.Size = New System.Drawing.Size(124, 28)
         Me.btnEditarEstudiante.TabIndex = 23
         Me.btnEditarEstudiante.Text = "Actualizar"
-        '
-        'btnGuardarEstudiante
-        '
-        Me.btnGuardarEstudiante.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.btnGuardarEstudiante.AutoRoundedCorners = True
-        Me.btnGuardarEstudiante.BorderRadius = 13
-        Me.btnGuardarEstudiante.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnGuardarEstudiante.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnGuardarEstudiante.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnGuardarEstudiante.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnGuardarEstudiante.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnGuardarEstudiante.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnGuardarEstudiante.FillColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnGuardarEstudiante.FillColor2 = System.Drawing.Color.Green
-        Me.btnGuardarEstudiante.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardarEstudiante.ForeColor = System.Drawing.Color.White
-        Me.btnGuardarEstudiante.Image = CType(resources.GetObject("btnGuardarEstudiante.Image"), System.Drawing.Image)
-        Me.btnGuardarEstudiante.Location = New System.Drawing.Point(529, 161)
-        Me.btnGuardarEstudiante.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnGuardarEstudiante.Name = "btnGuardarEstudiante"
-        Me.btnGuardarEstudiante.Size = New System.Drawing.Size(124, 28)
-        Me.btnGuardarEstudiante.TabIndex = 22
-        Me.btnGuardarEstudiante.Text = "Guardar"
         '
         'dgv_estudiantes
         '
@@ -334,7 +310,7 @@ Partial Class Panel_Estudiantes
         Me.btnLimpiarEstudiante.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.btnLimpiarEstudiante.ForeColor = System.Drawing.Color.White
         Me.btnLimpiarEstudiante.Image = CType(resources.GetObject("btnLimpiarEstudiante.Image"), System.Drawing.Image)
-        Me.btnLimpiarEstudiante.Location = New System.Drawing.Point(453, 161)
+        Me.btnLimpiarEstudiante.Location = New System.Drawing.Point(581, 161)
         Me.btnLimpiarEstudiante.Margin = New System.Windows.Forms.Padding(4)
         Me.btnLimpiarEstudiante.Name = "btnLimpiarEstudiante"
         Me.btnLimpiarEstudiante.Size = New System.Drawing.Size(68, 28)
@@ -475,7 +451,6 @@ Partial Class Panel_Estudiantes
         Me.Controls.Add(Me.txtNombreEstudiante)
         Me.Controls.Add(Me.btnEliminarEstudiante)
         Me.Controls.Add(Me.btnEditarEstudiante)
-        Me.Controls.Add(Me.btnGuardarEstudiante)
         Me.Controls.Add(Me.dgv_estudiantes)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Panel_Estudiantes"
@@ -489,7 +464,6 @@ Partial Class Panel_Estudiantes
     Friend WithEvents txtNombreEstudiante As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents btnEliminarEstudiante As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents btnEditarEstudiante As Guna.UI2.WinForms.Guna2GradientButton
-    Friend WithEvents btnGuardarEstudiante As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents dgv_estudiantes As DataGridView
     Friend WithEvents txtCorreoEstudiante As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtIdentificacionEstudiante As Guna.UI2.WinForms.Guna2TextBox

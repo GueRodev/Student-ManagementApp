@@ -252,7 +252,7 @@ Partial Class Panel_Usuarios
         Me.txt_ID_Usuario.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_ID_Usuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(176, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.txt_ID_Usuario.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_ID_Usuario.Location = New System.Drawing.Point(127, 149)
+        Me.txt_ID_Usuario.Location = New System.Drawing.Point(127, 17)
         Me.txt_ID_Usuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_ID_Usuario.Name = "txt_ID_Usuario"
         Me.txt_ID_Usuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -261,6 +261,7 @@ Partial Class Panel_Usuarios
         Me.txt_ID_Usuario.SelectedText = ""
         Me.txt_ID_Usuario.Size = New System.Drawing.Size(35, 21)
         Me.txt_ID_Usuario.TabIndex = 20
+        Me.txt_ID_Usuario.Visible = False
         '
         'ErrorIconoUsuario
         '

@@ -32,6 +32,7 @@ Public Class Panel_Estudiantes
         Dim colIDEstudiante As New DataGridViewTextBoxColumn()
         colIDEstudiante.DataPropertyName = "ID"
         colIDEstudiante.HeaderText = "ID"
+        colIDEstudiante.Visible = False
         dgv_estudiantes.Columns.Add(colIDEstudiante)
 
         Dim colNombre As New DataGridViewTextBoxColumn()
@@ -66,89 +67,6 @@ Public Class Panel_Estudiantes
 
         ' Asignar los datos al DataGridView
         dgv_estudiantes.DataSource = dtEstudiantes
-    End Sub
-    Private Sub btnGuardarEstudiante_Click(sender As Object, e As EventArgs) Handles btnGuardarEstudiante.Click
-        ' Validar si el usuario está seguro de guardar el estudiante
-        Dim confirmacion As DialogResult = MessageBox.Show("¿Está seguro de que desea guardar este estudiante?", "Confirmar Guardar Estudiante", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If confirmacion = DialogResult.No Then
-            Return ' Cancelar la operación si el usuario no está seguro
-        End If
-
-        ' Obtener los datos del estudiante desde los campos del formulario
-        Dim nombre As String = txtNombreEstudiante.Text
-        Dim apellidos As String = txtApellidosEstudiante.Text
-        Dim identificacion As String = txtIdentificacionEstudiante.Text
-        Dim correo As String = txtCorreoEstudiante.Text
-        Dim carrera As String = txtCarreraEstudiante.Text
-
-        ' Instanciar EstudianteModelo
-        Dim estudianteModelo As New EstudianteModelo()
-
-        ' Validar que los campos no estén vacíos
-        If String.IsNullOrWhiteSpace(nombre) OrElse String.IsNullOrWhiteSpace(apellidos) OrElse String.IsNullOrWhiteSpace(identificacion) OrElse String.IsNullOrWhiteSpace(correo) OrElse String.IsNullOrWhiteSpace(carrera) Then
-            MessageBox.Show("Por favor, complete todos los campos.")
-            Return
-        End If
-
-        ' Validar que el nombre y el apellido no contengan números enteros y no excedan los 16 caracteres
-        If Not EsNombreValido(nombre) Or Not EsNombreValido(apellidos) Then
-            MessageBox.Show("El nombre y el apellido no pueden contener números y deben tener máximo 16 caracteres.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return ' Cancelar la operación si no se cumple la validación
-        End If
-
-        ' Validar el formato del correo electrónico
-        If Not EsCorreoValido(correo) Then
-            MessageBox.Show("Ingrese un correo electrónico válido.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return ' Cancelar la operación si no se cumple la validación
-        End If
-
-        ' Verificar si ya existe un estudiante con el mismo correo electrónico
-        If estudianteModelo.ExisteEstudiantePorCorreo(correo) Then
-            MessageBox.Show("Ya existe un estudiante con ese correo electrónico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return
-        End If
-
-        ' Validar que la identificación sea válida
-        If Not EsIdentificacionValida(identificacion) Then
-            MessageBox.Show("La identificación debe ser un número de máximo 10 dígitos.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return ' Cancelar la operación si no se cumple la validación
-        End If
-
-        ' Verificar si ya existe un estudiante con la misma identificación
-        If Not String.IsNullOrEmpty(identificacion) AndAlso EstudianteModelo.ExisteEstudiantePorIdentificacion(identificacion) Then
-            MessageBox.Show("Ya existe un estudiante con esa identificación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return
-        End If
-
-
-
-        ' Convertir el campo de fecha de ingreso a tipo Date
-        Dim fechaIngreso As Date
-        If Not String.IsNullOrEmpty(txtFechaEstudiante.Text) Then
-            If Date.TryParse(txtFechaEstudiante.Text, fechaIngreso) Then
-                ' La conversión fue exitosa, la fecha se asignó correctamente
-            Else
-                MessageBox.Show("Ingrese una fecha de ingreso válida en formato dd/MM/yyyy.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Return ' Cancelar la operación si no se cumple la validación
-            End If
-        Else
-            MessageBox.Show("El campo de fecha de ingreso no puede estar vacío.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return ' Cancelar la operación si no se cumple la validación
-        End If
-
-        ' Llamar al método Dominio_InsertarEstudiante para guardar el nuevo estudiante
-        Dim insercionExitosa As Boolean = estudianteModelo.dominio_InsertarEstudiante(nombre, apellidos, identificacion, correo, carrera, fechaIngreso)
-
-        ' Verificar si la inserción fue exitosa
-        If insercionExitosa Then
-            MessageBox.Show("Estudiante guardado correctamente.")
-            ' Recargar los datos del DataGridView para reflejar los cambios en tiempo real
-            CargarDatosEstudiantes()
-            ' Limpiar los campos después de guardar el estudiante
-            LimpiarCampos()
-        Else
-            MessageBox.Show("Error al guardar el estudiante. Inténtelo de nuevo.")
-        End If
     End Sub
 
     Private Function EsNombreValido(nombre As String) As Boolean
@@ -206,8 +124,9 @@ Public Class Panel_Estudiantes
             Dim nombre As String = txtNombreEstudiante.Text
             Dim apellidos As String = txtApellidosEstudiante.Text
             Dim identificacion As String = txtIdentificacionEstudiante.Text
+            Dim carnet As String = txtCarnetEstudiante.Text
             Dim correo As String = txtCorreoEstudiante.Text
-            Dim carrera As String = txtCarreraEstudiante.Text
+            Dim telefono As String = txtTelefonoEstudiante.Text
 
             ' Validar si el usuario está seguro de guardar el estudiante
             Dim confirmacion As DialogResult = MessageBox.Show($"¿Está seguro de que desea Actualizar {nombre} {apellidos}", "Confirmar Actualizacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -220,7 +139,7 @@ Public Class Panel_Estudiantes
             Dim estudianteModelo As New EstudianteModelo()
 
             ' Validar que los campos no estén vacíos
-            If String.IsNullOrWhiteSpace(nombre) OrElse String.IsNullOrWhiteSpace(apellidos) OrElse String.IsNullOrWhiteSpace(identificacion) OrElse String.IsNullOrWhiteSpace(correo) OrElse String.IsNullOrWhiteSpace(carrera) Then
+            If String.IsNullOrWhiteSpace(nombre) OrElse String.IsNullOrWhiteSpace(apellidos) OrElse String.IsNullOrWhiteSpace(identificacion) OrElse String.IsNullOrWhiteSpace(carnet) OrElse String.IsNullOrWhiteSpace(correo) OrElse String.IsNullOrWhiteSpace(telefono) Then
                 MessageBox.Show("Por favor, complete todos los campos.")
                 Return
             End If
@@ -261,28 +180,21 @@ Public Class Panel_Estudiantes
                 Return
             End If
 
-            ' Validar que el campo de carrera no esté vacío y cumpla con los requisitos de longitud y contenido
-            If String.IsNullOrWhiteSpace(carrera) OrElse carrera.Length > 30 OrElse Not EsNombreValido(carrera) Then
-                MessageBox.Show("Ingrese Datos Validos para la carrera.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Return ' Cancelar la operación si no se cumple la validación
+            ' Nueva validación para el teléfono
+            If estudianteModelo.ExisteTelefonoExcluyendoId(telefono, idEstudiante) Then
+                MessageBox.Show("Ya existe un estudiante con ese número de teléfono.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
             End If
 
-            ' Convertir el campo de fecha de ingreso a tipo Date
-            Dim fechaIngreso As Date
-            If Not String.IsNullOrEmpty(txtFechaEstudiante.Text) Then
-                If Date.TryParse(txtFechaEstudiante.Text, fechaIngreso) Then
-                    ' La conversión fue exitosa, la fecha se asignó correctamente
-                Else
-                    MessageBox.Show("Ingrese una fecha de ingreso válida en formato dd/MM/yyyy.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    Return ' Cancelar la operación si no se cumple la validación
-                End If
-            Else
-                MessageBox.Show("El campo de fecha de ingreso no puede estar vacío.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Return ' Cancelar la operación si no se cumple la validación
+            ' Validar si el nuevo carnet ya existe en la base de datos, excluyendo al estudiante actual
+            If estudianteModelo.ExisteCarnetExcluyendoId(carnet, idEstudiante) Then
+                MessageBox.Show("Ya existe un estudiante con ese carnet.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
             End If
+
 
             ' Llamar al método dominio_ActualizarEstudiante para actualizar los datos del estudiante
-            Dim actualizacionExitosa As Boolean = estudianteModelo.dominio_ActualizarEstudiante(idEstudiante, nombre, apellidos, identificacion, correo, carrera, fechaIngreso)
+            Dim actualizacionExitosa As Boolean = estudianteModelo.dominio_ActualizarEstudiante(idEstudiante, nombre, apellidos, identificacion, carnet, correo, telefono)
 
             ' Verificar si la actualización fue exitosa
             If actualizacionExitosa Then

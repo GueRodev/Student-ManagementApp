@@ -31,6 +31,7 @@ Public Class Panel_Usuarios
         Dim colID As New DataGridViewTextBoxColumn()
         colID.DataPropertyName = "ID"
         colID.HeaderText = "ID"
+        colID.Visible = False
         dgv_usuarios.Columns.Add(colID)
 
         Dim colUsuario As New DataGridViewTextBoxColumn()
